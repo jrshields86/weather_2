@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import axios from 'axios';
 import './App.css'
-import { BASE_URL } from './api';
 
 function App() {
 
@@ -12,7 +11,7 @@ function App() {
 // console.log(BASE_URL);  
 
 
-  const fetchWeather = async(API_KEY)=>{
+  const fetchWeather = async()=>{
     const response = await axios.get(`https://api.openweathermap.org/data/3.0/onecall?lat=39.65&lon=-105.29&exclude={part}&appid=${API_KEY}`);
     console.log(response.data);
 };
