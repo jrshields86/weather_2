@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import axios from 'axios';
 import './App.css'
+import CurrentWeather from './CurrentWeather';
 
 function App() {
   const [current, setCurrent] = useState({});
@@ -19,9 +20,11 @@ useEffect(()=> {
   fetchWeather();
 }, []);
 
+console.log(current);
+
   return (
     <>
-      <h1>hello world</h1>
+      {current && <CurrentWeather current={current} />}
     </>
   )
 }
