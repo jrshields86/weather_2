@@ -1,14 +1,36 @@
-#root {
+* {
   max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  box-sizing: border-box;
 }
 
 .weatherContainer {
-  width: 500px;
+  display: flex;
+  flex-direction: column;
+  width: 800px;
   border: 2px solid black;
+  border-radius: 20px;
   background-color: rgb(0, 180, 216);
   margin: 20px auto 20px auto;
+  padding-left: 2rem;
 }
 
+.bottom {
+  display: flex;
+  justify-content: space-between;
+  font-weight: bolder;
+  gap: 1rem;
+  padding-right: 2rem;
+  text-align: center;
+}
+
+.temp {
+  font-weight: 600;
+  font-size: 70px;
+  margin: 1rem 0 0 0;
+}
+
+.feelsLike {
+  font-weight: 600;
+  font-size: 18px;
+  margin-top: 0;
+}
