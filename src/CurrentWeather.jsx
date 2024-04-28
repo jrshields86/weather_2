@@ -13,7 +13,7 @@ const CurrentWeather = ({current, windDirection}) => {
                 <div className='bottom'>
                     <p>Pressure
                         <br/>
-                        {current.pressure} hPa
+                        {(current.pressure * 0.025).toFixed(2)} in
                     </p>
                     <p>Humidity 
                         <br/>
@@ -33,7 +33,7 @@ const CurrentWeather = ({current, windDirection}) => {
                     </p>
                     <p>Wind Gust
                         <br/>
-                        {current.wind_gust} mph
+                        {current.wind_gust.toFixed()} mph
                     </p>
                 </div>
                 {/* <p>Weather Description: {current.weather[0].description}</p>
