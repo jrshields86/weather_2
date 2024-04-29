@@ -8,43 +8,57 @@ const CurrentWeather = ({current, windDirection}) => {
     };
 
     const icon = iconData[0].icon;
+    const description = iconData[0].main;
 
     return (
         <div className='app'>
-            <h1>Current Weather</h1>
             <div className='weatherContainer'>
-                <div className='top'>
-                    <p className='temp'>{Math.round(current.temp)}°F</p>
-                    <p className='feelsLike'>Feels Like: {Math.round(current.feels_like)}°F</p>
-                    <div className='iconInfo'>
+                <div className='topContainer'>
+                    <div className='top-left'>
+                        <p className='temp'>{Math.round(current.temp)}°F</p>
+                        <p className='feelsLike'>Feels Like: {Math.round(current.feels_like)}°F</p>
+                    </div>    
+                    <div className='top-right'>
                         <img alt='weather icon' className='weatherIcon' src={`icons/${icon}.png`}/>
+                        <p className='description'>{description}</p>
                     </div>
                 </div>
-                <div className='bottom'>
-                    <p>Pressure
-                        <br/>
-                        {current.pressure} hPa
-                    </p>
-                    <p>Humidity 
-                        <br/>
-                        {current.humidity} %
-                    </p>
-                    <p>Dew Point
-                        <br/>
-                        {Math.round(current.dew_point)} °F
-                    </p>
-                    <p>UV Index
-                        <br/>
-                        {Math.round(current.uvi)} of 11
-                    </p>
-                    <p>Wind
-                        <br/>
-                        {windDirection(current.wind_deg)} {current.wind_speed} mph
-                    </p>
-                    <p>Wind Gust
-                        <br/>
-                        {current.wind_gust} mph
-                    </p>
+                <div className='bottomContainer'>
+                    <div className='bottomUpper'>
+                        <div>
+                            <p className='detailTitle'>Pressure</p>
+                            <p className='detailValue'>{(current.pressure * 0.025).toFixed(2)} in</p>
+                        </div>
+
+                        <div>
+                            <p className='detailTitle'>Humidity </p>
+                            <p className='detailValue'>{current.humidity} %</p>
+                        </div>
+
+                        <div>
+                            <p className='detailTitle'>Dew Point</p>
+                            <p className='detailValue'>{Math.round(current.dew_point)} °F</p>
+                        </div>
+
+                    </div>
+                    <div className='bottomLower'>
+                        
+                        <div>
+                            <p className='detailTitle'>UV Index</p>
+                            <p className='detailValue'>{Math.round(current.uvi)} of 11</p>
+                        </div>
+
+                        <div>
+                            <p className='detailTitle'>Wind</p>
+                            <p className='detailValue'>{windDirection(current.wind_deg)} {current.wind_speed} mph</p>
+                        </div>
+
+                        <div>
+                            <p className='detailTitle'>Wind Gust</p>
+                            <p className='detailValue'>{Math.round(current.wind_gust)} mph</p>
+                        </div>
+
+                    </div>
                 </div>
             </div>
         </div>
