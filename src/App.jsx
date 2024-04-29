@@ -12,6 +12,7 @@ function App() {
   useEffect(()=> {
     const fetchWeather = async()=>{
       const response = await axios.get(`https://api.openweathermap.org/data/3.0/onecall?lat=39.65&lon=-105.29&exclude={part}&appid=${API_KEY}&units=imperial`);
+      console.log(response.data);
       const weatherData = response.data.current;
       const forecastData = response.data.daily;
       setCurrent(weatherData);
@@ -41,7 +42,6 @@ function App() {
   };
 
 
-  console.log(current);
   return (
     <>
       {current && <CurrentWeather current={current} windDirection={windDirection} />}

@@ -1,7 +1,14 @@
 import './App.css';
 
 const CurrentWeather = ({current, windDirection}) => {
-    
+    const iconData = current.weather;
+
+    if (!iconData){
+        return null;
+    };
+
+    const icon = iconData[0].icon;
+
     return (
         <div className='app'>
             <h1>Current Weather</h1>
@@ -9,6 +16,9 @@ const CurrentWeather = ({current, windDirection}) => {
                 <div className='top'>
                     <p className='temp'>{Math.round(current.temp)}°F</p>
                     <p className='feelsLike'>Feels Like: {Math.round(current.feels_like)}°F</p>
+                    <div className='iconInfo'>
+                        <img alt='weather icon' className='weatherIcon' src={`icons/${icon}.png`}/>
+                    </div>
                 </div>
                 <div className='bottom'>
                     <p>Pressure
@@ -36,10 +46,6 @@ const CurrentWeather = ({current, windDirection}) => {
                         {current.wind_gust} mph
                     </p>
                 </div>
-                {/* <p>Weather Description: {current.weather[0].description}</p>
-                <p>Weather Icon: {current.weather[0].icon}</p>
-                <p>Weather Main: {current.weather[0].main}</p>
-                <p>Weather ID: {current.weather[0].id}</p> */}
             </div>
         </div>
     );
