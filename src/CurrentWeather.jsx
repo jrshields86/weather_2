@@ -52,12 +52,6 @@ const CurrentWeather = ({current, windDirection}) => {
                             <p className='detailTitle'>Wind</p>
                             <p className='detailValue'>{windDirection(current.wind_deg)} {current.wind_speed} mph</p>
                         </div>
-
-                        <div>
-                            <p className='detailTitle'>Wind Gust</p>
-                            <p className='detailValue'>{Math.round(current.wind_gust)} mph</p>
-                        </div>
-
                     </div>
                 </div>
             </div>
