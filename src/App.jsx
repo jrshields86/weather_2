@@ -8,18 +8,7 @@ function App() {
   const [current, setCurrent] = useState({});
   const [forecast, setForecast] = useState([]);
   const API_KEY = import.meta.env.VITE_WEATHER_API_KEY;
-  
 
-  // useEffect(()=> {
-  //   const fetchWeather = async()=>{
-  //     const response = await axios.get(`https://api.openweathermap.org/data/3.0/onecall?lat=39.65&lon=-105.29&exclude={part}&appid=${API_KEY}&units=imperial`);
-  //     console.log(response.data);
-  //     const todayWeatherData = response.data.current;
-  //     const weatherData = response.data;
-  //     setCurrent(todayWeatherData);
-  //   };
-  //   fetchWeather();
-  // }, []);
 
   const handleOnSearchChange = (searchData) => {
     const [lat, lon] = searchData.value.split(' ');
@@ -28,7 +17,6 @@ function App() {
   
     Promise.all([currentWeatherFetch])
       .then(async (response) => {
-        console.log(response);
         const weatherResponse = await response[0].data.current;
         setCurrent({city: searchData.label , ...weatherResponse});
       })
@@ -59,8 +47,10 @@ function App() {
 
   return (
     <div>
-      <p></p>
-      <Search onSearchChange={handleOnSearchChange} />
+      <div className='searchBox'>
+        <Search onSearchChange={handleOnSearchChange} />
+      </div>
+      <h2 className='currentTitle'>Current Weather for: {current.city}</h2>
       {current && <CurrentWeather current={current} windDirection={windDirection} />}
     </div>
   )

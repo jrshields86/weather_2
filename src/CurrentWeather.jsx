@@ -50,7 +50,7 @@ const CurrentWeather = ({current, windDirection}) => {
 
                         <div>
                             <p className='detailTitle'>Wind</p>
-                            <p className='detailValue'>{windDirection(current.wind_deg)} {current.wind_speed} mph</p>
+                            <p className='detailValue'>{windDirection(current.wind_deg)} {Math.round(current.wind_speed)} mph</p>
                         </div>
                     </div>
                 </div>

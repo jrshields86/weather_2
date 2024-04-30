@@ -62,4 +62,16 @@ font-weight: 600;
   margin-top: 0;
 }
 
+.currentTitle {
+  text-align: center;
+}
 
+.searchBox {
+  display: flex;
+  justify-content: center;
+}
+
+.searchBar {
+  width: 200px;
+  
+}
