@@ -14,11 +14,14 @@ function App() {
     const [lat, lon] = searchData.value.split(' ');
 
     const currentWeatherFetch = axios.get(`https://api.openweathermap.org/data/3.0/onecall?lat=${lat}&lon=${lon}&exclude={part}&appid=${API_KEY}&units=imperial`);
-  
+    
     Promise.all([currentWeatherFetch])
       .then(async (response) => {
+        console.log(response.data);
         const weatherResponse = await response[0].data.current;
+        const fullWeatherResponse = await response[0].data;
         setCurrent({city: searchData.label , ...weatherResponse});
+        setForecast({city: searchData.label , ...fullWeatherResponse});
       })
       .catch((err) => console.log(err));
   };
@@ -44,6 +47,7 @@ function App() {
   };
 
  console.log(current);
+ console.log(forecast);
 
   return (
     <div>
