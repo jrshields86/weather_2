@@ -3,6 +3,7 @@ import axios from 'axios';
 import './App.css'
 import CurrentWeather from './CurrentWeather';
 import Search from './Search';
+import Forecast from './Forecast.jsx';
 
 function App() {
   const [current, setCurrent] = useState({});
@@ -56,6 +57,7 @@ function App() {
       </div>
       <h2 className='currentTitle'>Current Weather for: {current.city}</h2>
       {current && <CurrentWeather current={current} windDirection={windDirection} />}
+      {forecast && <Forecast  forecast={forecast} windDirection={windDirection} />}
     </div>
   )
 }

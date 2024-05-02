@@ -75,3 +75,13 @@ font-weight: 600;
   width: 200px;
   
 }
+
+.forecastContainer {
+  display: flex;
+  width: 200px;
+  height: 200px;
+  border: 2px solid black;
+  border-radius: 20px;
+  background-color: rgb(0, 180, 216);
+  margin: 20px auto 20px auto;
+}
