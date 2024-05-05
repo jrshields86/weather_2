@@ -76,7 +76,7 @@ font-weight: 600;
   
 }
 
-.forecastContainer {
+/* .forecastContainer {
   display: flex;
   width: 200px;
   height: 200px;
@@ -84,4 +84,20 @@ font-weight: 600;
   border-radius: 20px;
   background-color: rgb(0, 180, 216);
   margin: 20px auto 20px auto;
+} */
+
+.forecastContainer {
+  display: flex;
+  width: 700px;
+  border: 2px solid black;
+  padding: 1rem;
+  gap: 1rem;
+  margin: 20px auto 20px auto;
+  border-radius: 10px;
+  background-color: rgb(0, 180, 216);
+  justify-content: space-around;
+}
+
+.forecastRight {
+  display: flex;
 }
