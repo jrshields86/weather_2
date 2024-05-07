@@ -49,10 +49,17 @@ function App() {
 
   return (
     <div>
+
       <div className='searchBox'>
         <Search onSearchChange={handleOnSearchChange} />
       </div>
-      <h2 className='currentTitle'>Current Weather for: {current.city}</h2>
+
+      <div className='locationDisplayContainer'>
+        <div className='locationDisplay'>
+          <p>{current.city}</p>
+        </div>
+      </div>
+
       {current && <CurrentWeather current={current} windDirection={windDirection} />}
       {forecast && <Forecast  forecast={forecast} windDirection={windDirection} />}
     </div>
