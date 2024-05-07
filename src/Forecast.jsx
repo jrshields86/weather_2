@@ -10,9 +10,6 @@ const Forecast = ({forecast, windDirection}) => {
     const forecastData = forecast.daily;
     const formattedForecast = forecastData.slice(1, forecastData.length);
     console.log(formattedForecast);
-    const currDateUTC = forecast.current.dt;
-    const localDate = new Date(currDateUTC * 1000).toLocaleDateString();
-
 
     return (
         <div>
@@ -20,16 +17,26 @@ const Forecast = ({forecast, windDirection}) => {
                     {
                         formattedForecast.map(el =>{
                             const date = new Date(el.dt * 1000).toLocaleDateString()
-                            console.log(date);
+                            const iconData = el.weather;
+                            const dailyIcon = iconData.map(el => {
+                                return el.icon;
+                            });
+                            console.log(dailyIcon);
+            
                             return(
-                                <div key={el.dt}>
-                                    <div className='dateBox'>
+                                <div key={el.dt} className='forecastChild'>
+                                    <div className='forecastDate'>
                                         {date}
                                     </div>
                                     <div className='forecastRight'>
-                                        Min: {el.temp.min}
-                                        <br/>
-                                        Max: {el.temp.max}
+                                        <div className='forecastIcon'>
+                                        <img alt='weather icon' className='forecastIconImage' src={`icons/${dailyIcon}.png`}/>
+                                        </div>
+                                        <div className='minMax'>
+                                            Min: {Math.round(el.temp.min)} F°
+                                            <br/>
+                                            Max: {Math.round(el.temp.max)} F°
+                                        </div>
                                     </div>
                                 </div>
                             )

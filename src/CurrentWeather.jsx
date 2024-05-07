@@ -25,6 +25,7 @@ const CurrentWeather = ({current, windDirection}) => {
                 </div>
                 <div className='bottomContainer'>
                     <div className='bottomUpper'>
+
                         <div>
                             <p className='detailTitle'>Pressure</p>
                             <p className='detailValue'>{(current.pressure * 0.025).toFixed(2)} in</p>
@@ -52,6 +53,7 @@ const CurrentWeather = ({current, windDirection}) => {
                             <p className='detailTitle'>Wind</p>
                             <p className='detailValue'>{windDirection(current.wind_deg)} {Math.round(current.wind_speed)} mph</p>
                         </div>
+
                     </div>
                 </div>
             </div>

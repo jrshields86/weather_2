@@ -88,7 +88,8 @@ font-weight: 600;
 
 .forecastContainer {
   display: flex;
-  width: 700px;
+  flex-wrap: wrap;
+  width: 750px;
   border: 2px solid black;
   padding: 1rem;
   gap: 1rem;
@@ -100,4 +101,24 @@ font-weight: 600;
 
 .forecastRight {
   display: flex;
+  gap: 1rem;
+}
+
+.forecastChild {
+  border: 2px solid black;
+  border-radius: 10px;
+  padding: .75rem;
+}
+
+.minMax {
+  font-weight: bolder;
+}
+
+.forecastDate {
+  padding-bottom: .5rem;
+  font-weight: bolder;
+}
+
+.forecastIcon {
+  font-weight: bolder;
 }
