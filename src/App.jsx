@@ -4,6 +4,7 @@ import './App.css'
 import CurrentWeather from './CurrentWeather';
 import Search from './Search';
 import Forecast from './Forecast.jsx';
+import SunriseSunset from './SunriseSunset.jsx';
 
 function App() {
   const [current, setCurrent] = useState({});
@@ -53,7 +54,7 @@ function App() {
       <div className='searchBox'>
         <Search onSearchChange={handleOnSearchChange} />
       </div>
-
+      <SunriseSunset forecast={forecast}/>
       <div className='locationDisplayContainer'>
         <div className='locationDisplay'>
           <p>{current.city}</p>

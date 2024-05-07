@@ -147,3 +147,30 @@ font-weight: 600;
 .forecastIcon {
   font-weight: bolder;
 }
+
+.sunriseSunsetContainer {
+  width: 215px;
+  display: flex;
+  flex-direction: column;
+  padding: 1.25rem;
+  border-radius: 30px;
+  margin: 20px auto 20px auto;
+  background-color: rgb(0, 180, 216);
+  box-shadow: 10px -2px 20px 2px rgb(0 0 0 / 30%);
+  color: white;
+}
+
+#sunrise, #sunset, #sunriseText, #sunsetText {
+  border: 2px solid white;
+  padding: .25rem .75rem;
+  border-radius: 5px;
+}
+
+#top, #middle, #bottom {
+  display: flex;
+  justify-content: space-around;
+}
+
+#top {
+  margin-bottom: .75rem;
+}
