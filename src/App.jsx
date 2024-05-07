@@ -47,9 +47,6 @@ function App() {
     }
   };
 
- console.log(current);
- console.log(forecast);
-
   return (
     <div>
       <div className='searchBox'>

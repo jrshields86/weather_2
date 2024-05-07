@@ -2,7 +2,6 @@ import './App.css';
 
 const CurrentWeather = ({current, windDirection}) => {
     const iconData = current.weather;
-    console.log(iconData);
 
     if (!iconData){
         return null;

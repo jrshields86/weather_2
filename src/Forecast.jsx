@@ -1,37 +1,36 @@
 import './App.css'
 
 const Forecast = ({forecast, windDirection}) => {
+    console.log(forecast);
+
     if(!forecast.daily){
         return null;
-    }
+    };
 
     const forecastData = forecast.daily;
-    console.log(forecastData);
     const formattedForecast = forecastData.slice(1, forecastData.length);
     console.log(formattedForecast);
+    const currDateUTC = forecast.current.dt;
+    const localDate = new Date(currDateUTC * 1000).toLocaleDateString();
 
-    // const tomorrowData = forecast.daily[1].weather[0].icon;
-    // console.log(tomorrowData);
-    
 
     return (
         <div>
             <div className="forecastContainer">
-                {/* <div className='forecastLeft'>
-                    <p>Date</p>
-                    <img alt='weather icon' className='weatherIcon' src={`icons/${tomorrowData}.png`}/>
-                </div>
-                <div>
-                    <p>Min:</p>
-                    <p>Max:</p>
-                </div> */}
                     {
                         formattedForecast.map(el =>{
+                            const date = new Date(el.dt * 1000).toLocaleDateString()
+                            console.log(date);
                             return(
-                                <div className='forecastRight'>
-                                 Min: {el.temp.min}
-                                 <br/>
-                                 Max: {el.temp.max}
+                                <div key={el.dt}>
+                                    <div className='dateBox'>
+                                        {date}
+                                    </div>
+                                    <div className='forecastRight'>
+                                        Min: {el.temp.min}
+                                        <br/>
+                                        Max: {el.temp.max}
+                                    </div>
                                 </div>
                             )
                         })
