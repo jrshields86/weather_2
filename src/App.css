@@ -111,6 +111,8 @@ font-weight: 600;
 }
 
 .minMax {
+  display: flex;
+  flex-direction: column;
   font-weight: bolder;
 }
 
