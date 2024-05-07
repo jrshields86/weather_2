@@ -21,7 +21,9 @@ const Forecast = ({forecast, windDirection}) => {
                             const dailyIcon = iconData.map(el => {
                                 return el.icon;
                             });
-                            console.log(dailyIcon);
+                            const dailyDescription = iconData.map(el =>{
+                                return el.main;
+                            })
             
                             return(
                                 <div key={el.dt} className='forecastChild'>
@@ -31,13 +33,18 @@ const Forecast = ({forecast, windDirection}) => {
                                     <div className='forecastRight'>
                                         <div className='forecastIcon'>
                                         <img alt='weather icon' className='forecastIconImage' src={`icons/${dailyIcon}.png`}/>
+                                        <div>
+                                            {dailyDescription}
+                                        </div>
                                         </div>
                                         <div className='minMax'>
                                             Min: {Math.round(el.temp.min)} F°
                                             <br/>
                                             Max: {Math.round(el.temp.max)} F°
                                         </div>
+                                        
                                     </div>
+                                    
                                 </div>
                             )
                         })
