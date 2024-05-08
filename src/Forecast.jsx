@@ -1,7 +1,6 @@
 import './App.css'
 
 const Forecast = ({forecast, windDirection}) => {
-    console.log(forecast);
 
     if(!forecast.daily){
         return null;
@@ -9,7 +8,6 @@ const Forecast = ({forecast, windDirection}) => {
 
     const forecastData = forecast.daily;
     const formattedForecast = forecastData.slice(1, forecastData.length);
-    console.log(formattedForecast);
 
     return (
         <div>
@@ -38,8 +36,8 @@ const Forecast = ({forecast, windDirection}) => {
                                         </div>
                                         </div>
                                         <div className='minMax'>
-                                            <p>Min: {Math.round(el.temp.min)} F°</p>
                                             <p>Max: {Math.round(el.temp.max)} F°</p>
+                                            <p>Min: {Math.round(el.temp.min)} F°</p>
                                         </div>
                                         
                                     </div>
