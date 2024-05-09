@@ -7,13 +7,13 @@ const SunriseSunset = ({forecast}) => {
     };
 
     const sunriseUTC = (forecast.current.sunrise);
-    console.log(sunriseUTC);
     const sunsetUTC = (forecast.current.sunset);
 
-    const timezoneOffset = forecast.timezone_offset;
-    console.log(timezoneOffset);
-    const offsetSunrise = sunriseUTC + timezoneOffset;
-    console.log(offsetSunrise);
+    const sunriseTime = new Date(sunriseUTC * 1000);
+    const sunriseTimeString = sunriseTime.toTimeString().slice(0, 5);
+    const sunsetTime = new Date(sunsetUTC * 1000);
+    const sunsetTimeString = sunsetTime.toTimeString().slice(0, 5) ;
+
 
     
     return (
@@ -29,10 +29,10 @@ const SunriseSunset = ({forecast}) => {
                 </div>
                 <div id='middle'>
                     <div id="sunrise">
-                        {}
+                        {sunriseTimeString}
                     </div>
                     <div id="sunset">
-                        {}
+                        {sunsetTimeString}
                     </div>
                 </div>
                 <div id='bottom'>
