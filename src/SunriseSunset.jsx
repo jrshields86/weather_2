@@ -6,13 +6,20 @@ const SunriseSunset = ({forecast}) => {
         return null;
     };
 
-    const sunriseUTC = (forecast.current.sunrise);
-    const sunsetUTC = (forecast.current.sunset);
+    const sunriseUTC = forecast.current.sunrise + (forecast.timezone_offset);
+    const sunsetUTC = forecast.current.sunset + (forecast.timezone_offset);
+    const timezoneOffset = forecast.timezone_offset;
+    console.log(timezoneOffset);
+    console.log(sunriseUTC);
 
     const sunriseTime = new Date(sunriseUTC * 1000);
-    const sunriseTimeString = sunriseTime.toTimeString().slice(0, 5);
-    const sunsetTime = new Date(sunsetUTC * 1000);
-    const sunsetTimeString = sunsetTime.toTimeString().slice(0, 5) ;
+    const sunsetTime = new Date(sunsetUTC * 1000)
+    const sunriseHours = sunriseTime.getUTCHours();
+    const sunriseMinutes = sunriseTime.getUTCMinutes();
+    const sunsetHours = sunsetTime.getUTCHours();
+    const sunsetMinutes = sunsetTime.getUTCMinutes();
+    const zero = 0;
+    console.log(sunsetMinutes);
 
 
     
@@ -29,10 +36,10 @@ const SunriseSunset = ({forecast}) => {
                 </div>
                 <div id='middle'>
                     <div id="sunrise">
-                        {sunriseTimeString}
+                        {sunriseHours}:{sunriseMinutes}
                     </div>
                     <div id="sunset">
-                        {sunsetTimeString}
+                        {sunsetHours}:{sunsetMinutes}
                     </div>
                 </div>
                 <div id='bottom'>
