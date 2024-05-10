@@ -82,16 +82,6 @@ font-weight: 600;
   
 }
 
-/* .forecastContainer {
-  display: flex;
-  width: 200px;
-  height: 200px;
-  border: 2px solid black;
-  border-radius: 20px;
-  background-color: rgb(0, 180, 216);
-  margin: 20px auto 20px auto;
-} */
-
 .forecastContainer {
   position: relative;
   display: flex;
@@ -165,6 +155,7 @@ font-weight: 600;
   border: 2px solid black;
   padding: .25rem .75rem;
   border-radius: 5px;
+  font-weight: bolder;
 }
 
 #top, #middle, #bottom {
@@ -174,4 +165,9 @@ font-weight: 600;
 
 #top {
   margin-bottom: .75rem;
+}
+
+.sunriseIcon, .sunsetIcon {
+  width: 100px;
+  height: 100px;
 }

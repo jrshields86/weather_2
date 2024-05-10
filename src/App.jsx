@@ -11,6 +11,19 @@ function App() {
   const [forecast, setForecast] = useState([]);
   const API_KEY = import.meta.env.VITE_WEATHER_API_KEY;
 
+  function userLocation(){
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(success)
+    }
+  };
+  console.log(userLocation());
+
+  function success(pos) {
+    const crd = pos.coords;
+    const lat = crd.latitude;
+    const lon = crd.longitude;
+    console.log(lat, lon);
+  };
 
   const handleOnSearchChange = (searchData) => {
     const [lat, lon] = searchData.value.split(' ');
