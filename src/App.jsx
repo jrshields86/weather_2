@@ -7,23 +7,42 @@ import Forecast from './Forecast.jsx';
 import SunriseSunset from './SunriseSunset.jsx';
 
 function App() {
-  const [current, setCurrent] = useState({});
+  let [current, setCurrent] = useState({});
   const [forecast, setForecast] = useState([]);
+  const [userLat, setUserLat] = useState();
+  const [userLon, setUserLon] = useState(null);
   const API_KEY = import.meta.env.VITE_WEATHER_API_KEY;
+  
 
-  function userLocation(){
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(success)
-    }
-  };
-  console.log(userLocation());
+  useEffect(() => {
+    async function userLocation(){
+      console.log(userLat, userLon);
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(success)
+        try {
+          const userWeatherFetch = await axios.get(`https://api.openweathermap.org/data/3.0/onecall?lat=${userLat}&lon=${userLon}&exclude={part}&appid=${API_KEY}&units=imperial`);
+          setCurrent(userWeatherFetch.data.current)
+        } catch (error) {
+          console.log(error)
+        }
+      }
+    };
+    userLocation()
+  }, []);
 
   function success(pos) {
     const crd = pos.coords;
-    const lat = crd.latitude;
-    const lon = crd.longitude;
-    console.log(lat, lon);
+    const lat = (crd.latitude).toFixed(2);
+    const lon = (crd.longitude).toFixed(2);
+
+    setUserLat(lat);
+    setUserLon(lon);
   };
+  
+
+
+  
+
 
   const handleOnSearchChange = (searchData) => {
     const [lat, lon] = searchData.value.split(' ');

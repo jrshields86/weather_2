@@ -1,7 +1,6 @@
 import './App.css'
 
 const SunriseSunset = ({forecast}) => {
-    console.log(forecast);
     if(!forecast.current){
         return null;
     };
