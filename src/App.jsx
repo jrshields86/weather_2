@@ -5,44 +5,55 @@ import CurrentWeather from './CurrentWeather';
 import Search from './Search';
 import Forecast from './Forecast.jsx';
 import SunriseSunset from './SunriseSunset.jsx';
+import { api } from './api.jsx';
 
 function App() {
-  let [current, setCurrent] = useState({});
+  const [current, setCurrent] = useState({});
   const [forecast, setForecast] = useState([]);
-  const [userLat, setUserLat] = useState();
+  const [userLat, setUserLat] = useState(null);
   const [userLon, setUserLon] = useState(null);
   const API_KEY = import.meta.env.VITE_WEATHER_API_KEY;
-  
+  console.log(userLat, userLon);
 
   useEffect(() => {
-    async function userLocation(){
-      console.log(userLat, userLon);
-      if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(success)
-        try {
-          const userWeatherFetch = await axios.get(`https://api.openweathermap.org/data/3.0/onecall?lat=${userLat}&lon=${userLon}&exclude={part}&appid=${API_KEY}&units=imperial`);
-          setCurrent(userWeatherFetch.data.current)
-        } catch (error) {
-          console.log(error)
-        }
-      }
-    };
-    userLocation()
-  }, []);
+    console.log('render!');
+    console.log(userLat, userLon);
+    async function userData(){
+      const response = await axios.get(`https://api.openweathermap.org/data/3.0/onecall?lat=${userLat}&lon=${userLon}&exclude={part}&appid=${API_KEY}&units=imperial`);
+      setCurrent(response.data.current);
+      setForecast(response.data);
+    }
+    userData();
+  }, [userLat, userLon]);
+
+
+  console.log('hello 1');
+
+  function userLocation(){
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(success);
+      console.log(success);
+    }
+  };
+  userLocation();
 
   function success(pos) {
+    console.log(pos);
     const crd = pos.coords;
     const lat = (crd.latitude).toFixed(2);
     const lon = (crd.longitude).toFixed(2);
+    console.log(lat, lon);
 
     setUserLat(lat);
     setUserLon(lon);
   };
-  
 
 
   
 
+  
+  console.log('hello 2');
+  console.log(userLat, userLon);
 
   const handleOnSearchChange = (searchData) => {
     const [lat, lon] = searchData.value.split(' ');
@@ -51,7 +62,6 @@ function App() {
     
     Promise.all([currentWeatherFetch])
       .then(async (response) => {
-        console.log(response.data);
         const weatherResponse = await response[0].data.current;
         const fullWeatherResponse = await response[0].data;
         setCurrent({city: searchData.label , ...weatherResponse});
@@ -89,7 +99,7 @@ function App() {
       <SunriseSunset forecast={forecast}/>
       <div className='locationDisplayContainer'>
         <div className='locationDisplay'>
-          <p>{current.city}</p>
+          <p>{current.city ? current.city : 'Your Location'}</p>
         </div>
       </div>
 
