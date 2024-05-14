@@ -1,7 +1,7 @@
 import './App.css'
 
 const Forecast = ({forecast, windDirection}) => {
-
+    console.log(forecast);
     if(!forecast.daily){
         return null;
     };

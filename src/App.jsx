@@ -5,6 +5,7 @@ import CurrentWeather from './CurrentWeather';
 import Search from './Search';
 import Forecast from './Forecast.jsx';
 import SunriseSunset from './SunriseSunset.jsx';
+import MoonriseMoonset from './MoonriseMoonset.jsx';
 import { api } from './api.jsx';
 
 function App() {
@@ -13,11 +14,8 @@ function App() {
   const [userLat, setUserLat] = useState(null);
   const [userLon, setUserLon] = useState(null);
   const API_KEY = import.meta.env.VITE_WEATHER_API_KEY;
-  console.log(userLat, userLon);
 
   useEffect(() => {
-    console.log('render!');
-    console.log(userLat, userLon);
     async function userData(){
       const response = await axios.get(`https://api.openweathermap.org/data/3.0/onecall?lat=${userLat}&lon=${userLon}&exclude={part}&appid=${API_KEY}&units=imperial`);
       setCurrent(response.data.current);
@@ -26,44 +24,31 @@ function App() {
     userData();
   }, [userLat, userLon]);
 
-
-  console.log('hello 1');
-
   function userLocation(){
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(success);
-      console.log(success);
     }
   };
   userLocation();
 
   function success(pos) {
-    console.log(pos);
     const crd = pos.coords;
     const lat = (crd.latitude).toFixed(2);
     const lon = (crd.longitude).toFixed(2);
-    console.log(lat, lon);
-
     setUserLat(lat);
     setUserLon(lon);
   };
 
-
-  
-
-  
-  console.log('hello 2');
-  console.log(userLat, userLon);
-
   const handleOnSearchChange = (searchData) => {
     const [lat, lon] = searchData.value.split(' ');
-
     const currentWeatherFetch = axios.get(`https://api.openweathermap.org/data/3.0/onecall?lat=${lat}&lon=${lon}&exclude={part}&appid=${API_KEY}&units=imperial`);
     
     Promise.all([currentWeatherFetch])
       .then(async (response) => {
+        
         const weatherResponse = await response[0].data.current;
         const fullWeatherResponse = await response[0].data;
+        console.log(fullWeatherResponse);
         setCurrent({city: searchData.label , ...weatherResponse});
         setForecast({city: searchData.label , ...fullWeatherResponse});
       })
@@ -96,6 +81,7 @@ function App() {
       <div className='searchBox'>
         <Search onSearchChange={handleOnSearchChange} />
       </div>
+      <MoonriseMoonset />
       <SunriseSunset forecast={forecast}/>
       <div className='locationDisplayContainer'>
         <div className='locationDisplay'>

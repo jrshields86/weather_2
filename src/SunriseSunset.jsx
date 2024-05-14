@@ -64,10 +64,10 @@ const SunriseSunset = ({forecast}) => {
                 </div>
                 <div id='bottom'>
                     <div>
-                    <img alt='sunrise icon' className='sunriseIcon' src={`icons/Sunrise_icon.png`}/>
+                        <img alt='sunrise icon' className='sunriseIcon' src={`icons/Sunrise_icon.png`}/>
                     </div>
                     <div>
-                    <img alt='sunset icon' className='sunsetIcon' src={`icons/Sunset_icon.png`}/>
+                        <img alt='sunset icon' className='sunsetIcon' src={`icons/Sunset_icon.png`}/>
                     </div>
                 </div>
             </div>
