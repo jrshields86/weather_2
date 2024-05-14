@@ -81,7 +81,7 @@ function App() {
       <div className='searchBox'>
         <Search onSearchChange={handleOnSearchChange} />
       </div>
-      <MoonriseMoonset />
+      <MoonriseMoonset forecast={forecast} />
       <SunriseSunset forecast={forecast}/>
       <div className='locationDisplayContainer'>
         <div className='locationDisplay'>

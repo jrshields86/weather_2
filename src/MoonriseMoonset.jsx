@@ -1,7 +1,24 @@
 import './App.css'
 
 
-const MoonriseMoonset = () => {
+const MoonriseMoonset = ({forecast}) => {
+    console.log(forecast);
+    if(!forecast.daily){
+        return null;
+    };
+
+    const moonriseData = forecast.daily[0].moonrise + (forecast.timezone_offset);
+    const moonsetData =  forecast.daily[0].moonset + (forecast.timezone_offset);
+    console.log(moonriseData, moonsetData);
+
+    const moonriseTime = new Date(moonriseData * 1000);
+    const moonsetTime = new Date(moonsetData * 1000)
+    console.log(moonriseTime, moonsetTime);
+
+    const moonriseHours = moonriseTime.getUTCHours();
+    const moonriseMinutes = moonriseTime.getUTCMinutes();
+    console.log(moonriseHours, moonriseMinutes);
+
     return (
         <>  
             <div className="moonriseMoonsetContainer">
