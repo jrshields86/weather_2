@@ -130,6 +130,8 @@ font-weight: 600;
 }
 
 .forecastDate {
+  display: flex;
+  justify-content: space-between;
   padding-bottom: .5rem;
   font-weight: bolder;
 }

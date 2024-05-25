@@ -6,20 +6,31 @@ const Forecast = ({forecast, windDirection}) => {
         return null;
     };
 
-    const daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-    
-
     const forecastData = forecast.daily;
     const formattedForecast = forecastData.slice(1, forecastData.length);
+    const daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+    
+    
 
+    
     return (
         <div>
             <div className="forecastContainer">
                     {
                         formattedForecast.map(el =>{
                             const date = new Date(el.dt * 1000).toLocaleDateString();
-                            const day = new Date(el.dt * 1000).getUTCDay();
+                            const day = new Date(el.dt * 1000).getDay();
                             console.log(day);
+
+                            const dayOfWeekDisplay = (dayArr, dayIdx ) => {
+                                const reorderArr = dayArr.slice(dayIdx).concat(dayArr.slice(0, dayIdx));
+                                return reorderArr[0];  
+                                };
+
+                            const reorderedArr = dayOfWeekDisplay(daysOfWeek, day);
+                            console.log(reorderedArr);
+
+                            
                             const iconData = el.weather;
                             const dailyIcon = iconData.map(el => {
                                 return el.icon;
@@ -31,7 +42,8 @@ const Forecast = ({forecast, windDirection}) => {
                             return(
                                 <div key={el.dt} className='forecastChild'>
                                     <div className='forecastDate'>
-                                        {date}
+                                        <div>{date}</div>
+                                        <div>{reorderedArr}</div>
                                     </div>
                                     <div className='forecastRight'>
                                         <div className='forecastIcon'>
