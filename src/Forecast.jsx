@@ -1,7 +1,6 @@
 import './App.css'
 
 const Forecast = ({forecast, windDirection}) => {
-    console.log(forecast.daily);
     if(!forecast.daily){
         return null;
     };
@@ -20,7 +19,6 @@ const Forecast = ({forecast, windDirection}) => {
                         formattedForecast.map(el =>{
                             const date = new Date(el.dt * 1000).toLocaleDateString();
                             const day = new Date(el.dt * 1000).getDay();
-                            console.log(day);
 
                             const dayOfWeekDisplay = (dayArr, dayIdx ) => {
                                 const reorderArr = dayArr.slice(dayIdx).concat(dayArr.slice(0, dayIdx));
@@ -28,7 +26,6 @@ const Forecast = ({forecast, windDirection}) => {
                                 };
 
                             const reorderedArr = dayOfWeekDisplay(daysOfWeek, day);
-                            console.log(reorderedArr);
 
                             
                             const iconData = el.weather;

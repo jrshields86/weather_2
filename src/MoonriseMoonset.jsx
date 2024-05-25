@@ -2,9 +2,12 @@ import './App.css'
 
 
 const MoonriseMoonset = ({forecast}) => {
+    
     if(!forecast.daily){
         return null;
     };
+
+    console.log(forecast.daily[0].moon_phase);
 
     const moonriseData = forecast.daily[0].moonrise + (forecast.timezone_offset);
     const moonsetData =  forecast.daily[0].moonset + (forecast.timezone_offset);
@@ -25,15 +28,9 @@ const MoonriseMoonset = ({forecast}) => {
                     <div id='moonriseText'>
                         Moon Phase
                     </div>
-                    <div id='moonsetText'>
-                        
-                    </div>
                 </div>
                 <div id='middle'>
                     <div id="moonrise">
-                        
-                    </div>
-                    <div id="moonset">
                         
                     </div>
                 </div>
