@@ -23,18 +23,18 @@ const MoonriseMoonset = ({forecast}) => {
             <div className="moonriseMoonsetContainer">
                 <div id='top'>
                     <div id='moonriseText'>
-                        Moonrise
+                        Moon Phase
                     </div>
                     <div id='moonsetText'>
-                        Moonset
+                        
                     </div>
                 </div>
                 <div id='middle'>
                     <div id="moonrise">
-                        {}:{} a.m.
+                        
                     </div>
                     <div id="moonset">
-                        {}:{} p.m.
+                        
                     </div>
                 </div>
                 <div id='bottom'>

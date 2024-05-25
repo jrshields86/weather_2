@@ -42,8 +42,12 @@ const Forecast = ({forecast, windDirection}) => {
                             return(
                                 <div key={el.dt} className='forecastChild'>
                                     <div className='forecastDate'>
-                                        <div>{date}</div>
-                                        <div>{reorderedArr}</div>
+                                        <div>
+                                            {date}
+                                        </div>
+                                        <div>
+                                            {reorderedArr}
+                                        </div>
                                     </div>
                                     <div className='forecastRight'>
                                         <div className='forecastIcon'>
