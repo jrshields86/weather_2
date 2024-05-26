@@ -199,9 +199,18 @@ font-weight: 600;
   justify-content: space-around;
 }
 
+#moonPhaseMiddle {
+  flex-direction: column;
+}
+
 #top {
   margin-bottom: .75rem;
 }
+
+/* #moonIcon {
+  width: 150px;
+  height: 150px;
+} */
 
 /* .moonriseIcon, .moonsetIcon {
   width: 100px;
