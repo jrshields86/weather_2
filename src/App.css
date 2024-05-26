@@ -200,6 +200,7 @@ font-weight: 600;
 }
 
 #moonPhaseMiddle {
+  justify-content: center;
   flex-direction: column;
 }
 
@@ -207,10 +208,15 @@ font-weight: 600;
   margin-bottom: .75rem;
 }
 
-/* #moonIcon {
-  width: 150px;
-  height: 150px;
-} */
+#moonIcon {
+  width: 75px;
+  height: 75px;
+}
+
+#moonPhaseIcon {
+  text-align: center;
+  padding-bottom: .5rem;
+}
 
 /* .moonriseIcon, .moonsetIcon {
   width: 100px;
