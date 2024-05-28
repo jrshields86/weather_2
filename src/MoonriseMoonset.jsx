@@ -2,7 +2,7 @@ import './App.css'
 
 
 const MoonriseMoonset = ({forecast}) => {
-    
+    console.log(forecast);
     if(!forecast.daily){
         return null;
     };
@@ -32,21 +32,21 @@ const MoonriseMoonset = ({forecast}) => {
 
     const displayMoonPhaseIcon = (phaseNum) => {
         if (phaseNum === 0 || phaseNum === 1) {
-            return 'new_moon';
+            return 'moon_new_moon';
         } else if (phaseNum > 0 && phaseNum < 0.25) {
-            return 'waxing_crescent_moon'
+            return 'moon_waning_crescent'
         } else if (phaseNum === 0.25) {
-            return 'first_quarter_moon';
+            return 'moon_last_quarter';
         } else if (phaseNum > 0.25 && phaseNum < 0.5) {
-            return 'waxing_gibbous_moon';
+            return 'moon_waning_gibbous';
         } else if (phaseNum === 0.5) {
-            return 'full_moon';
+            return 'moon_full';
         } else if (phaseNum > 0.5 && phaseNum < 0.75) {
-            return 'waning_gibbous_moon';
+            return 'moon_waxing_gibbous';
         } else if (phaseNum === 0.75) {
-            return 'last_quarter_moon';
+            return 'moon_first_quarter';
         } else if (phaseNum > 0.75  && phaseNum < 1.0) {
-            return 'waning_crescent_moon';
+            return 'moon_waxing_crescent';
         }
     };
     console.log(displayMoonPhaseIcon(moonPhaseData));
