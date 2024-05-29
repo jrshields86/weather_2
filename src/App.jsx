@@ -77,19 +77,23 @@ function App() {
 
   return (
     <div>
-
-      <div className='searchBox'>
-        <Search onSearchChange={handleOnSearchChange} />
-      </div>
-      <MoonriseMoonset forecast={forecast} />
-      <SunriseSunset forecast={forecast}/>
-      <div className='locationDisplayContainer'>
-        <div className='locationDisplay'>
-          <p>{current.city ? current.city : 'Your Location'}</p>
+      <div className='searchAndLocationContainer'>
+        <div className='searchBox'>
+          <Search onSearchChange={handleOnSearchChange} />
+        </div>
+        <div className='locationDisplayContainer'>
+            <p>{current.city ? current.city : 'Your Location'}</p>
         </div>
       </div>
 
-      {current && <CurrentWeather current={current} windDirection={windDirection} />}
+      <div className='mainViewContainer'>
+        {current && <CurrentWeather current={current} windDirection={windDirection} />}
+        <div className='sunMoonContainer'>
+          <MoonriseMoonset forecast={forecast} />
+          <SunriseSunset forecast={forecast}/>
+        </div>
+      </div>
+
       {forecast && <Forecast  forecast={forecast} windDirection={windDirection} />}
     </div>
   )

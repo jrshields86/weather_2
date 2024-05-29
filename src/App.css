@@ -6,7 +6,7 @@
 .locationDisplayContainer {
   display: flex;
   justify-content: center;
-  margin: 20px auto 20px auto;
+  margin: auto;
 }
 
 .weatherContainer {
@@ -86,7 +86,7 @@ font-weight: 600;
   position: relative;
   display: flex;
   flex-wrap: wrap;
-  width: 750px;
+  width: 800px;
   border: 2px solid black;
   padding: 1rem;
   gap: 1rem;
@@ -96,7 +96,7 @@ font-weight: 600;
   justify-content: space-around;
 }
 
-.locationDisplay {
+.locationDisplayContainer p {
   position: relative;
   width: 300px;
   border: 2px solid black;
@@ -108,9 +108,9 @@ font-weight: 600;
   text-align: center;
 }
 
-.locationDisplay p {
+/* .locationDisplay p {
   margin: 0;
-}
+} */
 
 .forecastRight {
   display: flex;
@@ -138,6 +138,12 @@ font-weight: 600;
 
 .forecastIcon {
   font-weight: bolder;
+}
+
+.forecastIconImage {
+  border: 1px solid black;
+  width: 50px;
+  height: 50px;
 }
 
 .sunriseSunsetContainer {
@@ -170,8 +176,9 @@ font-weight: 600;
 }
 
 .sunriseIcon, .sunsetIcon {
-  width: 100px;
-  height: 100px;
+  width: 50px;
+  height: 50px;
+  border: 1px solid black;
 }
 
 .moonriseMoonsetContainer {
@@ -208,9 +215,15 @@ font-weight: 600;
   margin-bottom: .75rem;
 }
 
+#middle {
+  padding-bottom: 1rem;
+}
+
+
+
 #moonIcon {
-  width: 75px;
-  height: 75px;
+  width: 45px;
+  height: 45px;
 }
 
 #moonPhaseIcon {
@@ -218,7 +231,12 @@ font-weight: 600;
   padding-bottom: .5rem;
 }
 
-/* .moonriseIcon, .moonsetIcon {
-  width: 100px;
-  height: 100px;
-} */
+.searchAndLocationContainer {
+  display: flex;
+}
+
+.mainViewContainer {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
