@@ -7,6 +7,7 @@ import Forecast from './Forecast.jsx';
 import SunriseSunset from './SunriseSunset.jsx';
 import MoonriseMoonset from './MoonriseMoonset.jsx';
 import { api } from './api.jsx';
+import TodayForecast from './TodayForecast.jsx';
 
 function App() {
   const [current, setCurrent] = useState({});
@@ -89,10 +90,15 @@ function App() {
       <div className='mainViewContainer'>
         {current && <CurrentWeather current={current} windDirection={windDirection} />}
         <div className='sunMoonContainer'>
-          <MoonriseMoonset forecast={forecast} />
           <SunriseSunset forecast={forecast}/>
+          <MoonriseMoonset forecast={forecast} />
         </div>
       </div>
+
+      <div>
+        <TodayForecast />
+      </div>
+
 
       {forecast && <Forecast  forecast={forecast} windDirection={windDirection} />}
     </div>
