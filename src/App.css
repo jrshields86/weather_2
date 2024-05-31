@@ -246,4 +246,6 @@ font-weight: 600;
   border: 2px solid black;
   width: 800px;
   margin: 10px auto 10px auto;
+  border-radius: 10px;
+
 }

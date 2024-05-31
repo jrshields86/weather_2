@@ -7,7 +7,7 @@ import Forecast from './Forecast.jsx';
 import SunriseSunset from './SunriseSunset.jsx';
 import MoonriseMoonset from './MoonriseMoonset.jsx';
 import { api } from './api.jsx';
-import TodayForecast from './TodayForecast.jsx';
+import TodaysForecast from './TodaysForecast.jsx';
 
 function App() {
   const [current, setCurrent] = useState({});
@@ -96,7 +96,7 @@ function App() {
       </div>
 
       <div>
-        <TodayForecast forecast={forecast} />
+        <TodaysForecast forecast={forecast} />
       </div>
 
 

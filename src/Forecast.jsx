@@ -5,12 +5,9 @@ const Forecast = ({forecast, windDirection}) => {
         return null;
     };
 
-    const forecastData = forecast.daily;
-    const formattedForecast = forecastData.slice(1, forecastData.length);
+    const formattedForecast = forecast.daily.slice(1, forecast.daily.length);
     const daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
     
-    
-
     
     return (
         <div>

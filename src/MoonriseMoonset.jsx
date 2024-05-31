@@ -2,13 +2,11 @@ import './App.css'
 
 
 const MoonriseMoonset = ({forecast}) => {
-    console.log(forecast);
     if(!forecast.daily){
         return null;
     };
 
     const moonPhaseData = forecast.daily[0].moon_phase;
-    console.log(moonPhaseData);
 
     const displayMoonPhase = (phaseNum) => {
         if (phaseNum === 0 || phaseNum === 1) {
@@ -49,7 +47,6 @@ const MoonriseMoonset = ({forecast}) => {
             return 'moon_waxing_crescent';
         }
     };
-    console.log(displayMoonPhaseIcon(moonPhaseData));
 
     // const moonriseData = forecast.daily[0].moonrise + (forecast.timezone_offset);
     // const moonsetData =  forecast.daily[0].moonset + (forecast.timezone_offset);
