@@ -253,3 +253,8 @@ font-weight: 600;
   display: flex;
   gap: 1rem;
 }
+
+.todaysForecastTopContainer {
+  display: flex;
+  justify-content: space-between;
+}
