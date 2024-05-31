@@ -247,5 +247,9 @@ font-weight: 600;
   width: 800px;
   margin: 10px auto 10px auto;
   border-radius: 10px;
+}
 
+.todayForecastDateDayContainer {
+  display: flex;
+  gap: 1rem;
 }
