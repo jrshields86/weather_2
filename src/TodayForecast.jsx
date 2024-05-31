@@ -1,6 +1,17 @@
-const TodayForecast = () => {
+import './App.css'
+
+
+const TodayForecast = ({forecast}) => {
+    if (!forecast.daily) {
+        return null;
+    };
+    console.log(forecast.daily[0]);
     return (
-        <h1>Today's Forecast</h1>
+        <div>
+            <div className="todaysForecastContainer">
+
+            </div>
+        </div>
     );
 };
 

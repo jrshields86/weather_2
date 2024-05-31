@@ -16,7 +16,7 @@
   border: 2px solid black;
   border-radius: 20px;
   background-color: rgb(0, 180, 216);
-  margin: 20px auto 20px auto;
+  margin: 10px auto 10px auto;
   padding-left: 2rem;
   text-align: center;
 }
@@ -239,4 +239,11 @@ font-weight: 600;
   display: flex;
   justify-content: center;
   gap: 1rem;
+}
+
+.todaysForecastContainer {
+  background-color: rgb(0, 180, 216);
+  border: 2px solid black;
+  width: 800px;
+  margin: 10px auto 10px auto;
 }
