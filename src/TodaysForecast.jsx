@@ -4,9 +4,7 @@ const TodaysForecast = ({forecast}) => {
     if (!forecast.daily) {
         return null;
     };
-    if (!forecast.alerts) {
-        return null;
-    };
+    
     console.log(forecast);
     const todayData = forecast.daily[0];
     const todayTemp = {
@@ -26,9 +24,7 @@ const TodaysForecast = ({forecast}) => {
     const daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
     const date = new Date(todayData.dt * 1000).toLocaleDateString();
     const day = new Date(todayData.dt * 1000).getDay();
-    const todayDay = daysOfWeek.find((el, idx) => idx === day);
-    const todayTempMin = Math.round(todayTemp.min);
-    const todayTempMax = Math.round(todayTemp.max); 
+    const todayDay = daysOfWeek.find((el, idx) => idx === day); 
     const todaySummary = todayData.summary;
     const todayClouds = todayData.clouds;
     const todayDewPoint = Math.round(todayData.dew_point);
@@ -61,23 +57,32 @@ const TodaysForecast = ({forecast}) => {
                             <div className='todayMorningTemp'>
                                 Morning: {todayTemp.morning}°F
                             </div>
-                            <div>
-                                {/* <img alt='weather icon' className='forecastIconImage' src={`icons/${todayIcon}.png`}/> */}
+                            <div className='todayMorningFeelsLike'>
+                                Feels like: {todayFeelsLike.morning}°F
                             </div>
                         </div>
                         <div className='todayAfternoon'>
                             <div className='todayAfternoonTemp'>
                                 Afternoon: {todayTemp.day}°F
                             </div>
+                            <div className='todayAfternoonFeelsLike'>
+                                Feels Like: {todayFeelsLike.day}°F
+                            </div>
                         </div>
                         <div className='todayEvening'>
                             <div className='todayEveningTemp'>
                                 Evening: {todayTemp.evening}°F
                             </div>
+                            <div>
+                                Feels Like: {todayFeelsLike.evening}°F
+                            </div>
                         </div>
                         <div className='todayOvernight'>
                             <div className='todayOvernightTemp'>
                                 Overnight: {todayTemp.night}°F
+                            </div>
+                            <div>
+                                Feels Like: {todayFeelsLike.night}°F
                             </div>
                         </div>
                     </div>

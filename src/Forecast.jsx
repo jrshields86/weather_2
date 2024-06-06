@@ -52,8 +52,8 @@ const Forecast = ({forecast, windDirection}) => {
                                         </div>
                                         </div>
                                         <div className='minMax'>
-                                            <p>Max: {Math.round(el.temp.max)} F°</p>
-                                            <p>Min: {Math.round(el.temp.min)} F°</p>
+                                            <p>Day: {Math.round(el.temp.day)} F°</p>
+                                            <p>Night: {Math.round(el.temp.night)} F°</p>
                                         </div>
                                         
                                     </div>
