@@ -258,3 +258,7 @@ font-weight: 600;
   display: flex;
   justify-content: space-between;
 }
+
+.todayMorning {
+  display: flex;
+}

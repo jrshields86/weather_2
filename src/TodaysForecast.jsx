@@ -4,21 +4,24 @@ const TodaysForecast = ({forecast}) => {
     if (!forecast.daily) {
         return null;
     };
-
+    if (!forecast.alerts) {
+        return null;
+    };
+    console.log(forecast);
     const todayData = forecast.daily[0];
     const todayTemp = {
-        day: todayData.temp.day,
-        evening: todayData.temp.eve,
-        max: todayData.temp.max,
-        min: todayData.temp.min,
-        morning: todayData.temp.morn,
-        night: todayData.temp.night
+        day: Math.round(todayData.temp.day),
+        evening: Math.round(todayData.temp.eve),
+        max: Math.round(todayData.temp.max),
+        min: Math.round(todayData.temp.min),
+        morning: Math.round(todayData.temp.morn),
+        night: Math.round(todayData.temp.night)
     };
     const todayFeelsLike = {
-        day: todayData.feels_like.day,
-        evening: todayData.feels_like.eve,
-        morning: todayData.feels_like.morn,
-        night: todayData.feels_like.night
+        day: Math.round(todayData.feels_like.day),
+        evening: Math.round(todayData.feels_like.eve),
+        morning: Math.round(todayData.feels_like.morn),
+        night: Math.round(todayData.feels_like.night)
     };
     const daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
     const date = new Date(todayData.dt * 1000).toLocaleDateString();
@@ -36,6 +39,8 @@ const TodaysForecast = ({forecast}) => {
     const todayWindDeg = todayData.wind_deg;
     const todayWindGust = todayData.wind_gust;
     const todayWindSpeed = todayData.wind_speed;
+    const todayIcon = todayData.weather[0].icon;
+    console.log(todayIcon);
     
     console.log(forecast.daily[0]);
 
@@ -52,11 +57,28 @@ const TodaysForecast = ({forecast}) => {
                         </div>
                     </div>
                     <div className='todaysForecastMinMaxContainer'>
-                        <div>
-                            Max: {todayTempMax}
+                        <div className='todayMorning'>
+                            <div className='todayMorningTemp'>
+                                Morning: {todayTemp.morning}°F
+                            </div>
+                            <div>
+                                {/* <img alt='weather icon' className='forecastIconImage' src={`icons/${todayIcon}.png`}/> */}
+                            </div>
                         </div>
-                        <div>
-                            Min: {todayTempMin}
+                        <div className='todayAfternoon'>
+                            <div className='todayAfternoonTemp'>
+                                Afternoon: {todayTemp.day}°F
+                            </div>
+                        </div>
+                        <div className='todayEvening'>
+                            <div className='todayEveningTemp'>
+                                Evening: {todayTemp.evening}°F
+                            </div>
+                        </div>
+                        <div className='todayOvernight'>
+                            <div className='todayOvernightTemp'>
+                                Overnight: {todayTemp.night}°F
+                            </div>
                         </div>
                     </div>
                 </div>

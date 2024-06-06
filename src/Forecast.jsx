@@ -5,6 +5,7 @@ const Forecast = ({forecast, windDirection}) => {
         return null;
     };
 
+    console.log(forecast.daily);
     const formattedForecast = forecast.daily.slice(1, forecast.daily.length);
     const daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
     
@@ -45,7 +46,7 @@ const Forecast = ({forecast, windDirection}) => {
                                     </div>
                                     <div className='forecastRight'>
                                         <div className='forecastIcon'>
-                                        <img alt='weather icon' className='forecastIconImage' src={`icons/${dailyIcon}.png`}/>
+                                            <img alt='weather icon' className='forecastIconImage' src={`icons/${dailyIcon}.png`}/>
                                         <div>
                                             {dailyDescription}
                                         </div>
