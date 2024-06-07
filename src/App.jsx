@@ -82,9 +82,9 @@ function App() {
         <div className='searchBox'>
           <Search onSearchChange={handleOnSearchChange} />
         </div>
-        <div className='locationDisplayContainer'>
-            <p>{current.city ? current.city : 'Your Location'}</p>
-        </div>
+      </div>
+      <div className='locationDisplayContainer'>
+          <p>{current.city ? current.city : 'Your Location'}</p>
       </div>
 
       <div className='mainViewContainer'>

@@ -59,7 +59,7 @@ const TodaysForecast = ({forecast, windDirection}) => {
                     <div className='todaysForecastPop'>
                         POP: {todayPOP} %
                     </div>
-                    <div className='todaySummary'>
+                    <div className='todaysForecastSummary'>
                         {todaySummary}
                     </div>
                 </div>
@@ -75,35 +75,38 @@ const TodaysForecast = ({forecast, windDirection}) => {
                     <img alt='weather icon' className='todaysForecastIcon' src={`icons/${todayIcon}.png`}/>
                 </div>
                 <div className='todaysForecastMinMaxContainer'>
-                        <div className='todayMorning'>
-                            <div className='todayMorningTemp'>
+                        <div className='todaysForecastMorning'>
+                            <div className='todaysForecastMorningTemp'>
                                 Morning: {todayTemp.morning} °F
                             </div>
-                            <div className='todayMorningFeelsLike'>
+                            <div className='todaysForecastMorningFeelsLike'>
                                 Feels like: {todayFeelsLike.morning} °F
                             </div>
                         </div>
-                        <div className='todayAfternoon'>
-                            <div className='todayAfternoonTemp'>
+                        <hr/>
+                        <div className='todaysForecastAfternoon'>
+                            <div className='todaysForecastAfternoonTemp'>
                                 Afternoon: {todayTemp.day} °F
                             </div>
-                            <div className='todayAfternoonFeelsLike'>
+                            <div className='todaysForecastAfternoonFeelsLike'>
                                 Feels Like: {todayFeelsLike.day} °F
                             </div>
                         </div>
-                        <div className='todayEvening'>
-                            <div className='todayEveningTemp'>
+                        <hr/>
+                        <div className='todaysForecastEvening'>
+                            <div className='todaysForecastEveningTemp'>
                                 Evening: {todayTemp.evening} °F
                             </div>
-                            <div>
+                            <div className='todaysForecastEveningFeelsLike'>
                                 Feels Like: {todayFeelsLike.evening} °F
                             </div>
                         </div>
-                        <div className='todayOvernight'>
-                            <div className='todayOvernightTemp'>
+                        <hr/>
+                        <div className='todaysForecastOvernight'>
+                            <div className='todaysForecastOvernightTemp'>
                                 Overnight: {todayTemp.night} °F
                             </div>
-                            <div>
+                            <div className='todaysForecastOvernightFeelsLike'>
                                 Feels Like: {todayFeelsLike.night} °F
                             </div>
                         </div>

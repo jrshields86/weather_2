@@ -272,3 +272,24 @@ font-weight: 600;
   flex-direction: column;
   justify-content: space-around;
 }
+
+.todaysForecastDate,
+.todaysForecastDay,
+.todaysForecastWind,
+.todaysForecastPop,
+.todaysForecastSummary,
+.todaysForecastHumidity,
+.todaysForecastPressure {
+  font-weight: bolder;
+}
+
+.todaysForecastMorningTemp,
+.todaysForecastMorningFeelsLike,
+.todaysForecastAfternoonTemp,
+.todaysForecastAfternoonFeelsLike,
+.todaysForecastEveningTemp,
+.todaysForecastEveningFeelsLike,
+.todaysForecastOvernightTemp,
+.todaysForecastOvernightFeelsLike {
+  font-weight: bolder;
+}
