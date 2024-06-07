@@ -1,6 +1,6 @@
 import './App.css'
 
-const TodaysForecast = ({forecast}) => {
+const TodaysForecast = ({forecast, windDirection}) => {
     if (!forecast.daily) {
         return null;
     };
@@ -29,15 +29,16 @@ const TodaysForecast = ({forecast}) => {
     const todayClouds = todayData.clouds;
     const todayDewPoint = Math.round(todayData.dew_point);
     const todayHumidity = todayData.humidity;
-    const todayProbOfPrecip = todayData.pop;
-    const todayPressure = todayData.pressure;
+    const todayPOP = todayData.pop * 100;
+    const todayPressure = (todayData.pressure * 0.025).toFixed(2);
     const todayRain = todayData.rain;
     const todayWindDeg = todayData.wind_deg;
     const todayWindGust = todayData.wind_gust;
     const todayWindSpeed = todayData.wind_speed;
     const todayIcon = todayData.weather[0].icon;
-    console.log(todayIcon);
-    
+    const todayDirection = windDirection(todayData.wind_deg);
+    console.log(todayDirection);
+
     console.log(todayData);
 
     return (
@@ -52,7 +53,28 @@ const TodaysForecast = ({forecast}) => {
                             {todayDay}
                         </div>
                     </div>
-                    <div className='todaysForecastMinMaxContainer'>
+                    <div className='todaysForecastWind'>
+                        Wind: {todayDirection} {Math.round(todayData.wind_speed)} mph
+                    </div>
+                    <div className='todaysForecastPop'>
+                        POP: {todayPOP} %
+                    </div>
+                    <div className='todaySummary'>
+                        {todaySummary}
+                    </div>
+                </div>
+                <div className='todaysForecastHumidityPressureContainer'>
+                    <div className='todaysForecastHumidity'>
+                        Humidity: {todayData.humidity} %
+                    </div>
+                    <div className='todaysForecastPressure'>
+                        Pressure: {todayPressure} in
+                    </div>
+                </div>
+                <div className='todaysForecastIconContainer'>
+                    <img alt='weather icon' className='todaysForecastIcon' src={`icons/${todayIcon}.png`}/>
+                </div>
+                <div className='todaysForecastMinMaxContainer'>
                         <div className='todayMorning'>
                             <div className='todayMorningTemp'>
                                 Morning: {todayTemp.morning} °F
@@ -86,10 +108,7 @@ const TodaysForecast = ({forecast}) => {
                             </div>
                         </div>
                     </div>
-                </div>
-                <div className='todaySummary'>
-                    {todaySummary}
-                </div>
+                
             </div>
         </div>
     );

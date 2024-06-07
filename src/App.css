@@ -242,6 +242,8 @@ font-weight: 600;
 }
 
 .todaysForecastContainer {
+  display: flex;
+  justify-content: space-between;
   background-color: rgb(0, 180, 216);
   border: 2px solid black;
   width: 800px;
@@ -256,10 +258,17 @@ font-weight: 600;
 
 .todaysForecastTopContainer {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
 }
 
 .todayMorning, .todayAfternoon, .todayEvening, .todayOvernight {
   display: flex;
   gap: 1rem;
+}
+
+.todaysForecastHumidityPressureContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 }

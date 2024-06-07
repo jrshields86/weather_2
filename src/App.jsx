@@ -96,7 +96,7 @@ function App() {
       </div>
 
       <div>
-        <TodaysForecast forecast={forecast} />
+        <TodaysForecast forecast={forecast} windDirection={windDirection} />
       </div>
 
 
