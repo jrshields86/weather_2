@@ -8,7 +8,13 @@ const CurrentWeather = ({current, windDirection}) => {
     };
 
     const icon = iconData[0].icon;
-    const description = iconData[0].main;
+    const description = iconData[0].description;
+
+    const kilosToMiles = (kilos) => {
+        const miles = kilos * 0.6214;
+        return miles;
+    };
+    console.log(kilosToMiles(10));
 
     return (
         <div className='app'>
@@ -48,11 +54,6 @@ const CurrentWeather = ({current, windDirection}) => {
                             <p className='detailTitle'>UV Index</p>
                             <p className='detailValue'>{Math.round(current.uvi)} of 11</p>
                         </div>
-                        <div>
-                            <p className='detailTitle'>Visibility</p>
-                            <p></p>
-                        </div>
-
                     </div>
                 </div>
             </div>

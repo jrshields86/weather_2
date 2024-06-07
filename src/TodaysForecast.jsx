@@ -38,7 +38,7 @@ const TodaysForecast = ({forecast}) => {
     const todayIcon = todayData.weather[0].icon;
     console.log(todayIcon);
     
-    console.log(forecast.daily[0]);
+    console.log(todayData);
 
     return (
         <div>
@@ -87,7 +87,7 @@ const TodaysForecast = ({forecast}) => {
                         </div>
                     </div>
                 </div>
-                <div>
+                <div className='todaySummary'>
                     {todaySummary}
                 </div>
             </div>
