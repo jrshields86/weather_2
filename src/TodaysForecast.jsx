@@ -53,11 +53,15 @@ const TodaysForecast = ({forecast, windDirection}) => {
                             {todayDay}
                         </div>
                     </div>
-                    <div className='todaysForecastWind'>
-                        Wind: {todayDirection} {Math.round(todayData.wind_speed)} mph
-                    </div>
-                    <div className='todaysForecastPop'>
-                        POP: {todayPOP} %
+                    <div className='todaysForecastWindPopContainer'>
+                        <div className='todaysForecastWind'>
+                            <p>Wind:</p>
+                            <p>{todayDirection} {Math.round(todayData.wind_speed)} mph</p>
+                        </div>
+                        <div className='todaysForecastPop'>
+                            <p>POP:</p>
+                            <p>{todayPOP} %</p>
+                        </div>
                     </div>
                     <div className='todaysForecastSummary'>
                         {todaySummary}
@@ -65,10 +69,12 @@ const TodaysForecast = ({forecast, windDirection}) => {
                 </div>
                 <div className='todaysForecastHumidityPressureContainer'>
                     <div className='todaysForecastHumidity'>
-                        Humidity: {todayData.humidity} %
+                        <p>Humidity:</p>
+                        <p>{todayData.humidity} %</p>
                     </div>
                     <div className='todaysForecastPressure'>
-                        Pressure: {todayPressure} in
+                        <p>Pressure:</p>
+                        <p>{todayPressure} in</p>
                     </div>
                 </div>
                 <div className='todaysForecastIconContainer'>

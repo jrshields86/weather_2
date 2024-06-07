@@ -185,6 +185,7 @@ font-weight: 600;
   width: 250px;
   display: flex;
   flex-direction: column;
+  align-items: center;
   padding: 1.25rem;
   border: 2px solid black;
   border-radius: 30px;
@@ -284,12 +285,26 @@ font-weight: 600;
 }
 
 .todaysForecastMorningTemp,
-.todaysForecastMorningFeelsLike,
 .todaysForecastAfternoonTemp,
-.todaysForecastAfternoonFeelsLike,
 .todaysForecastEveningTemp,
-.todaysForecastEveningFeelsLike,
-.todaysForecastOvernightTemp,
-.todaysForecastOvernightFeelsLike {
+.todaysForecastOvernightTemp {
   font-weight: bolder;
+}
+
+.todaysForecastMorningFeelsLike,
+.todaysForecastAfternoonFeelsLike,
+.todaysForecastEveningFeelsLike,
+.todaysForecastOvernightFeelsLike {
+  font-weight: 500;
+}
+
+.todaysForecastWindPopContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.todaysForecastIconContainer {
+  display: flex;
+  align-items: center;
 }
