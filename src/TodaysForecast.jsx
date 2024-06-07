@@ -55,34 +55,34 @@ const TodaysForecast = ({forecast}) => {
                     <div className='todaysForecastMinMaxContainer'>
                         <div className='todayMorning'>
                             <div className='todayMorningTemp'>
-                                Morning: {todayTemp.morning}°F
+                                Morning: {todayTemp.morning} °F
                             </div>
                             <div className='todayMorningFeelsLike'>
-                                Feels like: {todayFeelsLike.morning}°F
+                                Feels like: {todayFeelsLike.morning} °F
                             </div>
                         </div>
                         <div className='todayAfternoon'>
                             <div className='todayAfternoonTemp'>
-                                Afternoon: {todayTemp.day}°F
+                                Afternoon: {todayTemp.day} °F
                             </div>
                             <div className='todayAfternoonFeelsLike'>
-                                Feels Like: {todayFeelsLike.day}°F
+                                Feels Like: {todayFeelsLike.day} °F
                             </div>
                         </div>
                         <div className='todayEvening'>
                             <div className='todayEveningTemp'>
-                                Evening: {todayTemp.evening}°F
+                                Evening: {todayTemp.evening} °F
                             </div>
                             <div>
-                                Feels Like: {todayFeelsLike.evening}°F
+                                Feels Like: {todayFeelsLike.evening} °F
                             </div>
                         </div>
                         <div className='todayOvernight'>
                             <div className='todayOvernightTemp'>
-                                Overnight: {todayTemp.night}°F
+                                Overnight: {todayTemp.night} °F
                             </div>
                             <div>
-                                Feels Like: {todayFeelsLike.night}°F
+                                Feels Like: {todayFeelsLike.night} °F
                             </div>
                         </div>
                     </div>

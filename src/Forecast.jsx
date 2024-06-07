@@ -24,8 +24,6 @@ const Forecast = ({forecast, windDirection}) => {
                                 };
 
                             const reorderedArr = dayOfWeekDisplay(daysOfWeek, day);
-
-                            
                             const iconData = el.weather;
                             const dailyIcon = iconData.map(el => {
                                 return el.icon;

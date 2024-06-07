@@ -25,33 +25,32 @@ const CurrentWeather = ({current, windDirection}) => {
                 </div>
                 <div className='bottomContainer'>
                     <div className='bottomUpper'>
-
-                        <div>
-                            <p className='detailTitle'>Pressure</p>
-                            <p className='detailValue'>{(current.pressure * 0.025).toFixed(2)} in</p>
-                        </div>
-
                         <div>
                             <p className='detailTitle'>Humidity </p>
                             <p className='detailValue'>{current.humidity} %</p>
                         </div>
-
+                        <div>
+                            <p className='detailTitle'>Wind</p>
+                            <p className='detailValue'>{windDirection(current.wind_deg)} {Math.round(current.wind_speed)} mph</p>
+                        </div>
+                        <div>
+                            <p className='detailTitle'>Pressure</p>
+                            <p className='detailValue'>{(current.pressure * 0.025).toFixed(2)} in</p>
+                        </div>
+                        
                         <div>
                             <p className='detailTitle'>Dew Point</p>
                             <p className='detailValue'>{Math.round(current.dew_point)} °F</p>
                         </div>
-
                     </div>
                     <div className='bottomLower'>
-                        
                         <div>
                             <p className='detailTitle'>UV Index</p>
                             <p className='detailValue'>{Math.round(current.uvi)} of 11</p>
                         </div>
-
                         <div>
-                            <p className='detailTitle'>Wind</p>
-                            <p className='detailValue'>{windDirection(current.wind_deg)} {Math.round(current.wind_speed)} mph</p>
+                            <p className='detailTitle'>Visibility</p>
+                            <p></p>
                         </div>
 
                     </div>
