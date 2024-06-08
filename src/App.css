@@ -250,10 +250,12 @@ font-weight: 600;
   width: 800px;
   margin: 10px auto 10px auto;
   border-radius: 10px;
+  text-align: center;
 }
 
 .todayForecastDateDayContainer {
   display: flex;
+  justify-content: center;
   gap: 1rem;
 }
 
@@ -307,4 +309,10 @@ font-weight: 600;
 .todaysForecastIconContainer {
   display: flex;
   align-items: center;
+}
+
+.todaysForecastSummaryContainer {
+  display: flex;
+  justify-content: center;
+  padding-left: 1rem;
 }

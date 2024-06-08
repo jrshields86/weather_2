@@ -10,12 +10,6 @@ const CurrentWeather = ({current, windDirection}) => {
     const icon = iconData[0].icon;
     const description = iconData[0].description;
 
-    const kilosToMiles = (kilos) => {
-        const miles = kilos * 0.6214;
-        return miles;
-    };
-    console.log(kilosToMiles(10));
-
     return (
         <div className='app'>
             <div className='weatherContainer'>
