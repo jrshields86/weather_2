@@ -87,13 +87,13 @@ function App() {
           <p>{current.city ? current.city : 'Your Location'}</p>
       </div>
 
-      <div className='mainViewContainer'>
+      
         {current && <CurrentWeather current={current} windDirection={windDirection} />}
         <div className='sunMoonContainer'>
           <SunriseSunset forecast={forecast}/>
           <MoonriseMoonset forecast={forecast} />
         </div>
-      </div>
+      
 
       <div>
         <TodaysForecast forecast={forecast} windDirection={windDirection} />
