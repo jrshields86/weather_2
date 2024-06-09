@@ -22,13 +22,17 @@
 .weatherContainer {
   display: flex;
   flex-direction: column;
-  width: 50%;
+  width: 60%;
   border: 2px solid black;
   border-radius: 20px;
   background-color: rgb(0, 180, 216);
-  margin: 10px auto 10px auto;
-  padding-left: 2rem;
   text-align: center;
+}
+
+.sunMoonContainer {
+  display: flex;
+  justify-content: center;
+  gap: 4rem;
 }
 
 .topContainer {
@@ -105,10 +109,6 @@ font-weight: 600;
   background-color: rgb(0, 180, 216);
   justify-content: space-around;
 }
-
-/* .locationDisplay p {
-  margin: 0;
-} */
 
 .forecastRight {
   display: flex;
@@ -242,11 +242,9 @@ font-weight: 600;
 
 .todaysForecastContainer {
   display: flex;
-  justify-content: space-between;
   background-color: rgb(0, 180, 216);
   border: 2px solid black;
-  width: 800px;
-  margin: 10px auto 10px auto;
+  width: 60%;
   border-radius: 10px;
   text-align: center;
 }
@@ -307,7 +305,7 @@ font-weight: 600;
 .todaysForecastDayIconSummaryContainer {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  justify-content: center;
 }
 
 .todaysForecastSummaryContainer {
@@ -323,4 +321,22 @@ font-weight: 600;
 
 .todaysForecastIconTempContainer {
   display: flex;
+}
+
+.todaysForecastMinMaxContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-right: 1rem;
+}
+
+.todaysForecastIcon {
+  height: 100px;
+  width: 100px;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }

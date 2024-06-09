@@ -89,15 +89,20 @@ function App() {
 
       
         {current && <CurrentWeather current={current} windDirection={windDirection} />}
+        <div>
+          <TodaysForecast forecast={forecast} windDirection={windDirection} />
+      </div>
         <div className='sunMoonContainer'>
-          <SunriseSunset forecast={forecast}/>
-          <MoonriseMoonset forecast={forecast} />
+          <div>
+            <SunriseSunset forecast={forecast}/>
+          </div>
+          <div>
+            <MoonriseMoonset forecast={forecast} />
+          </div>
         </div>
       
 
-      <div>
-        <TodaysForecast forecast={forecast} windDirection={windDirection} />
-      </div>
+      
 
 
       {forecast && <Forecast  forecast={forecast} windDirection={windDirection} />}
