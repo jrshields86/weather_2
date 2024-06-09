@@ -52,7 +52,9 @@ const TodaysForecast = ({forecast, windDirection}) => {
                             {todayDay}
                         </div>
                     </div>
-                    <img alt='weather icon' className='todaysForecastIcon' src={`icons/${todayIcon}.png`}/>
+                    <div className='todaysForecastIconContainer'>
+                        <img alt='weather icon' className='todaysForecastIcon' src={`icons/${todayIcon}.png`}/>
+                    </div>
                     <div className='todaysForecastSummaryContainer'>
                         <p className='todaysForecastSummary'>{todaySummary}</p>
                     </div>           
