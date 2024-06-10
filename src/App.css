@@ -37,7 +37,15 @@
 
 .topContainer {
   display: flex;
-  justify-content: space-around;
+  
+}
+
+.bottomContainer {
+  display: flex;
+}
+
+.bottomLowerContainer {
+  display: flex;
 }
 
 .bottom {

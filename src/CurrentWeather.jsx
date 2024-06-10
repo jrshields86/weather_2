@@ -38,19 +38,17 @@ const CurrentWeather = ({current, windDirection}) => {
                             <p className='detailValue'>{(current.pressure * 0.025).toFixed(2)} in</p>
                         </div>
                     </div>
-                    <div className='bottomLower'>
+                </div>
+                <div className='bottomLowerContainer'>
                         <div>
                             <p className='detailTitle'>Dew Point</p>
                             <p className='detailValue'>{Math.round(current.dew_point)} °F</p>
                         </div>
-                    
-                    
                         <div>
                             <p className='detailTitle'>UV Index</p>
                             <p className='detailValue'>{Math.round(current.uvi)} of 11</p>
                         </div>
                     </div>
-                </div>
             </div>
         </div>
     );
