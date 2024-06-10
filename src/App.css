@@ -55,6 +55,8 @@
 
 .leftAndRightContainer {
   display: flex;
+  justify-content: space-evenly;
+
 }
 
 .bottom {
@@ -162,7 +164,7 @@ font-weight: 600;
 }
 
 .sunriseSunsetContainer {
-  width: 250px;
+  width: 100%;
   display: flex;
   flex-direction: column;
   padding: 1.25rem;
@@ -197,7 +199,7 @@ font-weight: 600;
 }
 
 .moonriseMoonsetContainer {
-  width: 250px;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
