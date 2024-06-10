@@ -48,6 +48,15 @@
   display: flex;
 }
 
+.rightContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.leftAndRightContainer {
+  display: flex;
+}
+
 .bottom {
   display: flex;
   justify-content: space-between;

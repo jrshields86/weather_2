@@ -88,18 +88,18 @@ function App() {
       </div>
 
       
-        {current && <CurrentWeather current={current} windDirection={windDirection} />}
+        {current && <CurrentWeather forecast={forecast} current={current} windDirection={windDirection} />}
         <div>
           <TodaysForecast forecast={forecast} windDirection={windDirection} />
       </div>
-        <div className='sunMoonContainer'>
+        {/* <div className='sunMoonContainer'>
           <div>
             <SunriseSunset forecast={forecast}/>
           </div>
           <div>
             <MoonriseMoonset forecast={forecast} />
           </div>
-        </div>
+        </div> */}
       
 
       
