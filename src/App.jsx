@@ -8,6 +8,7 @@ import SunriseSunset from './SunriseSunset.jsx';
 import MoonriseMoonset from './MoonriseMoonset.jsx';
 import { api } from './api.jsx';
 import TodaysForecast from './TodaysForecast.jsx';
+import Alerts from './Alerts.jsx';
 
 function App() {
   const [current, setCurrent] = useState({});
@@ -89,6 +90,9 @@ function App() {
 
       
         {current && <CurrentWeather forecast={forecast} current={current} windDirection={windDirection} />}
+        <div>
+          <Alerts forecast={forecast} />
+        </div>
         <div>
           <TodaysForecast forecast={forecast} windDirection={windDirection} />
       </div>
