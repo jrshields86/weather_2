@@ -362,15 +362,18 @@ font-weight: 600;
   margin-bottom: 1.5rem;
 }
 
-.alertsComponent {
+.alertsContainer {
   display: flex;
   justify-content: center;
   width: 30%;
   border: 2px solid black;
-  border-radius: 5px;
   background-color: rgb(0, 180, 216);
-  margin-bottom: 1rem;
+}
 
+.alertsComponent {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
 }
 
 body.active-modal {
@@ -381,8 +384,9 @@ body.active-modal {
   background-color: rgb(0, 180, 216);
   padding: 10px 20px;
   display: block;
-  margin: 1rem auto 0;
+  margin: 1rem auto;
   font-size: 18px;
+  border-radius: 5px;
 }
 
 .modal, .overlay {
