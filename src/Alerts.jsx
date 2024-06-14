@@ -19,27 +19,27 @@ const Alerts = ({forecast}) => {
     };
 
     if (modal) {
-        document.body.classList.add('active-modal')
+        document.body.classList.add('activeModal')
     } else {
-        document.body.classList.remove('active-modal')
+        document.body.classList.remove('activeModal')
     }
 
 
     return (
         
         <div>
-            <button className="btn-modal" onClick={toggleModal}>
+            <button className="buttonModal" onClick={toggleModal}>
                     {alertTitle}
             </button>
             {modal && (
-            <div className="modal">
-            <div onClick={toggleModal} className="overlay"></div>
-            <div className="modal-content">
+            <div className="alertModal">
+            <div onClick={toggleModal} className="alertOverlay"></div>
+            <div className="modalContent">
                 <h2>{alertTitle}</h2>
                 <p>
                 {alertDescription}
                 </p>
-                <button className="close-modal" onClick={toggleModal}>
+                <button className="closeModal" onClick={toggleModal}>
                 CLOSE
                 </button>
             </div>
