@@ -111,8 +111,8 @@ function App() {
       
 
 
-      {/* {forecast && <Forecast  forecast={forecast} windDirection={windDirection} />} */}
-      <ForecastTest forecast={forecast} windDirection={windDirection} />
+      {forecast && <Forecast  forecast={forecast} windDirection={windDirection} />}
+      {/* <ForecastTest forecast={forecast} windDirection={windDirection} /> */}
     </div>
   )
 }

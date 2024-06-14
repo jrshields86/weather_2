@@ -4,7 +4,25 @@ import './App.css'
 
 
 
-const ForecastTest = () => {
+const ForecastTest = ({forecast, windDirection}) => {
+    if(!forecast.daily){
+        return null;
+    };
+
+    const formattedForecast = forecast.daily.slice(1, forecast.daily.length);
+    const daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+    const forecastTempData = forecast.daily[0];
+    const todayTemp = {
+        day: Math.round(forecastTempData.temp.day),
+        evening: Math.round(forecastTempData.temp.eve),
+        max: Math.round(forecastTempData.temp.max),
+        min: Math.round(forecastTempData.temp.min),
+        morning: Math.round(forecastTempData.temp.morn),
+        night: Math.round(forecastTempData.temp.night)
+    };
+
+    console.log(todayTemp);
+
     return (
         <>
         <div className='accordionContainer'>

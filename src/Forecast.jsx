@@ -1,4 +1,6 @@
 import './App.css'
+import 'bootstrap/dist/css/bootstrap.css';
+import Accordion from 'react-bootstrap/Accordion';
 
 const Forecast = ({forecast, windDirection}) => {
     if(!forecast.daily){
@@ -50,65 +52,38 @@ const Forecast = ({forecast, windDirection}) => {
                             })
             
                             return(
-                                <div key={el.dt} className='forecastChild'>
-                                    <div className='forecastLeftSide'>
-                                        <div className='forecastDate'>
-                                            <div>
-                                                {date}
-                                            </div>
-                                            <div>
-                                                {reorderedArr}
-                                            </div>
-                                        </div>
-                                        <div className='forecastRight'>
-                                            <div className='forecastIcon'>
-                                                <img alt='weather icon' className='forecastIconImage' src={`icons/${dailyIcon}.png`}/>
-                                            <div>
-                                                {dailyDescription}
-                                            </div>
-                                            </div>
-                                        </div>
+                                <>
+                                    <div className='accordionContainer'>
+                                        <Accordion defaultActiveKey="0" className='accordion'>
+                                            <Accordion.Item eventKey="0">
+                                                <Accordion.Header>
+                                                    <div>Howdy</div>
+                                                </Accordion.Header>
+                                                <Accordion.Body>
+                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                                                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+                                                minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                                                aliquip ex ea commodo consequat. Duis aute irure dolor in
+                                                reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                                                pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+                                                culpa qui officia deserunt mollit anim id est laborum.
+                                                </Accordion.Body>
+                                            </Accordion.Item>
+                                            <Accordion.Item eventKey="1">
+                                                <Accordion.Header>Accordion Item #2</Accordion.Header>
+                                                <Accordion.Body>
+                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                                                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+                                                minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                                                aliquip ex ea commodo consequat. Duis aute irure dolor in
+                                                reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                                                pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+                                                culpa qui officia deserunt mollit anim id est laborum.
+                                                </Accordion.Body>
+                                            </Accordion.Item>
+                                        </Accordion>
                                     </div>
-                                    <div className='forecastRightSide'>
-                                    <div className='forecastTempContainer'>
-                                        <div className='todaysForecastMorning'>
-                                            <div className='todaysForecastMorningTemp'>
-                                                Morning: {todayTemp.morning} °F
-                                            </div>
-                                            <div className='todaysForecastMorningFeelsLike'>
-                                                Feels like: {todayFeelsLike.morning} °F
-                                            </div>
-                                        </div>
-                                        <hr/>
-                                        <div className='todaysForecastAfternoon'>
-                                            <div className='todaysForecastAfternoonTemp'>
-                                                Afternoon: {todayTemp.day} °F
-                                            </div>
-                                            <div className='todaysForecastAfternoonFeelsLike'>
-                                                Feels Like: {todayFeelsLike.day} °F
-                                            </div>
-                                        </div>
-                                        <hr/>
-                                        <div className='todaysForecastEvening'>
-                                            <div className='todaysForecastEveningTemp'>
-                                                Evening: {todayTemp.evening} °F
-                                            </div>
-                                            <div className='todaysForecastEveningFeelsLike'>
-                                                Feels Like: {todayFeelsLike.evening} °F
-                                            </div>
-                                        </div>
-                                        <hr/>
-                                        <div className='todaysForecastOvernight'>
-                                            <div className='todaysForecastOvernightTemp'>
-                                                Overnight: {todayTemp.night} °F
-                                            </div>
-                                            <div className='todaysForecastOvernightFeelsLike'>
-                                                Feels Like: {todayFeelsLike.night} °F
-                                            </div>
-                                        </div>
-                                    </div>
-                                    </div>
-                                </div>
+                                </>
                             )
                         })
                     }

@@ -5,7 +5,6 @@ const TodaysForecast = ({forecast, windDirection}) => {
         return null;
     };
     
-    console.log(forecast);
     const todayData = forecast.daily[0];
     const todayTemp = {
         day: Math.round(todayData.temp.day),
@@ -38,7 +37,6 @@ const TodaysForecast = ({forecast, windDirection}) => {
     const todayIcon = todayData.weather[0].icon;
     const todayDirection = windDirection(todayData.wind_deg);
 
-    console.log(todayData);
 
     return (
         <div className='app'>
