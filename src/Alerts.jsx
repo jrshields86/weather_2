@@ -9,10 +9,19 @@ const Alerts = ({forecast}) => {
         return null;
     };
     const [modal, setModal] = useState(false);
-    const alertTitle = forecast.alerts[0].event;
-    const alertStartTime = new Date(forecast.alerts[0].start * 1000);
-    const alertEndTime = new Date(forecast.alerts[0].end * 1000);
-    const alertDescription = forecast.alerts[0].description;
+    // const alertTitle = forecast.alerts[0].event;
+    // const alertStartTime = new Date(forecast.alerts[0].start * 1000);
+    // const alertEndTime = new Date(forecast.alerts[0].end * 1000);
+    // const alertDescription = forecast.alerts[0].description;
+
+    const alertMap = (arr) => {
+        const map = arr.map(alert => {
+            return alert;
+        });
+        return map;
+    };
+    console.log(alertMap(forecast.alerts));
+
     
     const toggleModal = () => {
         setModal(!modal)
@@ -29,15 +38,15 @@ const Alerts = ({forecast}) => {
         
         <div>
             <button className="buttonModal" onClick={toggleModal}>
-                    {alertTitle}
+                    {}
             </button>
             {modal && (
             <div className="alertModal">
             <div onClick={toggleModal} className="alertOverlay"></div>
             <div className="modalContent">
-                <h2>{alertTitle}</h2>
+                <h2>{}</h2>
                 <p>
-                {alertDescription}
+                {}
                 </p>
                 <button className="closeModal" onClick={toggleModal}>
                 CLOSE

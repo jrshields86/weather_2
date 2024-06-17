@@ -10,6 +10,8 @@ import { api } from './api.jsx';
 import TodaysForecast from './TodaysForecast.jsx';
 import Alerts from './Alerts.jsx';
 import ForecastTest from './ForecastTest.jsx';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 
 function App() {
@@ -98,21 +100,13 @@ function App() {
         <div>
           <TodaysForecast forecast={forecast} windDirection={windDirection} />
       </div>
-        {/* <div className='sunMoonContainer'>
-          <div>
-            <SunriseSunset forecast={forecast}/>
-          </div>
-          <div>
-            <MoonriseMoonset forecast={forecast} />
-          </div>
-        </div> */}
-      
 
       
-
-
-      {forecast && <Forecast  forecast={forecast} windDirection={windDirection} />}
-      {/* <ForecastTest forecast={forecast} windDirection={windDirection} /> */}
+      
+      {/* {forecast && <Forecast  forecast={forecast} windDirection={windDirection} />} */}
+      <div>
+        <ForecastTest forecast={forecast} windDirection={windDirection} />
+      </div>
     </div>
   )
 }
