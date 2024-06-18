@@ -4,7 +4,7 @@ import { Accordion } from "react-bootstrap";
 
 
 const ForecastTest = ({forecast, windDirection}) => {
-    console.log(forecast)
+    // console.log(forecast)
     if(!forecast.daily){
         return null;
     };
@@ -12,7 +12,7 @@ const ForecastTest = ({forecast, windDirection}) => {
 
 
     const renderAccordion = (day) => {
-        console.log(day);
+        // console.log(day);
         <Accordion key={day.dt}>
                     <Accordion.Item eventKey="0">
                         <Accordion.Header>Accordion Item #1</Accordion.Header>

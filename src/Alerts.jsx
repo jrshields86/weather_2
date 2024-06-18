@@ -9,6 +9,7 @@ const Alerts = ({forecast}) => {
         return null;
     };
     const [modal, setModal] = useState(false);
+    const [description, setDescription] = useState('');
     // const alertTitle = forecast.alerts[0].event;
     // const alertStartTime = new Date(forecast.alerts[0].start * 1000);
     // const alertEndTime = new Date(forecast.alerts[0].end * 1000);
@@ -22,11 +23,16 @@ const Alerts = ({forecast}) => {
     };
     const alertsArr = alertMap(forecast.alerts);
     const alertEventArr = alertsArr.map(alert => alert.event);
-    console.log(alertEventArr);
+    const alertEventDescriptionArr = alertsArr.map( alert => alert.description);
+    const alertDescription = () => {
+        console.log('hello world');
+    }
+
 
     
     const toggleModal = () => {
         setModal(!modal)
+        alertDescription()
     };
 
     if (modal) {
@@ -48,7 +54,6 @@ const Alerts = ({forecast}) => {
                         </li>
                     )
                 })
-            
             }
             </ul>
             {modal && (
