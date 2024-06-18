@@ -20,7 +20,9 @@ const Alerts = ({forecast}) => {
         });
         return map;
     };
-    console.log(alertMap(forecast.alerts));
+    const alertsArr = alertMap(forecast.alerts);
+    const alertEventArr = alertsArr.map(alert => alert.event);
+    console.log(alertEventArr);
 
     
     const toggleModal = () => {
@@ -37,9 +39,18 @@ const Alerts = ({forecast}) => {
     return (
         
         <div>
-            <button className="buttonModal" onClick={toggleModal}>
-                    {}
-            </button>
+            <ul>
+            {
+                alertEventArr.map((event, idx) => {
+                    return(
+                        <li key={idx}>
+                            <button className="buttonModal" onClick={toggleModal}>{event}</button>
+                        </li>
+                    )
+                })
+            
+            }
+            </ul>
             {modal && (
             <div className="alertModal">
             <div onClick={toggleModal} className="alertOverlay"></div>
