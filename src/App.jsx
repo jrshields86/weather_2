@@ -11,6 +11,7 @@ import TodaysForecast from './TodaysForecast.jsx';
 import Alerts from './Alerts.jsx';
 import ForecastTest from './ForecastTest.jsx';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import ForecastAccordion from './ForecastComponent/ForecastAccordion.jsx';
 
 
 
@@ -100,12 +101,15 @@ function App() {
         <div>
           <TodaysForecast forecast={forecast} windDirection={windDirection} />
       </div>
+      {/* <div>
+        <ForecastAccordion />
+      </div> */}
 
       
       
-      {/* {forecast && <Forecast  forecast={forecast} windDirection={windDirection} />} */}
+      {forecast && <Forecast  forecast={forecast} windDirection={windDirection} />}
       <div>
-        <ForecastTest forecast={forecast} windDirection={windDirection} />
+        {/* <ForecastTest forecast={forecast} windDirection={windDirection} /> */}
       </div>
     </div>
   )

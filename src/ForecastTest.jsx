@@ -4,7 +4,7 @@ import { Accordion } from "react-bootstrap";
 
 
 const ForecastTest = ({forecast, windDirection}) => {
-    // console.log(forecast)
+    console.log(forecast)
     if(!forecast.daily){
         return null;
     };
@@ -31,7 +31,7 @@ const ForecastTest = ({forecast, windDirection}) => {
     const forecastAccordion = formattedForecast.map(renderAccordion);
 
     return (
-        <div>{formattedForecast.map(renderAccordion)}</div>
+        <h1>forecastTest</h1>
     );
 };
 
