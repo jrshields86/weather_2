@@ -9,38 +9,35 @@ const Forecast = ({forecast, windDirection}) => {
 
     const formattedForecast = forecast.daily.slice(1, forecast.daily.length);
     const daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-
-    // const forecastTempData = forecast.daily[0];
+    
 
     console.log(formattedForecast);
-
-    // const todayTemp = {
-    //     day: Math.round(forecastTempData.temp.day),
-    //     evening: Math.round(forecastTempData.temp.eve),
-    //     max: Math.round(forecastTempData.temp.max),
-    //     min: Math.round(forecastTempData.temp.min),
-    //     morning: Math.round(forecastTempData.temp.morn),
-    //     night: Math.round(forecastTempData.temp.night)
-    // };
-    // const todayFeelsLike = {
-    //     day: Math.round(forecastTempData.feels_like.day),
-    //     evening: Math.round(forecastTempData.feels_like.eve),
-    //     morning: Math.round(forecastTempData.feels_like.morn),
-    //     night: Math.round(forecastTempData.feels_like.night)
-    // };
     
     
     return (
-        <div>
-            <Accordion>
+        <div className='forecastContainer'>
+            <Accordion className='accordion'>
                 {
                     formattedForecast.map((item, idx) => (
-                        <Accordion.Item eventKey={idx}>
-                            <Accordion.Header>{item.dt}</Accordion.Header>
+                        <Accordion.Item key={idx} eventKey={idx}>
+                            <Accordion.Header>
+                                <div>
+                                    {item.dt}
+                                </div>
+                            </Accordion.Header>
                             <Accordion.Body>
-                            <p>Clouds: {item.clouds}%</p>
-                            <p>Humidity: {item.humidity}</p>
-                            <p>Dew Point: {item.dew_point}</p>
+                                <div>
+                                    <p>Clouds: {item.clouds}%</p>
+                                </div>
+                                <div>
+                                    <p>Humidity: {item.humidity}</p>
+                                </div>
+                                <div>
+                                    <p>Dew Point: {item.dew_point}</p>
+                                </div>
+                                <div>
+                                    <p>POP: {item.pop}</p>
+                                </div>       
                             </Accordion.Body>
                         </Accordion.Item>
                     ))

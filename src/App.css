@@ -427,3 +427,7 @@ body.activeModal {
 .forecastAccordion {
   width: 60%;
 }
+
+.accordion {
+  width: 100%;
+}
