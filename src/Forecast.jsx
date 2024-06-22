@@ -1,5 +1,5 @@
 import './App.css'
-import { Accordion } from "react-bootstrap";
+import { Accordion, AccordionItem, AccordionHeader } from "react-bootstrap";
 
 
 const Forecast = ({forecast, windDirection}) => {
@@ -20,10 +20,14 @@ const Forecast = ({forecast, windDirection}) => {
                 {
                     formattedForecast.map((item, idx) => (
                         <Accordion.Item key={idx} eventKey={idx}>
-                            <Accordion.Header>
-                                <div>
-                                    {item.dt}
-                                </div>
+                            <Accordion.Header className='accordionHeader'>
+                                    <p className='accordionHeaderChild'>day</p>
+                                    <p className='accordionHeaderChild'>date</p>
+                                    <p className='accordionHeaderChild'>Day/Night Temp</p>
+                                    <p className='accordionHeaderChild'>Icon</p>
+                                    <p className='accordionHeaderChild'>Short Description</p>
+                                    <p className='accordionHeaderChild'>POP</p>
+                                    <p className='accordionHeaderChild'>Wind</p>
                             </Accordion.Header>
                             <Accordion.Body>
                                 <div>

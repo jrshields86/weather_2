@@ -431,3 +431,16 @@ body.activeModal {
 .accordion {
   width: 100%;
 }
+
+.accordionHeader button {
+  display: flex;
+}
+
+.accordionHeaderChild {
+  width: 14.28%;
+}
+
+.accordion-body {
+  display: flex;
+  justify-content: space-evenly;
+}
