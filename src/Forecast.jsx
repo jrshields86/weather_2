@@ -23,24 +23,21 @@ const Forecast = ({forecast, windDirection}) => {
                             <Accordion.Header className='accordionHeader'>
                                     <p className='accordionHeaderChild'>day</p>
                                     <p className='accordionHeaderChild'>date</p>
-                                    <p className='accordionHeaderChild'>Day/Night Temp</p>
-                                    <p className='accordionHeaderChild'>Icon</p>
-                                    <p className='accordionHeaderChild'>Short Description</p>
-                                    <p className='accordionHeaderChild'>POP</p>
-                                    <p className='accordionHeaderChild'>Wind</p>
+                                    <p className='accordionHeaderChild'>{Math.round(item.temp.day)}/{Math.round(item.temp.night)} °F</p>
+                                    <img alt='weather icon' className='weatherIcon' src={`icons/${item.weather[0].icon}.png`}/>
+                                    <p className='accordionHeaderChild'>{item.weather[0].description}</p>
+                                    <p className='accordionHeaderChild'>{item.pop * 100} %</p>
+                                    <p className='accordionHeaderChild'>{windDirection(item.wind_deg)} {Math.round(item.wind_speed)} mph</p>
                             </Accordion.Header>
                             <Accordion.Body>
                                 <div>
-                                    <p>Clouds: {item.clouds}%</p>
+                                    <p>Clouds: {item.clouds} %</p>
                                 </div>
                                 <div>
-                                    <p>Humidity: {item.humidity}</p>
+                                    <p>Humidity: {item.humidity} %</p>
                                 </div>
                                 <div>
-                                    <p>Dew Point: {item.dew_point}</p>
-                                </div>
-                                <div>
-                                    <p>POP: {item.pop}</p>
+                                    <p>Dew Point: {item.dew_point} °F</p>
                                 </div>       
                             </Accordion.Body>
                         </Accordion.Item>
