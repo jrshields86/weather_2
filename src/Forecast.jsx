@@ -24,7 +24,7 @@ const Forecast = ({forecast, windDirection}) => {
                     formattedForecast.map((item, idx) => (
                         <Accordion.Item key={idx} eventKey={idx}>
                             <Accordion.Header className='accordionHeader'>
-                                    <p className='accordionHeaderChild'>{new Date(item.dt * 1000).getDay()}</p>
+                                    <p className='accordionHeaderChild'>{daysOfWeek.find((itm, index) => index === new Date(item.dt * 1000).getDay())}</p>
                                     <p className='accordionHeaderChild'>date</p>
                                     <p className='accordionHeaderChild'>{Math.round(item.temp.day)}/{Math.round(item.temp.night)} °F</p>
                                     <img alt='weather icon' className='weatherIcon' src={`icons/${item.weather[0].icon}.png`}/>
