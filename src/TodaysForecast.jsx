@@ -28,7 +28,7 @@ const TodaysForecast = ({forecast, windDirection}) => {
     const todayClouds = todayData.clouds;
     const todayDewPoint = Math.round(todayData.dew_point);
     const todayHumidity = todayData.humidity;
-    const todayPOP = todayData.pop * 100;
+    const todayPOP = Math.round(todayData.pop * 100);
     const todayPressure = (todayData.pressure * 0.025).toFixed(2);
     const todayRain = todayData.rain;
     const todayWindDeg = todayData.wind_deg;

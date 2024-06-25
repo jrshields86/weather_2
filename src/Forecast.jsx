@@ -9,8 +9,11 @@ const Forecast = ({forecast, windDirection}) => {
 
     const formattedForecast = forecast.daily.slice(1, forecast.daily.length);
     const daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-    
-
+    const dayData = formattedForecast.map((item, idx) => {
+       const day = new Date(item.dt * 1000).getDay();
+       return day; 
+    });
+    console.log(dayData);
     console.log(formattedForecast);
     
     
@@ -21,7 +24,7 @@ const Forecast = ({forecast, windDirection}) => {
                     formattedForecast.map((item, idx) => (
                         <Accordion.Item key={idx} eventKey={idx}>
                             <Accordion.Header className='accordionHeader'>
-                                    <p className='accordionHeaderChild'>day</p>
+                                    <p className='accordionHeaderChild'>{new Date(item.dt * 1000).getDay()}</p>
                                     <p className='accordionHeaderChild'>date</p>
                                     <p className='accordionHeaderChild'>{Math.round(item.temp.day)}/{Math.round(item.temp.night)} °F</p>
                                     <img alt='weather icon' className='weatherIcon' src={`icons/${item.weather[0].icon}.png`}/>
