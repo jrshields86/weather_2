@@ -21,7 +21,7 @@ const TodaysForecast = ({forecast, windDirection}) => {
         night: Math.round(todayData.feels_like.night)
     };
     const daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-    const date = new Date(todayData.dt * 1000).toLocaleDateString();
+    const date = new Date(todayData.dt * 1000).toDateString();
     const day = new Date(todayData.dt * 1000).getDay();
     const todayDay = daysOfWeek.find((el, idx) => idx === day); 
     const todaySummary = todayData.summary;
@@ -46,9 +46,9 @@ const TodaysForecast = ({forecast, windDirection}) => {
                         <div className='todaysForecastDate'>
                             {date}
                         </div>
-                        <div className='todaysForecastDay'>
+                        {/* <div className='todaysForecastDay'>
                             {todayDay}
-                        </div>
+                        </div> */}
                     </div>
                     <div className='todaysForecastIconContainer'>
                         <img alt='weather icon' className='todaysForecastIcon' src={`icons/${todayIcon}.png`}/>
