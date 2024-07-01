@@ -46,9 +46,6 @@ const TodaysForecast = ({forecast, windDirection}) => {
                         <div className='todaysForecastDate'>
                             {date}
                         </div>
-                        {/* <div className='todaysForecastDay'>
-                            {todayDay}
-                        </div> */}
                     </div>
                     <div className='todaysForecastIconContainer'>
                         <img alt='weather icon' className='todaysForecastIcon' src={`icons/${todayIcon}.png`}/>
@@ -57,31 +54,8 @@ const TodaysForecast = ({forecast, windDirection}) => {
                         <p className='todaysForecastSummary'>{todaySummary}</p>
                     </div>           
                 </div>
-                <div className='todaysForecastTopContainer'>
-                    
-                    <div className='todaysForecastWindPopContainer'>
-                        <div className='todaysForecastWind'>
-                            <p className='detailTitle'>Wind:</p>
-                            <p className='detailValue'>{todayDirection} {Math.round(todayData.wind_speed)} mph</p>
-                        </div>
-                        <div className='todaysForecastPop'>
-                            <p className='detailTitle'>POP:</p>
-                            <p className='detailValue'>{todayPOP} %</p>
-                        </div>
-                    </div>
-                    
-                </div>
-                <div className='todaysForecastHumidityPressureContainer'>
-                    <div className='todaysForecastHumidity'>
-                        <p className='detailTitle'>Humidity:</p>
-                        <p className='detailValue'>{todayData.humidity} %</p>
-                    </div>
-                    <div className='todaysForecastPressure'>
-                        <p className='detailTitle'>Pressure:</p>
-                        <p>{todayPressure} in</p>
-                    </div>
-                </div>
                 <div className='todaysForecastMinMaxContainer'>
+                        <hr/>
                         <div className='todaysForecastMorning'>
                             <div className='todaysForecastMorningTemp'>
                                 Morning: {todayTemp.morning} °F
@@ -117,7 +91,31 @@ const TodaysForecast = ({forecast, windDirection}) => {
                                 Feels Like: {todayFeelsLike.night} °F
                             </div>
                         </div>
+                        <hr/>
                     </div>
+                <div className='todaysForecastTopContainer'>
+                    <div className='todaysForecastWindPopContainer'>
+                        <div className='todaysForecastWind'>
+                            <p className='detailTitle'>Wind:</p>
+                            <p className='detailValue'>{todayDirection} {Math.round(todayData.wind_speed)} mph</p>
+                        </div>
+                        <div className='todaysForecastPop'>
+                            <p className='detailTitle'>POP:</p>
+                            <p className='detailValue'>{todayPOP} %</p>
+                        </div>
+                    </div>
+                </div>
+                <div className='todaysForecastHumidityPressureContainer'>
+                    <div className='todaysForecastHumidity'>
+                        <p className='detailTitle'>Humidity:</p>
+                        <p className='detailValue'>{todayData.humidity} %</p>
+                    </div>
+                    <div className='todaysForecastPressure'>
+                        <p className='detailTitle'>Pressure:</p>
+                        <p>{todayPressure} in</p>
+                    </div>
+                </div>
+                
                 
             </div>
             

@@ -90,25 +90,29 @@ function App() {
       <div className='locationDisplayContainer'>
           <p>{current.city ? current.city : 'Your Location'}</p>
       </div>
-
-      
-        {current && <CurrentWeather forecast={forecast} current={current} windDirection={windDirection} />}
-        <div>
-          <Alerts forecast={forecast} />
-        </div>
-        <div>
-          <TodaysForecast forecast={forecast} windDirection={windDirection} />
-      </div>
-      {/* <div>
-        <ForecastAccordion />
-      </div> */}
-
-      
-      
-      {forecast && <Forecast  forecast={forecast} windDirection={windDirection} />}
       <div>
-        {/* <ForecastTest forecast={forecast} windDirection={windDirection} /> */}
+        {current && <CurrentWeather forecast={forecast} current={current} windDirection={windDirection} />}
+      </div>  
+      <div>
+        <Alerts forecast={forecast} />
       </div>
+      <div>
+        <TodaysForecast forecast={forecast} windDirection={windDirection} />
+      </div>
+      <div>
+        <SunriseSunset forecast={forecast} />
+      </div>
+      <div>
+        <MoonriseMoonset forecast={forecast} />
+      </div>
+      <div>
+        {forecast && <Forecast  forecast={forecast} windDirection={windDirection} />}
+      </div>
+
+      
+      
+      
+      
     </div>
   )
 }
