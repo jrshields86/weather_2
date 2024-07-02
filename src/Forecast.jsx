@@ -13,8 +13,10 @@ const Forecast = ({forecast, windDirection}) => {
        const day = new Date(item.dt * 1000).toDateString();
        return day; 
     });
-    console.log(typeof new Date(forecast.daily[0].dt * 1000).toDateString());
-    console.log(formattedForecast);
+    const dateDay = new Date(formattedForecast[0].dt * 1000).toDateString().substring(0, 3);
+    const dateNumber = new Date(formattedForecast[0].dt * 1000).toDateString().substring(7, 10);
+    console.log(dateDay, dateNumber);
+
     
     
     return (
@@ -24,7 +26,10 @@ const Forecast = ({forecast, windDirection}) => {
                     formattedForecast.map((item, idx) => (
                         <Accordion.Item key={idx} eventKey={idx}>
                             <Accordion.Header className='accordionHeader'>
-                                    <p className='accordionHeaderChild'>{new Date(item.dt * 1000).toDateString().slice(0, 10)}</p>
+                                    <p className='accordionHeaderChild'>
+                                        {new Date(item.dt * 1000).toDateString().substring(0, 3)}
+                                        {new Date(item.dt * 1000).toDateString().substring(7, 10)}
+                                    </p>
                                     <p className='accordionHeaderChild'>{Math.round(item.temp.day)}/{Math.round(item.temp.night)} °F</p>
                                     <img alt='weather icon' className='weatherIcon' src={`icons/${item.weather[0].icon}.png`}/>
                                     {/* <p className='accordionHeaderChild'>{item.weather[0].description}</p> */}
