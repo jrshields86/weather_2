@@ -110,9 +110,16 @@ font-weight: 600;
   font-weight: 600;
 }
 
+.descriptionContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 .description {
   font-weight: 600;
   font-size: 18px;
+  padding-top: .8rem;
 }
 
 .currentTitle {

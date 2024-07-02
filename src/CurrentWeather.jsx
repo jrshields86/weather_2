@@ -25,7 +25,9 @@ const CurrentWeather = ({current, windDirection, forecast}) => {
                             </div>    
                             <div className='top-right'>
                                 <img alt='weather icon' className='currentWeatherIcon' src={`icons/${icon}.png`}/>
-                                <p className='description'>{description}</p>
+                                <div className='descriptionContainer'>
+                                    <p className='description'>{description}</p>
+                                </div>
                             </div>
                         </div>
                         <div className='bottomContainer'>
