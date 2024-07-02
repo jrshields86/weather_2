@@ -29,6 +29,18 @@
   text-align: center;
 }
 
+.currentWeatherIcon {
+  height: 100px;
+  width: 100px;
+}
+
+.top-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .sunMoonContainer {
   display: flex;
   justify-content: center;
@@ -37,7 +49,7 @@
 
 .topContainer {
   display: flex;
-  
+  gap: 1rem;
 }
 
 .bottomContainer {
@@ -101,7 +113,6 @@ font-weight: 600;
 .description {
   font-weight: 600;
   font-size: 18px;
-  margin-top: 0;
 }
 
 .currentTitle {
@@ -495,6 +506,22 @@ body.activeModal {
 }
 
 .todaysForecastHeader p {
+  width: 98%;
+  border: 2px solid black;
+  border-radius: 10px;
+  font-weight: bolder;
+  font-size: 1.5rem;
+  padding: 5px;
+  background-color: rgb(0, 180, 216);
+  text-align: center;
+}
+
+.forecastHeader {
+  display: flex;
+  justify-content: center;
+}
+
+.forecastHeader p {
   width: 98%;
   border: 2px solid black;
   border-radius: 10px;

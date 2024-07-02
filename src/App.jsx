@@ -111,6 +111,9 @@ function App() {
       <div>
         <MoonriseMoonset forecast={forecast} />
       </div>
+      <div className='forecastHeader'>
+        <p>7 Day Forecast</p>
+      </div>
       <div>
         {forecast && <Forecast  forecast={forecast} windDirection={windDirection} />}
       </div>

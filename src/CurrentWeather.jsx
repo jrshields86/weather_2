@@ -24,7 +24,7 @@ const CurrentWeather = ({current, windDirection, forecast}) => {
                                 <p className='feelsLike'>Feels Like: {Math.round(current.feels_like)}°F</p>
                             </div>    
                             <div className='top-right'>
-                                <img alt='weather icon' className='weatherIcon' src={`icons/${icon}.png`}/>
+                                <img alt='weather icon' className='currentWeatherIcon' src={`icons/${icon}.png`}/>
                                 <p className='description'>{description}</p>
                             </div>
                         </div>
