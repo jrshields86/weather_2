@@ -37,25 +37,25 @@ const Forecast = ({forecast, windDirection}) => {
                                         <img alt='weather icon' className='raindropIcon' src={`icons/raindrop.png`}/>
                                         {Math.round(item.pop * 100)} %
                                     </p>
-                                    <p className='accordionHeaderChild'>{windDirection(item.wind_deg)} {Math.round(item.wind_speed)} mph</p>
+                                    {/* <p className='accordionHeaderChild'>{windDirection(item.wind_deg)} {Math.round(item.wind_speed)} mph</p> */}
                             </Accordion.Header>
                             <Accordion.Body className='accordionBody'>
-                                <div>
+                                <div className='accordionBodyChild - summary'>
                                     <p>{item.summary}</p>
                                 </div>
-                                <div>
+                                <div className='accordionBodyChild'>
                                     <p>{windDirection(item.wind_deg)} {Math.round(item.wind_speed)} mph</p>
                                 </div>
-                                <div>
+                                <div className='accordionBodyChild'>
                                     <p>Humidity: {item.humidity} %</p>
                                 </div>
-                                <div>
+                                <div className='accordionBodyChild'>
                                     <p>Dew Point: {Math.round(item.dew_point)} °F</p>
                                 </div>
-                                <div>
+                                <div className='accordionBodyChild'>
                                     <p>UV Index: {Math.round(item.uvi)} of 11</p>
                                 </div>
-                                <div>
+                                <div className='accordionBodyChild'>
                                     <p>Pressure: {(item.pressure * 0.025).toFixed(2)} in</p>
                                 </div>       
                             </Accordion.Body>
