@@ -21,25 +21,29 @@ function App() {
   const API_KEY = import.meta.env.VITE_WEATHER_API_KEY;
 
   useEffect(() => {
-    async function userData(){
-      const response = await axios.get(`https://api.openweathermap.org/data/3.0/onecall?lat=${userLat}&lon=${userLon}&exclude={part}&appid=${API_KEY}&units=imperial`);
-      setCurrent(response.data.current);
-      setForecast(response.data);
-    }
-    userData();
-  }, [userLat, userLon]);
+    userLocation();
+  }, [])
+
+  // useEffect(() => {
+  //   async function userData(){
+  //     const response = await axios.get(`https://api.openweathermap.org/data/3.0/onecall?lat=${userLat}&lon=${userLon}&exclude={part}&appid=${API_KEY}&units=imperial`);
+  //     setCurrent(response.data.current);
+  //     setForecast(response.data);
+  //   }
+  //   userData();
+  // }, [userLat, userLon]);
 
   function userLocation(){
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(success);
     }
   };
-  userLocation();
 
   function success(pos) {
     const crd = pos.coords;
     const lat = (crd.latitude).toFixed(2);
     const lon = (crd.longitude).toFixed(2);
+    console.log(lat, lon);
     setUserLat(lat);
     setUserLon(lon);
   };
