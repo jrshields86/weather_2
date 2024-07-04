@@ -12,7 +12,6 @@ import Alerts from './Alerts.jsx';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
-
 function App() {
   const [current, setCurrent] = useState({});
   const [forecast, setForecast] = useState([]);
@@ -24,20 +23,19 @@ function App() {
     userLocation();
   }, [])
 
-  // useEffect(() => {
-  //   async function userData(){
-  //     const response = await axios.get(`https://api.openweathermap.org/data/3.0/onecall?lat=${userLat}&lon=${userLon}&exclude={part}&appid=${API_KEY}&units=imperial`);
-  //     setCurrent(response.data.current);
-  //     setForecast(response.data);
-  //   }
-  //   userData();
-  // }, [userLat, userLon]);
-
   function userLocation(){
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(success);
+      console.log(userLat, userLon)
     }
   };
+
+  // async function userData(){
+  //   const response = await axios.get(`https://api.openweathermap.org/data/3.0/onecall?lat=${userLat}&lon=${userLon}&exclude={part}&appid=${API_KEY}&units=imperial`);
+  //   setCurrent(response.data.current);
+  //   setForecast(response.data);
+  // }
+  // userData();
 
   function success(pos) {
     const crd = pos.coords;
