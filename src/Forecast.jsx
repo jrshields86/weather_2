@@ -3,7 +3,6 @@ import { Accordion, AccordionItem, AccordionHeader } from "react-bootstrap";
 
 
 const Forecast = ({forecast, windDirection}) => {
-    console.log(forecast);
     if(!forecast.daily){
         return null;
     };

@@ -20,32 +20,38 @@ function App() {
   const API_KEY = import.meta.env.VITE_WEATHER_API_KEY;
 
   useEffect(() => {
-    userLocation();
-  }, [])
+    locationData(userLat, userLon)
+  }, [userLat, userLon]);
 
+  
   function userLocation(){
     if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(success);
-      console.log(userLat, userLon)
+      navigator.geolocation.getCurrentPosition(success);  
     }
   };
-
-  // async function userData(){
-  //   const response = await axios.get(`https://api.openweathermap.org/data/3.0/onecall?lat=${userLat}&lon=${userLon}&exclude={part}&appid=${API_KEY}&units=imperial`);
-  //   setCurrent(response.data.current);
-  //   setForecast(response.data);
-  // }
-  // userData();
+  userLocation();
 
   function success(pos) {
     const crd = pos.coords;
     const lat = (crd.latitude).toFixed(2);
     const lon = (crd.longitude).toFixed(2);
-    console.log(lat, lon);
     setUserLat(lat);
     setUserLon(lon);
   };
-
+  
+  const locationData = async(lat, lon) => {
+    const userLogOnResponse = axios.get(`https://api.openweathermap.org/data/3.0/onecall?lat=${lat}&lon=${lon}&exclude={part}&appid=${API_KEY}&units=imperial`);
+  
+    Promise.all([userLogOnResponse])
+    .then(async (response) => {
+      const instantUserResponseCurrent = await response[0].data.current;
+      const instantUserResponse = await response[0].data;
+      setCurrent({...instantUserResponseCurrent});
+      setForecast({...instantUserResponse});
+    })
+    .catch((err) => console.log(err));
+  };
+  
   const handleOnSearchChange = (searchData) => {
     const [lat, lon] = searchData.value.split(' ');
     const currentWeatherFetch = axios.get(`https://api.openweathermap.org/data/3.0/onecall?lat=${lat}&lon=${lon}&exclude={part}&appid=${API_KEY}&units=imperial`);
@@ -55,7 +61,6 @@ function App() {
         
         const weatherResponse = await response[0].data.current;
         const fullWeatherResponse = await response[0].data;
-        console.log(fullWeatherResponse);
         setCurrent({city: searchData.label , ...weatherResponse});
         setForecast({city: searchData.label , ...fullWeatherResponse});
       })
@@ -81,6 +86,8 @@ function App() {
         return 'NW'
     }
   };
+
+  
 
   return (
     <div>
