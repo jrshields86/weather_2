@@ -10,6 +10,7 @@ import { api } from './api.jsx';
 import TodaysForecast from './TodaysForecast.jsx';
 import Alerts from './Alerts.jsx';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Hourly from './Hourly.jsx';
 
 
 function App() {
@@ -107,6 +108,9 @@ function App() {
       </div>  
       <div>
         <Alerts forecast={forecast} />
+      </div>
+      <div>
+        <Hourly forecast={forecast} />
       </div>
       <div className='todaysForecastHeader'>
         <p>Today's Forecast</p>

@@ -15,7 +15,6 @@ const Forecast = ({forecast, windDirection}) => {
     });
     const dateDay = new Date(formattedForecast[0].dt * 1000).toDateString().substring(0, 3);
     const dateNumber = new Date(formattedForecast[0].dt * 1000).toDateString().substring(7, 10);
-    console.log(dateDay, dateNumber);
 
     
     
