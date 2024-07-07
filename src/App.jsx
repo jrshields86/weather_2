@@ -92,6 +92,9 @@ function App() {
 
   return (
     <div>
+      <div className='appHeader'>
+        Joe's Weather Service
+      </div>
       <div className='searchAndLocationContainer'>
         <div className='searchBox'>
           <Search onSearchChange={handleOnSearchChange} />
@@ -100,7 +103,6 @@ function App() {
       <div className='locationDisplayContainer'>
           <p>{current.city ? current.city : 'Your Location'}</p>
       </div>
-      
       <div>
         {current && <CurrentWeather forecast={forecast} current={current} windDirection={windDirection} />}
       </div>  
