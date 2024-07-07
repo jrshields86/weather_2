@@ -41,6 +41,9 @@ const TodaysForecast = ({forecast, windDirection}) => {
     return (
         <div className='app'>
             <div className="todaysForecastContainer">
+                <div className='todaysForecastHeader'>
+                    Today's Forecast
+                </div>
                 <div className='todaysForecastDayIconSummaryContainer'>
                     <div className='todayForecastDateDayContainer'>
                         <div className='todaysForecastDate'>
@@ -54,7 +57,7 @@ const TodaysForecast = ({forecast, windDirection}) => {
                         <p className='todaysForecastSummary'>{todaySummary}</p>
                     </div>           
                 </div>
-                <div className='todaysForecastMinMaxContainer'>
+                {/* <div className='todaysForecastMinMaxContainer'>
                         <hr/>
                         <div className='todaysForecastMorning'>
                             <div className='todaysForecastMorningTemp'>
@@ -92,7 +95,7 @@ const TodaysForecast = ({forecast, windDirection}) => {
                             </div>
                         </div>
                         <hr/>
-                    </div>
+                    </div> */}
                 <div className='todaysForecastTopContainer'>
                     <div className='todaysForecastWindPopContainer'>
                         <div className='todaysForecastWind'>

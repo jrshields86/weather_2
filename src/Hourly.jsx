@@ -11,6 +11,9 @@ const Hourly = ({forecast}) => {
 
     return (
         <div className="hourlyContainer">
+            <div className="hourlyHeader">
+                Hourly
+            </div>
             <div className="hourlyBox">
                 {
                     formattedHourly.map((item, idx) => {

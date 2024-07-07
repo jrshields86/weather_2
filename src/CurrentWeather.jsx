@@ -16,6 +16,9 @@ const CurrentWeather = ({current, windDirection, forecast}) => {
     return (
         <div className='app'>
             <div className='weatherContainer'>
+                <div className='currentWeatherHeader'>
+                    Current Weather
+                </div>
                 <div className='leftAndRightContainer'>
                     <div className='leftContainer'>
                         <div className='topContainer'>

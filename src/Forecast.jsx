@@ -20,6 +20,9 @@ const Forecast = ({forecast, windDirection}) => {
     
     return (
         <div className='forecastContainer'>
+            <div className='forecastHeader'>
+                7 Day Forecast
+            </div>
             <Accordion className='accordion'>
                 {
                     formattedForecast.map((item, idx) => (
