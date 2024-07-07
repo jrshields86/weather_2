@@ -548,10 +548,14 @@ body.activeModal {
 
 .hourlyBox {
   display: flex;
+
   overflow-x: auto; 
   white-space: nowrap;
 }
 
 .hourlyChild {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   border: 1px solid black;
 }

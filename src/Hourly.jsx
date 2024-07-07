@@ -13,12 +13,22 @@ const Hourly = ({forecast}) => {
         <div className="hourlyContainer">
             <div className="hourlyBox">
                 {
-                    formattedHourly.map(item => {
+                    formattedHourly.map((item, idx) => {
                         const hour = new Date(item.dt * 1000).getHours();
-                        console.log(hour)
+                        const index = idx;
+                        const hourDisplay = (hour, index) => {
+                            if (hour > 12) {
+                                return hour - 12;
+                            } else if (hour === 0) {
+                                return 12;
+                            } else {
+                                return hour;
+                            }
+                        };
+                        
                         return (
                             <div className="hourlyChild" key={item.dt}>
-                                <p>{}</p>
+                                <p>{hourDisplay(hour, index)}</p>
                                 <img alt='weather icon' className='weatherIcon' src={`icons/${item.weather[0].icon}.png`}/>
                                 <p>{Math.round(item.temp)}°</p>
                             </div>
