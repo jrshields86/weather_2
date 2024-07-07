@@ -554,6 +554,7 @@ body.activeModal {
   display: flex;
   overflow-x: auto; 
   white-space: nowrap;
+  padding-bottom: 1rem;
 }
 
 .hourlyChild {
