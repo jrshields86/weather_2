@@ -91,7 +91,7 @@ function App() {
   
 
   return (
-    <div>
+    <div className='appContainer'>
       <div className='appHeader'>
         Joe's Weather Service
       </div>
