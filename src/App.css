@@ -2,6 +2,11 @@
   box-sizing: border-box;
 }
 
+.appContainer {
+  display: flex;
+  flex-direction: column;
+}
+
 .locationDisplayContainer {
   max-width: 800px;
   display: flex;
@@ -25,7 +30,6 @@
   flex-direction: column;
   width: 98%;
   max-width: 800px;
-
   margin: 0px auto 0px auto;
   border: 2px solid black;
   border-radius: 10px;
@@ -146,7 +150,6 @@ font-weight: 600;
   flex-wrap: wrap;
   width: 98%;
   max-width: 800px;
-
   border: 2px solid black;
   padding: 1rem;
   gap: 1rem;
@@ -268,8 +271,6 @@ font-weight: 600;
   padding-bottom: 1rem;
 }
 
-
-
 #moonIcon {
   width: 45px;
   height: 45px;
@@ -282,8 +283,7 @@ font-weight: 600;
 
 .searchAndLocationContainer {
   display: flex;
-  width: 98%;
-  max-width: 800px;
+  justify-content: center;
 }
 
 .mainViewContainer {
@@ -600,7 +600,7 @@ body.activeModal {
 }
 
 .appHeader {
-  width: 98%;
+  width: 90%;
   max-width: 800px;
   font-size: 1.5rem;
   font-weight: bolder;
@@ -610,11 +610,5 @@ body.activeModal {
   border: 2px solid black;
   border-radius: 10px;
   margin: 0px auto 20px auto;
-}
-
-.appContainer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
