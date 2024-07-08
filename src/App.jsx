@@ -21,9 +21,8 @@ function App() {
   const API_KEY = import.meta.env.VITE_WEATHER_API_KEY;
 
   useEffect(() => {
-    locationData(userLat, userLon)
+      locationData(userLat, userLon);
   }, [userLat, userLon]);
-
   
   function userLocation(){
     if (navigator.geolocation) {

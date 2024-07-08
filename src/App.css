@@ -390,6 +390,13 @@ font-weight: 600;
   width: 100px;
 }
 
+.todaysForecastPop {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+}
+
 .app {
   display: flex;
   flex-direction: column;
@@ -612,3 +619,7 @@ body.activeModal {
   margin: 0px auto 20px auto;
 }
 
+.todaysForecastRaindropIcon {
+  width: 40px;
+  height: 40px;
+}
