@@ -57,45 +57,6 @@ const TodaysForecast = ({forecast, windDirection}) => {
                         <p className='todaysForecastSummary'>{todaySummary}</p>
                     </div>           
                 </div>
-                {/* <div className='todaysForecastMinMaxContainer'>
-                        <hr/>
-                        <div className='todaysForecastMorning'>
-                            <div className='todaysForecastMorningTemp'>
-                                Morning: {todayTemp.morning} °F
-                            </div>
-                            <div className='todaysForecastMorningFeelsLike'>
-                                Feels like: {todayFeelsLike.morning} °F
-                            </div>
-                        </div>
-                        <hr/>
-                        <div className='todaysForecastAfternoon'>
-                            <div className='todaysForecastAfternoonTemp'>
-                                Afternoon: {todayTemp.day} °F
-                            </div>
-                            <div className='todaysForecastAfternoonFeelsLike'>
-                                Feels Like: {todayFeelsLike.day} °F
-                            </div>
-                        </div>
-                        <hr/>
-                        <div className='todaysForecastEvening'>
-                            <div className='todaysForecastEveningTemp'>
-                                Evening: {todayTemp.evening} °F
-                            </div>
-                            <div className='todaysForecastEveningFeelsLike'>
-                                Feels Like: {todayFeelsLike.evening} °F
-                            </div>
-                        </div>
-                        <hr/>
-                        <div className='todaysForecastOvernight'>
-                            <div className='todaysForecastOvernightTemp'>
-                                Overnight: {todayTemp.night} °F
-                            </div>
-                            <div className='todaysForecastOvernightFeelsLike'>
-                                Feels Like: {todayFeelsLike.night} °F
-                            </div>
-                        </div>
-                        <hr/>
-                    </div> */}
                 <div className='todaysForecastTopContainer'>
                     <div className='todaysForecastWindPopContainer'>
                         <div className='todaysForecastWind'>

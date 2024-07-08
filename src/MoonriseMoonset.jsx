@@ -48,18 +48,6 @@ const MoonriseMoonset = ({forecast}) => {
         }
     };
 
-    // const moonriseData = forecast.daily[0].moonrise + (forecast.timezone_offset);
-    // const moonsetData =  forecast.daily[0].moonset + (forecast.timezone_offset);
-    // console.log(moonriseData, moonsetData);
-
-    // const moonriseTime = new Date(moonriseData * 1000);
-    // const moonsetTime = new Date(moonsetData * 1000);
-    // console.log(moonriseTime, moonsetTime);
-
-    // const moonriseHours = moonriseTime.getUTCHours();
-    // const moonriseMinutes = moonriseTime.getUTCMinutes();
-    // console.log(moonriseHours, moonriseMinutes);
-
     return (
         <>  
             <div className="moonriseMoonsetContainer">
@@ -76,12 +64,6 @@ const MoonriseMoonset = ({forecast}) => {
                 <div id='bottom'>
                     <div id="moonrise">
                         {displayMoonPhase(moonPhaseData)}
-                    </div>
-                    <div>
-                        {/* <img alt='moonnrise icon' className='moonriseIcon' src={`icons/Moonrise_icon.png`}/> */}
-                    </div>
-                    <div>
-                        {/* <img alt='moonset icon' className='moonsetIcon' src={`icons/Moonset_icon.png`}/> */}
                     </div>
                 </div>
             </div>

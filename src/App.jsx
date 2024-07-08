@@ -88,8 +88,6 @@ function App() {
     }
   };
 
-  
-
   return (
     <div className='appContainer'>
       <div className='appHeader'>

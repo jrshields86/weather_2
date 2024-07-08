@@ -1,9 +1,6 @@
 import './App.css';
-import SunriseSunset from './SunriseSunset.jsx';
-import MoonriseMoonset from './MoonriseMoonset.jsx';
 
-
-const CurrentWeather = ({current, windDirection, forecast}) => {
+const CurrentWeather = ({current, windDirection}) => {
     const iconData = current.weather;
 
     if (!iconData){
