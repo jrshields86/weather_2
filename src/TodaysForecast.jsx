@@ -64,7 +64,7 @@ const TodaysForecast = ({forecast, windDirection}) => {
                             <p className='detailValue'>{todayDirection} {Math.round(todayData.wind_speed)} mph</p>
                         </div>
                         <div className='todaysForecastPop'>
-                        <img alt='raindrop icon' className='todaysForecastRaindropIcon' src={`icons/raindrop.png`}/>
+                            <img alt='raindrop icon' className='todaysForecastRaindropIcon' src={`icons/raindrop.png`}/>
                             <p className='detailValue'>{todayPOP} %</p>
                         </div>
                     </div>

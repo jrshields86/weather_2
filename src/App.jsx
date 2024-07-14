@@ -113,13 +113,13 @@ function App() {
         <TodaysForecast forecast={forecast} windDirection={windDirection} />
       </div>
       <div>
+        {forecast && <Forecast  forecast={forecast} windDirection={windDirection} />}
+      </div>
+      <div>
         <SunriseSunset forecast={forecast} />
       </div>
       <div>
         <MoonriseMoonset forecast={forecast} />
-      </div>
-      <div>
-        {forecast && <Forecast  forecast={forecast} windDirection={windDirection} />}
       </div>
     </div>
   )
