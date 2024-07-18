@@ -564,7 +564,7 @@ body.activeModal {
   border: 2px solid black;
   border-radius: 10px;
   background-color: rgb(0, 180, 216);
-  margin: 0px auto 0px auto;
+  margin: 16px auto 0px auto;
 }
 
 .hourlyBox {
@@ -622,4 +622,8 @@ body.activeModal {
 .todaysForecastRaindropIcon {
   width: 40px;
   height: 40px;
+}
+
+.alertLineItemList {
+    list-style-type: none;
 }

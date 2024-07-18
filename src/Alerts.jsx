@@ -5,6 +5,7 @@ import './App.css'
 
 
 const Alerts = ({forecast}) => {
+    console.log(forecast);
     if (!forecast.alerts) {
         return null;
     };
@@ -49,7 +50,7 @@ const Alerts = ({forecast}) => {
             {
                 alertEventArr.map((event, idx) => {
                     return(
-                        <li key={idx}>
+                        <li className='alertLineItemList' key={idx}>
                             <button className="buttonModal" onClick={toggleModal}>{event}</button>
                         </li>
                     )

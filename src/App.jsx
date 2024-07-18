@@ -103,9 +103,9 @@ function App() {
       <div>
         {current && <CurrentWeather forecast={forecast} current={current} windDirection={windDirection} />}
       </div>  
-      <div>
+      {/* <div>
         <Alerts forecast={forecast} />
-      </div>
+      </div> */}
       <div>
         <Hourly forecast={forecast} />
       </div>
