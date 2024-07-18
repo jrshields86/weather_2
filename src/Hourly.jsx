@@ -7,7 +7,6 @@ const Hourly = ({forecast}) => {
         return null;
     }
     const formattedHourly = (forecast.hourly).slice(0, 24);
-    console.log(formattedHourly);
 
     return (
         <div className="hourlyContainer">
@@ -18,7 +17,6 @@ const Hourly = ({forecast}) => {
                 {
                     formattedHourly.map((item, idx) => {
                         const hour = new Date(item.dt * 1000).getHours();
-                        console.log(hour);
                         const index = idx;
                         const hourDisplay = (hour, index) => {
                             if (hour > 12) {

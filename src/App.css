@@ -11,7 +11,7 @@
   max-width: 800px;
   display: flex;
   justify-content: center;
-  margin: 20px auto 0px auto;
+  margin: 16px auto 0px auto;
 }
 
 .locationDisplayContainer p {
@@ -153,7 +153,7 @@ font-weight: 600;
   border: 2px solid black;
   padding: 1rem;
   gap: 1rem;
-  margin: 20px auto 20px auto;
+  margin: 0px auto 16px auto;
   border-radius: 10px;
   background-color: rgb(0, 180, 216);
   justify-content: space-around;
@@ -204,7 +204,7 @@ font-weight: 600;
   padding: 1.25rem;
   border: 2px solid black;
   border-radius: 10px;
-  margin: 0px auto 20px auto;
+  margin: 0px auto 16px auto;
   background-color: rgb(0, 180, 216);
   box-shadow: 10px -2px 20px 2px rgb(0 0 0 / 30%);
   color: black;
@@ -240,7 +240,7 @@ font-weight: 600;
   padding: 1.25rem;
   border: 2px solid black;
   border-radius: 10px;
-  margin: 20px auto 20px auto;
+  margin: 0px auto 16px auto;
   background-color: rgb(0, 180, 216);
   box-shadow: 10px -2px 20px 2px rgb(0 0 0 / 30%);
   color: black;
@@ -296,7 +296,7 @@ font-weight: 600;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  margin: 20px auto 20px auto;
+  margin: 16px auto 16px auto;
   background-color: rgb(0, 180, 216);
   border: 2px solid black;
   width: 98%;
@@ -564,7 +564,7 @@ body.activeModal {
   border: 2px solid black;
   border-radius: 10px;
   background-color: rgb(0, 180, 216);
-  margin: 20px auto 0px auto;
+  margin: 0px auto 0px auto;
 }
 
 .hourlyBox {
@@ -616,7 +616,7 @@ body.activeModal {
   background-color: rgb(0, 180, 216);
   border: 2px solid black;
   border-radius: 10px;
-  margin: 0px auto 20px auto;
+  margin: 16px auto 16px auto;
 }
 
 .todaysForecastRaindropIcon {

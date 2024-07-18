@@ -1,6 +1,7 @@
 import './App.css';
 
 const CurrentWeather = ({current, windDirection}) => {
+    console.log(current.clouds);
     const iconData = current.weather;
 
     if (!iconData){
@@ -35,6 +36,10 @@ const CurrentWeather = ({current, windDirection}) => {
                                 <div>
                                     <p className='detailTitle'>Wind</p>
                                     <p className='detailValue'>{windDirection(current.wind_deg)} {Math.round(current.wind_speed)} mph</p>
+                                </div>
+                                <div>
+                                    <p className='detailTitle'>Clouds</p>
+                                    <p className='detailValue'>{current.clouds} %</p>
                                 </div>
                                 {/* <div>
                                     <p className='detailTitle'>Humidity </p>
