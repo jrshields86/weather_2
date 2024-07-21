@@ -8,7 +8,7 @@
 }
 
 .locationDisplayContainer {
-  max-width: 800px;
+  max-width: 550px;
   display: flex;
   justify-content: center;
   margin: 16px auto 0px auto;
@@ -29,7 +29,7 @@
   display: flex;
   flex-direction: column;
   width: 98%;
-  max-width: 800px;
+  max-width: 550px;
   margin: 0px auto 0px auto;
   border: 2px solid black;
   border-radius: 10px;
@@ -149,7 +149,7 @@ font-weight: 600;
   display: flex;
   flex-wrap: wrap;
   width: 98%;
-  max-width: 800px;
+  max-width: 550px;
   border: 2px solid black;
   padding: 1rem;
   gap: 1rem;
@@ -198,7 +198,7 @@ font-weight: 600;
 
 .sunriseSunsetContainer {
   width: 98%;
-  max-width: 800px;
+  max-width: 550px;
   display: flex;
   flex-direction: column;
   padding: 1.25rem;
@@ -233,7 +233,7 @@ font-weight: 600;
 
 .moonriseMoonsetContainer {
   width: 98%;
-  max-width: 800px;
+  max-width: 550px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -300,7 +300,7 @@ font-weight: 600;
   background-color: rgb(0, 180, 216);
   border: 2px solid black;
   width: 98%;
-  max-width: 800px;
+  max-width: 550px;
   border-radius: 10px;
   text-align: center;
 }
@@ -560,7 +560,7 @@ body.activeModal {
 
 .hourlyContainer {
   width: 98%;
-  max-width: 800px;
+  max-width: 550px;
   border: 2px solid black;
   border-radius: 10px;
   background-color: rgb(0, 180, 216);
@@ -608,7 +608,7 @@ body.activeModal {
 
 .appHeader {
   width: 90%;
-  max-width: 800px;
+  max-width: 550px;
   font-size: 1.5rem;
   font-weight: bolder;
   padding: 0.5rem;
