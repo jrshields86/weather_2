@@ -39,7 +39,7 @@ const CurrentWeather = ({current, windDirection}) => {
                                 </div>
                                 <div>
                                     <p className='detailTitle'>Clouds</p>
-                                    <p className='detailValue'>{current.clouds} %</p>
+                                    <p className='detailValue'>{current.clouds}%</p>
                                 </div>
                                 {/* <div>
                                     <p className='detailTitle'>Humidity </p>
