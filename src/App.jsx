@@ -118,9 +118,9 @@ function App() {
       <div>
         <SunriseSunset forecast={forecast} />
       </div>
-      <div>
+      {/* <div>
         <MoonriseMoonset forecast={forecast} />
-      </div>
+      </div> */}
     </div>
   )
 }

@@ -1,4 +1,5 @@
 import './App.css'
+import MoonriseMoonset from './MoonriseMoonset';
 
 const SunriseSunset = ({forecast}) => {
     if(!forecast.current){
@@ -46,7 +47,46 @@ const SunriseSunset = ({forecast}) => {
     return (
         <>  
             <div className="sunriseSunsetContainer">
-                <div id='top'>
+                <div>
+                    <div className="moonriseMoonsetContainer">
+                    <div id='top'>
+                        <div id='moonriseText'>
+                            Sunrise
+                        </div>
+                    </div>
+                    <div id='moonPhaseMiddle'>
+                        <div id='moonPhaseIcon'>
+                            <img alt='sunrise icon' className='sunriseIcon' src={`icons/Sunrise_icon.png`}/>
+                        </div>
+                    </div>
+                    <div id='bottom'>
+                        <div id="moonrise">
+                            {sunriseHours}:{correctSunriseMin()} a.m.
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                    <div className="moonriseMoonsetContainer">
+                    <div id='top'>
+                        <div id='moonriseText'>
+                            Sunset
+                        </div>
+                    </div>
+                    <div id='moonPhaseMiddle'>
+                        <div id='moonPhaseIcon'>
+                            <img alt='sunset icon' className='sunsetIcon' src={`icons/Sunset_icon.png`}/>
+                        </div>
+                    </div>
+                    <div id='bottom'>
+                        <div id="moonrise">
+                            {correctSunsetHour()}:{correctSunsetMin()} p.m.
+                        </div>
+                    </div>
+                </div>
+                <div id='sunriseSunsetChild 3'>
+                    <MoonriseMoonset  forecast={forecast} />
+                </div>
+                {/* <div id='top'>
                     <div id='sunriseText'>
                         Sunrise
                     </div>
@@ -69,7 +109,7 @@ const SunriseSunset = ({forecast}) => {
                     <div>
                         <img alt='sunset icon' className='sunsetIcon' src={`icons/Sunset_icon.png`}/>
                     </div>
-                </div>
+                </div> */}
             </div>
         </>
     );
