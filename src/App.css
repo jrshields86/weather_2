@@ -199,8 +199,8 @@ font-weight: 600;
 .sunriseSunsetContainer {
   width: 80%;
   display: flex;
-  flex-wrap: wrap;
   justify-content: space-around;
+  flex-wrap: wrap;
   padding: 1.25rem;
   border: 2px solid black;
   border-radius: 10px;
