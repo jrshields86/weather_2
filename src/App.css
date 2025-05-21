@@ -49,6 +49,23 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  flex-basis: 1;
+}
+
+.top-left {
+  flex-basis: 1;
+}
+
+#currentWeatherLeft {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+#currentWeatherRight {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
 }
 
 .sunMoonContainer {
@@ -259,6 +276,7 @@ font-weight: 600;
 #top, #middle, #bottom {
   display: flex;
   justify-content: space-around;
+  text-align: center;
 }
 
 #moonPhaseMiddle {
@@ -636,4 +654,11 @@ body.activeModal {
 
 .alertLineItemList {
     list-style-type: none;
+}
+
+@media (max-width: 370px) {
+  #currentWeatherLeft {
+    flex-direction: column;
+    align-items: center;
+  }
 }
