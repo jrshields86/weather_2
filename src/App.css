@@ -9,13 +9,14 @@
 
 .locationDisplayContainer {
   width: 80%;
+  max-width: 1400px;
   display: flex;
   justify-content: center;
   margin: 16px auto 0px auto;
 }
 
 .locationDisplayContainer p {
-  width: 98%;
+  min-width: 300px;
   border: 2px solid black;
   border-radius: 10px;
   font-weight: bolder;
@@ -29,6 +30,7 @@
   display: flex;
   flex-direction: column;
   width: 80%;
+  max-width: 1400px;
   margin: 0px auto 0px auto;
   border: 2px solid black;
   border-radius: 10px;
@@ -79,7 +81,7 @@
 .leftAndRightContainer {
   display: flex;
   justify-content: space-evenly;
-
+  align-items: center;
 }
 
 .bottom {
@@ -559,6 +561,7 @@ body.activeModal {
 
 .hourlyContainer {
   width: 80%;
+  max-width: 1400px;
   border: 2px solid black;
   border-radius: 10px;
   background-color: rgb(0, 180, 216);
@@ -568,9 +571,11 @@ body.activeModal {
 
 .hourlyBox {
   display: flex;
+  justify-content: center;
   overflow-x: auto; 
   white-space: nowrap;
   padding-bottom: 1rem;
+  gap: .25rem;
 }
 
 .hourlyChild {
@@ -578,6 +583,7 @@ body.activeModal {
   flex-direction: column;
   align-items: center;
   border: 1px solid black;
+  border-radius: 5px;;
 }
 
 .currentWeatherHeader {
@@ -607,6 +613,7 @@ body.activeModal {
 
 .appHeader {
   width: 80%;
+  max-width: 1400px;
   font-size: 1.5rem;
   font-weight: bolder;
   padding: 0.5rem;
