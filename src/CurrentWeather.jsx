@@ -18,24 +18,29 @@ const CurrentWeather = ({current, windDirection}) => {
                     Current Weather
                 </div>
                 <div className='leftAndRightContainer'>
-                        <div className='top-left'>
-                            <p className='temp'>{Math.round(current.temp)}°F</p>
-                            <p className='feelsLike'>Feels Like: {Math.round(current.feels_like)}°F</p>
-                        </div>    
-                        <div className='top-right'>
-                            <img alt='weather icon' className='currentWeatherIcon' src={`icons/${icon}.png`}/>
-                            <div className='descriptionContainer'>
-                                <p className='description'>{description}</p>
+
+                        <div>
+                            <div className='top-left'>
+                                <p className='temp'>{Math.round(current.temp)}°F</p>
+                                <p className='feelsLike'>Feels Like: {Math.round(current.feels_like)}°F</p>
+                            </div>    
+                            <div className='top-right'>
+                                <img alt='weather icon' className='currentWeatherIcon' src={`icons/${icon}.png`}/>
+                                <div className='descriptionContainer'>
+                                    <p className='description'>{description}</p>
+                                </div>
                             </div>
                         </div>
-                        
-                        <div id='currentWeatherWind'>
-                            <p className='detailTitle'>Wind</p>
-                            <p className='detailValue'>{windDirection(current.wind_deg)} {Math.round(current.wind_speed)} mph</p>
-                        </div>
-                        <div id='currentWeatherClouds'>
-                            <p className='detailTitle'>Clouds</p>
-                            <p className='detailValue'>{current.clouds}%</p>
+
+                        <div>
+                            <div id='currentWeatherWind'>
+                                <p className='detailTitle'>Wind</p>
+                                <p className='detailValue'>{windDirection(current.wind_deg)} {Math.round(current.wind_speed)} mph</p>
+                            </div>
+                            <div id='currentWeatherClouds'>
+                                <p className='detailTitle'>Clouds</p>
+                                <p className='detailValue'>{current.clouds}%</p>
+                            </div>
                         </div>
 
                         {/* <div>
