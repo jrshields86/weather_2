@@ -80,6 +80,7 @@
 
 .leftAndRightContainer {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-evenly;
   align-items: center;
 }
@@ -151,6 +152,7 @@ font-weight: 600;
   display: flex;
   flex-wrap: wrap;
   width: 80%;
+  max-width: 1400px;
   border: 2px solid black;
   padding: 1rem;
   gap: 1rem;
@@ -200,6 +202,7 @@ font-weight: 600;
 
 .sunriseSunsetContainer {
   width: 80%;
+  max-width: 1400px;
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
@@ -300,6 +303,7 @@ font-weight: 600;
   background-color: rgb(0, 180, 216);
   border: 2px solid black;
   width: 80%;
+  max-width: 1400px;
   border-radius: 10px;
   text-align: center;
   box-shadow: 10px -2px 20px 2px rgb(0 0 0 / 30%);
