@@ -41,7 +41,7 @@ const TodaysForecast = ({forecast, windDirection}) => {
     return (
         <div className='app'>
             <div className="todaysForecastContainer">
-                <div className='todaysForecastHeader'>
+                <div className='section-header'>
                     Today's Forecast
                 </div>
                 <div className='todaysForecastDayIconSummaryContainer'>
