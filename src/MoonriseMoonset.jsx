@@ -50,7 +50,7 @@ const MoonriseMoonset = ({forecast}) => {
 
     return (
         <>  
-            <div className="moonriseMoonsetContainer">
+            <div className="container">
                 <div id='top'>
                     <div id='moonriseText'>
                         Moon Phase
