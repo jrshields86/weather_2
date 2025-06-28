@@ -98,7 +98,7 @@ function App() {
         </div>
       </div>
       <div className='container'>
-          <p>{current.city ? current.city : 'Your Location'}</p>
+          <p className='section-header'>{current.city ? current.city : 'Your Location'}</p>
       </div>
       <div>
         {current && <CurrentWeather forecast={forecast} current={current} windDirection={windDirection} />}

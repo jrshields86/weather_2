@@ -17,7 +17,7 @@ const CurrentWeather = ({current, windDirection}) => {
                 <div className='section-header'>
                     Current Weather
                 </div>
-                <div className='container'>
+                <div className='leftAndRightContainer'>
 
                         <div id='currentWeatherRight'>
                             <div className='top-left'>
@@ -26,7 +26,7 @@ const CurrentWeather = ({current, windDirection}) => {
                             </div>    
                             <div className='top-right'>
                                 <img alt='weather icon' className='currentWeatherIcon' src={`icons/${icon}.png`}/>
-                                <div className='container'>
+                                <div className='descriptionContainer'>
                                     <p className='description'>{description}</p>
                                 </div>
                             </div>
