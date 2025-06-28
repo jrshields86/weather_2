@@ -44,21 +44,21 @@ const TodaysForecast = ({forecast, windDirection}) => {
                 <div className='section-header'>
                     Today's Forecast
                 </div>
-                <div className='container'>
-                    <div className='container'>
+                <div className='todaysForecastDayIconSummaryContainer'>
+                    <div className='todayForecastDateDayContainer'>
                         <div className='todaysForecastDate'>
                             {date}
                         </div>
                     </div>
-                    <div className='container'>
+                    <div className='todaysForecastIconContainer'>
                         <img alt='weather icon' className='todaysForecastIcon' src={`icons/${todayIcon}.png`}/>
                     </div>
-                    <div className='container'>
+                    <div className='todaysForecastSummaryContainer'>
                         <p className='todaysForecastSummary'>{todaySummary}</p>
                     </div>           
                 </div>
-                <div className='container'>
-                    <div className='container'>
+                <div className='todaysForecastTopContainer'>
+                    <div className='todaysForecastWindPopContainer'>
                         <div className='todaysForecastWind'>
                             <p className='detailTitle'>Wind:</p>
                             <p className='detailValue'>{todayDirection} {Math.round(todayData.wind_speed)} mph</p>
@@ -69,7 +69,7 @@ const TodaysForecast = ({forecast, windDirection}) => {
                         </div>
                     </div>
                 </div>
-                <div className='container'>
+                <div className='todaysForecastHumidityPressureContainer'>
                     <div className='todaysForecastHumidity'>
                         <p className='detailTitle'>Humidity:</p>
                         <p className='detailValue'>{todayData.humidity} %</p>
