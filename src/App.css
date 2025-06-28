@@ -2,10 +2,16 @@
   box-sizing: border-box;
 }
 
-.appContainer {
-  display: flex;
-  flex-direction: column;
+body {
+  font-family: 'Inter', sans-serif;
 }
+
+.appContainer {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
 
 .locationDisplayContainer {
   width: 80%;
@@ -655,9 +661,24 @@ body.activeModal {
     list-style-type: none;
 }
 
+button {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+button:hover {
+  background-color: #2980b9;
+}
+
 @media (max-width: 370px) {
   #currentWeatherLeft {
     flex-direction: column;
     align-items: center;
   }
 }
+
