@@ -14,8 +14,17 @@ body {
   align-items: center;
 }
 
-
-
+.section-header {
+  width: 98%;
+  border: 2px solid black;
+  border-radius: 10px;
+  font-weight: bolder;
+  font-size: 1.5rem;
+  padding: 5px;
+  background-color: rgb(0, 180, 216);
+  text-align: center;
+  margin: 0 auto 1rem auto;
+}
 
 .locationDisplayContainer {
   width: 80%;
@@ -542,11 +551,6 @@ body.activeModal {
   font-weight: 900;
 }
 
-.currentConditionsHeader {
-  display: flex;
-  justify-content: center;
-}
-
 .currentConditionsHeader p {
   width: 98%;
   border: 2px solid black;
@@ -558,28 +562,7 @@ body.activeModal {
   text-align: center;
 }
 
-.todaysForecastHeader {
-  display: flex;
-  justify-content: center;
-}
-
 .todaysForecastHeader p {
-  width: 98%;
-  border: 2px solid black;
-  border-radius: 10px;
-  font-weight: bolder;
-  font-size: 1.5rem;
-  padding: 5px;
-  background-color: rgb(0, 180, 216);
-  text-align: center;
-}
-
-.forecastHeader {
-  display: flex;
-  justify-content: center;
-}
-
-.forecastHeader p {
   width: 98%;
   border: 2px solid black;
   border-radius: 10px;
@@ -615,45 +598,6 @@ body.activeModal {
   align-items: center;
   border: 1px solid black;
   border-radius: 5px;;
-}
-
-.currentWeatherHeader {
-  font-size: 1.5rem;
-  font-weight: bolder;
-  padding: .5rem;
-}
-
-.todaysForecastHeader {
-  font-size: 1.5rem;
-  font-weight: bolder;
-  padding: 0.5rem;
-}
-
-.forecastHeader {
-  font-size: 1.5rem;
-  font-weight: bolder;
-  padding: 0.5rem;
-}
-
-.hourlyHeader {
-  font-size: 1.5rem;
-  font-weight: bolder;
-  padding: 0.5rem;
-  text-align: center;
-}
-
-.appHeader {
-  width: 80%;
-  max-width: 1400px;
-  font-size: 1.5rem;
-  font-weight: bolder;
-  padding: 0.5rem;
-  text-align: center;
-  background-color: rgb(0, 180, 216);
-  border: 2px solid black;
-  border-radius: 10px;
-  margin: 16px auto 16px auto;
-  box-shadow: 10px -2px 20px 2px rgb(0 0 0 / 30%);
 }
 
 .todaysForecastRaindropIcon {

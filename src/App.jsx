@@ -89,7 +89,7 @@ function App() {
 
   return (
     <div className='appContainer'>
-      <div className='appHeader'>
+      <div className='section-header'>
         Joe's Weather Service
       </div>
       <div className='searchAndLocationContainer'>

@@ -10,7 +10,7 @@ const Hourly = ({forecast}) => {
 
     return (
         <div className="hourlyContainer">
-            <div className="hourlyHeader">
+            <div className="section-header">
                 Hourly
             </div>
             <div className="hourlyBox">

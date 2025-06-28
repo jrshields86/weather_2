@@ -14,7 +14,7 @@ const CurrentWeather = ({current, windDirection}) => {
     return (
         <div className='app'>
             <div className='weatherContainer'>
-                <div className='currentWeatherHeader'>
+                <div className='section-header'>
                     Current Weather
                 </div>
                 <div className='leftAndRightContainer'>
