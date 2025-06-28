@@ -88,16 +88,16 @@ function App() {
   };
 
   return (
-    <div className='appContainer'>
+    <div className='container'>
       <div className='section-header'>
         Joe's Weather Service
       </div>
-      <div className='searchAndLocationContainer'>
+      <div className='container'>
         <div className='searchBox'>
           <Search onSearchChange={handleOnSearchChange} />
         </div>
       </div>
-      <div className='locationDisplayContainer'>
+      <div className='container'>
           <p>{current.city ? current.city : 'Your Location'}</p>
       </div>
       <div>

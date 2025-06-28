@@ -13,11 +13,11 @@ const CurrentWeather = ({current, windDirection}) => {
 
     return (
         <div className='app'>
-            <div className='weatherContainer'>
+            <div className='container'>
                 <div className='section-header'>
                     Current Weather
                 </div>
-                <div className='leftAndRightContainer'>
+                <div className='container'>
 
                         <div id='currentWeatherRight'>
                             <div className='top-left'>
@@ -26,7 +26,7 @@ const CurrentWeather = ({current, windDirection}) => {
                             </div>    
                             <div className='top-right'>
                                 <img alt='weather icon' className='currentWeatherIcon' src={`icons/${icon}.png`}/>
-                                <div className='descriptionContainer'>
+                                <div className='container'>
                                     <p className='description'>{description}</p>
                                 </div>
                             </div>
