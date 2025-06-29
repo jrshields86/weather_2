@@ -9,8 +9,8 @@ const Hourly = ({forecast}) => {
     const formattedHourly = (forecast.hourly).slice(0, 24);
 
     return (
-        <div className="container">
-            <div className="section-header">
+        <div className="hourlyContainer">
+            <div className="hourlyHeader">
                 Hourly
             </div>
             <div className="hourlyBox">

@@ -19,8 +19,8 @@ const Forecast = ({forecast, windDirection}) => {
     
     
     return (
-        <div className='container'>
-            <div className='section-header'>
+        <div className='forecastContainer'>
+            <div className='forecastHeader'>
                 7 Day Forecast
             </div>
             <Accordion className='accordion'>

@@ -40,8 +40,8 @@ const TodaysForecast = ({forecast, windDirection}) => {
 
     return (
         <div className='app'>
-            <div className="container">
-                <div className='section-header'>
+            <div className="todaysForecastContainer">
+                <div className='todaysForecastHeader'>
                     Today's Forecast
                 </div>
                 <div className='todaysForecastDayIconSummaryContainer'>

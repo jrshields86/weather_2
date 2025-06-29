@@ -46,7 +46,7 @@ const SunriseSunset = ({forecast}) => {
     
     return (
         <>  
-            <div className="container">
+            <div className="sunriseSunsetContainer">
                 <div id='sunriseSunsetChild 1'>
                     <div className="moonriseMoonsetContainer">
                     <div id='top'>
