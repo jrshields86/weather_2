@@ -67,8 +67,6 @@ body {
   align-items: center;
 }
 
-
-
 #currentWeatherLeft {
   display: flex;
   justify-content: space-around;
