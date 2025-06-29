@@ -12,11 +12,10 @@ font-family: 'Montserrat', sans-serif;
   color: var(--color-text);}
 
 .appContainer {
-  padding: var(--space-md);
-  margin: 0 auto;
   max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
 }
-
 
 .locationDisplayContainer {
   width: 80%;
@@ -48,6 +47,16 @@ font-family: 'Montserrat', sans-serif;
   background-color: rgb(0, 180, 216);
   text-align: center;
   box-shadow: 10px -2px 20px 2px rgb(0 0 0 / 30%);
+}
+
+/* Make all major panels fluid */
+.weatherContainer,
+.forecastContainer,
+.hourlyContainer {
+  width: 100%;
+  max-width: 1400px;
+  margin: 1rem auto;     /* consistent vertical spacing */
+  padding: 1rem;
 }
 
 .currentWeatherIcon {
@@ -680,10 +689,23 @@ button:hover {
   background-color: #2980b9;
 }
 
-@media (max-width: 370px) {
-  #currentWeatherLeft {
+/* At narrow widths, stack flex children vertically */
+ @media (max-width: 576px) {
+  /* Stack any two‐column layouts */
+  #currentWeatherLeft,
+  #currentWeatherRight,
+  .topContainer,
+  .bottomLowerContainer,
+  .forecastRight {
     flex-direction: column;
     align-items: center;
   }
-}
 
+  /* Tweak padding for small screens */
+  .appContainer,
+  .weatherContainer,
+  .forecastContainer,
+  .hourlyContainer {
+    padding: 0.5rem;
+  }
+ }
