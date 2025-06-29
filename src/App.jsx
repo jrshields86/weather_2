@@ -88,17 +88,17 @@ function App() {
   };
 
   return (
-    <div className='container'>
-      <div className='section-header'>
+    <div className='appContainer'>
+      <div className='appHeader'>
         Joe's Weather Service
       </div>
-      <div className='container'>
+      <div className='searchAndLocationContainer'>
         <div className='searchBox'>
           <Search onSearchChange={handleOnSearchChange} />
         </div>
       </div>
-      <div className='container'>
-          <p className='section-header'>{current.city ? current.city : 'Your Location'}</p>
+      <div className='locationDisplayContainer'>
+          <p>{current.city ? current.city : 'Your Location'}</p>
       </div>
       <div>
         {current && <CurrentWeather forecast={forecast} current={current} windDirection={windDirection} />}
