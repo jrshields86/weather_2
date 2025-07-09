@@ -8,9 +8,9 @@ body {
 
 .appContainer {
   width: 100%;
-  max-width: 600px;      /* desktop cap */
+  max-width: 480px;      /* desktop cap */
   margin: 0 auto;
-  padding: 1rem;         /* use rem for consistency */
+  padding: 0 1rem;         /* use rem for consistency */
 }
 
 .locationDisplayContainer {
