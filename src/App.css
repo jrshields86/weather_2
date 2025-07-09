@@ -1,16 +1,22 @@
+@import './styles/design-system.css';
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
+
+
 * {
   box-sizing: border-box;
 }
 
 body {
-  font-family: 'Inter', sans-serif;
-}
+font-family: 'Montserrat', sans-serif;
+  background: var(--color-bg);
+  color: var(--color-text);}
 
 .appContainer {
   width: 100%;
   max-width: 480px;      /* desktop cap */
   margin: 0 auto;
   padding: 0 1rem;         /* use rem for consistency */
+
 }
 
 .locationDisplayContainer {
