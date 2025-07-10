@@ -21,15 +21,28 @@ function App() {
   const API_KEY = import.meta.env.VITE_WEATHER_API_KEY;
 
   useEffect(() => {
-      locationData(userLat, userLon);
-  }, [userLat, userLon]);
-  
-  function userLocation(){
     if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(success);  
+      navigator.geolocation.getCurrentPosition(({ coords }) => {
+        setUserLat(coords.latitude.toFixed(2));
+        setUserLon(coords.longitude.toFixed(2));
+      });
     }
-  };
-  userLocation();
+  }, []);
+  
+  useEffect(() => {
+    if (userLat != null && userLon != null) {
+      axios
+        .get(`https://api.openweathermap.org/data/3.0/onecall?
+          lat=${userLat}&lon=${userLon}
+          &appid=${API_KEY}
+          &units=imperial`)
+        .then(res => {
+          setCurrent(res.data.current);
+          setForecast(res.data);
+        })
+        .catch(console.error);
+    }
+  }, [userLat, userLon]);
 
   function success(pos) {
     const crd = pos.coords;
@@ -40,7 +53,7 @@ function App() {
   };
   
   const locationData = async(lat, lon) => {
-    const userLogOnResponse = axios.get(`https://api.openweathermap.org/data/3.0/onecall?lat=${lat}&lon=${lon}&exclude={part}&appid=${API_KEY}&units=imperial`);
+    const userLogOnResponse = axios.get(`https://api.openweathermap.org/data/3.0/onecall?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=imperial`);
   
     Promise.all([userLogOnResponse])
     .then(async (response) => {
@@ -54,7 +67,7 @@ function App() {
   
   const handleOnSearchChange = (searchData) => {
     const [lat, lon] = searchData.value.split(' ');
-    const currentWeatherFetch = axios.get(`https://api.openweathermap.org/data/3.0/onecall?lat=${lat}&lon=${lon}&exclude={part}&appid=${API_KEY}&units=imperial`);
+    const currentWeatherFetch = axios.get(`https://api.openweathermap.org/data/3.0/onecall?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=imperial`);
     
     Promise.all([currentWeatherFetch])
       .then(async (response) => {
