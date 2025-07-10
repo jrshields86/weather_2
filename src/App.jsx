@@ -11,38 +11,14 @@ import TodaysForecast from './TodaysForecast.jsx';
 import Alerts from './Alerts.jsx';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Hourly from './Hourly.jsx';
+import GeoLocator from './GeoLocator.jsx';
 
 
 function App() {
   const [current, setCurrent] = useState({});
   const [forecast, setForecast] = useState([]);
-  const [userLat, setUserLat] = useState(null);
-  const [userLon, setUserLon] = useState(null);
+  const [geoError, setGeoError] = useState('');
   const API_KEY = import.meta.env.VITE_WEATHER_API_KEY;
-
-  useEffect(() => {
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(({ coords }) => {
-        setUserLat(coords.latitude.toFixed(2));
-        setUserLon(coords.longitude.toFixed(2));
-      });
-    }
-  }, []);
-  
-  useEffect(() => {
-    if (userLat != null && userLon != null) {
-      axios
-        .get(`https://api.openweathermap.org/data/3.0/onecall?
-          lat=${userLat}&lon=${userLon}
-          &appid=${API_KEY}
-          &units=imperial`)
-        .then(res => {
-          setCurrent(res.data.current);
-          setForecast(res.data);
-        })
-        .catch(console.error);
-    }
-  }, [userLat, userLon]);
 
   function success(pos) {
     const crd = pos.coords;
@@ -52,18 +28,13 @@ function App() {
     setUserLon(lon);
   };
   
-  const locationData = async(lat, lon) => {
-    const userLogOnResponse = axios.get(`https://api.openweathermap.org/data/3.0/onecall?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=imperial`);
-  
-    Promise.all([userLogOnResponse])
-    .then(async (response) => {
-      const instantUserResponseCurrent = await response[0].data.current;
-      const instantUserResponse = await response[0].data;
-      setCurrent({...instantUserResponseCurrent});
-      setForecast({...instantUserResponse});
-    })
-    .catch((err) => console.log(err));
-  };
+ const locationData = async (lat, lon) => {
+  const resp = await axios.get(
+    `https://api.openweathermap.org/data/3.0/onecall?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=imperial`
+  );
+  setCurrent(resp.data.current);
+  setForecast(resp.data);
+};
   
   const handleOnSearchChange = (searchData) => {
     const [lat, lon] = searchData.value.split(' ');
@@ -106,6 +77,16 @@ function App() {
         Joe's Weather Service
       </div>
       <div className='searchAndLocationContainer'>
+        <section className='geoButton'>
+          <GeoLocator
+            onLocate={(lat, lon) => {
+              setGeoError('');      // clear any previous error
+              locationData(lat, lon);
+          }}
+          />
+          {geoError && <p style={{ color: 'red' }}>Error: {geoError}</p>}
+        </section>
+
         <div className='searchBox'>
           <Search onSearchChange={handleOnSearchChange} />
         </div>

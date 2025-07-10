@@ -6,7 +6,7 @@ export default function GeoLocator({ onLocate }) {
 
   const handleClick = () => {
     if (!navigator.geolocation) {
-      setError('Geolocation not supported in this browser.');
+      setError('Geolocation not supported.');
       return;
     }
     setLoading(true);
@@ -18,14 +18,9 @@ export default function GeoLocator({ onLocate }) {
       },
       (err) => {
         setLoading(false);
-        // e.g. “User denied geolocation” or “timeout”
         setError(err.message || 'Unable to get your location.');
       },
-      {
-        enableHighAccuracy: true,
-        timeout: 10_000,       // 10s timeout
-        maximumAge: 60_000,    // allow 1m-old cached position
-      }
+      { enableHighAccuracy: true, timeout: 10000, maximumAge: 60000 }
     );
   };
 
