@@ -1,4 +1,4 @@
-import './App.css'
+import '../App.css'
 
 const TodaysForecast = ({forecast, windDirection}) => {
     if (!forecast.daily) {
