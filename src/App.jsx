@@ -1,17 +1,17 @@
 import { useState, useEffect } from 'react'
 import axios from 'axios';
 import './App.css'
-import CurrentWeather from './CurrentWeather';
-import Search from './Search';
-import Forecast from './Forecast.jsx';
-import SunriseSunset from './SunriseSunset.jsx';
-import MoonriseMoonset from './MoonriseMoonset.jsx';
-import { api } from './api.jsx';
-import TodaysForecast from './TodaysForecast.jsx';
-import Alerts from './Alerts.jsx';
+import CurrentWeather from './components/CurrentWeather';
+import Search from './components/Search';
+import Forecast from './components/Forecast.jsx';
+import SunriseSunset from './components/SunriseSunset.jsx';
+import MoonriseMoonset from './components/MoonriseMoonset.jsx';
+import { api } from './api.js';
+import TodaysForecast from './components/TodaysForecast.jsx';
+import Alerts from './components/Alerts.jsx';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Hourly from './Hourly.jsx';
-import GeoLocator from './GeoLocator.jsx';
+import Hourly from './components/Hourly.jsx';
+import GeoLocator from './components/GeoLocator.jsx';
 
 
 function App() {
