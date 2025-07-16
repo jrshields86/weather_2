@@ -688,27 +688,6 @@ button:hover {
   background-color: #2980b9;
 }
 
-/* At narrow widths, stack flex children vertically */
- @media (max-width: 576px) {
-  /* Stack any two‐column layouts */
-  #currentWeatherLeft,
-  #currentWeatherRight,
-  .topContainer,
-  .bottomLowerContainer,
-  .forecastRight {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  /* Tweak padding for small screens */
-  .appContainer,
-  .weatherContainer,
-  .forecastContainer,
-  .hourlyContainer {
-    padding: 0.5rem;
-  }
- }
-
  @media (max-width: 576px) {
   /* Constrain the overall wrapper */
   .appContainer {

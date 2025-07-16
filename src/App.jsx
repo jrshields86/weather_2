@@ -18,23 +18,41 @@ function App() {
   const [current, setCurrent] = useState({});
   const [forecast, setForecast] = useState([]);
   const [geoError, setGeoError] = useState('');
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState('');
   const API_KEY = import.meta.env.VITE_WEATHER_API_KEY;
 
-  function success(pos) {
-    const crd = pos.coords;
-    const lat = (crd.latitude).toFixed(2);
-    const lon = (crd.longitude).toFixed(2);
-    setUserLat(lat);
-    setUserLon(lon);
-  };
+  // function success(pos) {
+  //   const crd = pos.coords;
+  //   const lat = (crd.latitude).toFixed(2);
+  //   const lon = (crd.longitude).toFixed(2);
+  //   setUserLat(lat);
+  //   setUserLon(lon);
+  // };
   
  const locationData = async (lat, lon) => {
-  const resp = await axios.get(
+  setError('');    // clear previous errors
+  setLoading(true);    // show spinner
+
+  try {
+    const resp = await axios.get(
     `https://api.openweathermap.org/data/3.0/onecall?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=imperial`
   );
   setCurrent(resp.data.current);
   setForecast(resp.data);
+  } catch (err) {
+    console.error(err);
+    setError("Sorry, something went wrong. Please try again.")
+  } finally {
+    setLoading(false);
+  }
 };
+
+// useEffect(() => {
+//     if (coords.lat && coords.lon) {
+//       locationData(coords.lat, coords.lon);
+//     }
+//   }, [coords]);
   
   const handleOnSearchChange = (searchData) => {
     const [lat, lon] = searchData.value.split(' ');
