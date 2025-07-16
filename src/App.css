@@ -708,3 +708,33 @@ button:hover {
     padding: 0.5rem;
   }
  }
+
+ @media (max-width: 576px) {
+  /* Constrain the overall wrapper */
+  .appContainer {
+    max-width: 100%;      /* fill the screen */
+    padding: 0.5rem;      /* slightly tighter */
+  }
+
+  /* Force all inner panels to fit */
+  .weatherContainer,
+  .forecastContainer,
+  .hourlyContainer,
+  .searchAndLocationContainer,
+  .todaysForecastContainer,
+  .sunriseSunsetContainer,
+  .moonriseMoonsetContainer {
+    width: 100% !important;       /* fill the wrapper */
+    max-width: 100% !important;   /* override the 1,400px cap */
+  }
+
+  /* Any two-column flex layouts ➔ stack vertically */
+  #currentWeatherLeft,
+  #currentWeatherRight,
+  .topContainer,
+  .bottomLowerContainer,
+  .forecastRight {
+    flex-direction: column;
+    align-items: center;
+  }
+}

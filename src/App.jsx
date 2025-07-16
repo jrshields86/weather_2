@@ -73,9 +73,7 @@ function App() {
 
   return (
     <div className='appContainer'>
-      <div className='appHeader'>
-        Joe's Weather Service
-      </div>
+      <h1 className='appHeader'>Joe's Weather Service</h1>
       <div className='searchAndLocationContainer'>
         <section className='geoButton'>
           <GeoLocator
