@@ -688,6 +688,27 @@ button:hover {
   background-color: #2980b9;
 }
 
+.spinner {
+  width: 3rem;
+  height: 3rem;
+  border: 0.4rem solid rgba(0,0,0,0.1);
+  border-top-color: rgba(0,0,0,0.6);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 2rem auto;
+}
+
+.errorMsg {
+  color: #c00;
+  text-align: center;
+  margin: 1rem 0;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+
  @media (max-width: 576px) {
   /* Constrain the overall wrapper */
   .appContainer {
