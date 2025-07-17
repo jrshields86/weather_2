@@ -10,7 +10,7 @@ import { api } from './api.js';
 import TodaysForecast from './components/TodaysForecast.jsx';
 import Alerts from './components/Alerts.jsx';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Hourly from './components/Hourly.jsx';
+import Hourly from './components/Hourly';
 import GeoLocator from './components/GeoLocator.jsx';
 import LoadingSpinner from './components/LoadingSpinner.jsx';
 
@@ -22,14 +22,6 @@ function App() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
   const API_KEY = import.meta.env.VITE_WEATHER_API_KEY;
-
-  // function success(pos) {
-  //   const crd = pos.coords;
-  //   const lat = (crd.latitude).toFixed(2);
-  //   const lon = (crd.longitude).toFixed(2);
-  //   setUserLat(lat);
-  //   setUserLon(lon);
-  // };
   
  const locationData = async (lat, lon) => {
   setError('');    // clear previous errors

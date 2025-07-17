@@ -1,54 +1,41 @@
-import React from "react";
+import React from 'react';
 import '../App.css'
 
+export default function Hourly({ forecast }) {
+    const hourly = (forecast.hourly);
+  if (!Array.isArray(hourly) || hourly.length === 0) {
+    return null;
+  }
 
-const Hourly = ({forecast}) => {
-    if (!forecast.hourly) {
-        return null;
-    }
-    const formattedHourly = (forecast.hourly).slice(0, 24);
+  // 1. Figure out “now” in milliseconds
+  const nowMs = Date.now();
 
-    return (
-        <div className="hourlyContainer">
-            <div className="hourlyHeader">
-                Hourly
-            </div>
-            <div className="hourlyBox">
-                {
-                    formattedHourly.map((item, idx) => {
-                        const hour = new Date(item.dt * 1000).getHours();
-                        const index = idx;
-                        const hourDisplay = (hour, index) => {
-                            if (hour > 12) {
-                                return hour - 12;
-                            } else if (hour === 0) {
-                                return 12;
-                            } else {
-                                return hour;
-                            }
-                        };
+  // 2. Filter out any hours in the past
+  const upcoming = hourly.filter(h => h.dt * 1000 >= nowMs);
 
-                        const amPm = (hour) => {
-                            if (hour <= 11) {
-                                return 'am';
-                            } else {
-                                return 'pm'
-                            }
-                        }
-                        
-                        return (
-                            <div className="hourlyChild" key={item.dt}>
-                                <p>{hourDisplay(hour, index)}{amPm(hour)}</p>
-                                <img alt='weather icon' className='weatherIcon' src={`icons/${item.weather[0].icon}.png`}/>
-                                <p>{Math.round(item.temp)}°</p>
-                            </div>
-                        )
-                    })
-                }
-                
-            </div>
-        </div>
-    );
-};
+  // 3. Take exactly the next 12 entries
+  const display = upcoming.slice(0, 12);
 
-export default Hourly;
+  return (
+    <div className="hourlyContainer">
+      {display.map(h => {
+        const date = new Date(h.dt * 1000);
+        const timeLabel = date.toLocaleTimeString([], {
+          hour:   '2-digit',
+          minute: '2-digit'
+        });
+
+        return (
+          <div className="hourlyItem" key={h.dt}>
+            <div className="hourlyTime">{timeLabel}</div>
+            <img
+              src={`https://openweathermap.org/img/wn/${h.weather[0].icon}@2x.png`}
+              alt={h.weather[0].description}
+            />
+            <div className="hourlyTemp">{Math.round(h.temp)}°</div>
+          </div>
+        );
+      })}
+    </div>
+  );
+}
