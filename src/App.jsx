@@ -12,6 +12,7 @@ import Alerts from './components/Alerts.jsx';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Hourly from './components/Hourly.jsx';
 import GeoLocator from './components/GeoLocator.jsx';
+import LoadingSpinner from './components/LoadingSpinner.jsx';
 
 
 function App() {
@@ -38,21 +39,15 @@ function App() {
     const resp = await axios.get(
     `https://api.openweathermap.org/data/3.0/onecall?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=imperial`
   );
-  setCurrent(resp.data.current);
-  setForecast(resp.data);
+    setCurrent(resp.data.current);
+    setForecast(resp.data);
   } catch (err) {
     console.error(err);
     setError("Sorry, something went wrong. Please try again.")
   } finally {
     setLoading(false);
   }
-};
-
-// useEffect(() => {
-//     if (coords.lat && coords.lon) {
-//       locationData(coords.lat, coords.lon);
-//     }
-//   }, [coords]);
+  };
   
   const handleOnSearchChange = (searchData) => {
     const [lat, lon] = searchData.value.split(' ');
@@ -92,45 +87,54 @@ function App() {
   return (
     <div className='appContainer'>
       <h1 className='appHeader'>Joe's Weather Service</h1>
-      <div className='searchAndLocationContainer'>
-        <section className='geoButton'>
-          <GeoLocator
-            onLocate={(lat, lon) => {
-              setGeoError('');      // clear any previous error
-              locationData(lat, lon);
-          }}
-          />
-          {geoError && <p style={{ color: 'red' }}>Error: {geoError}</p>}
-        </section>
+      
+      {loading && <LoadingSpinner />}
+      {error   && <div className="errorMsg">{error}</div>}
 
-        <div className='searchBox'>
-          <Search onSearchChange={handleOnSearchChange} />
+      {/* Only render the main UI when not loading & no error */}
+      {!loading && !error && (
+      <>
+        <div className='searchAndLocationContainer'>
+          <section className='geoButton'>
+            <GeoLocator
+              onLocate={(lat, lon) => {
+                setGeoError('');      // clear any previous error
+                locationData(lat, lon);
+            }}
+            />
+            {geoError && <p style={{ color: 'red' }}>Error: {geoError}</p>}
+          </section>
+
+          <div className='searchBox'>
+            <Search onSearchChange={handleOnSearchChange} />
+          </div>
         </div>
-      </div>
-      <div className='locationDisplayContainer'>
-          <p>{current.city ? current.city : 'Your Location'}</p>
-      </div>
-      <div>
-        {current && <CurrentWeather forecast={forecast} current={current} windDirection={windDirection} />}
-      </div>  
-      {/* <div>
-        <Alerts forecast={forecast} />
-      </div> */}
-      <div>
-        <Hourly forecast={forecast} />
-      </div>
-      <div>
-        <TodaysForecast forecast={forecast} windDirection={windDirection} />
-      </div>
-      <div>
-        {forecast && <Forecast  forecast={forecast} windDirection={windDirection} />}
-      </div>
-      <div>
-        <SunriseSunset forecast={forecast} />
-      </div>
-      {/* <div>
-        <MoonriseMoonset forecast={forecast} />
-      </div> */}
+        <div className='locationDisplayContainer'>
+            <p>{current.city ? current.city : 'Your Location'}</p>
+        </div>
+        <div>
+          {current && <CurrentWeather forecast={forecast} current={current} windDirection={windDirection} />}
+        </div>  
+        {/* <div>
+          <Alerts forecast={forecast} />
+        </div> */}
+        <div>
+          <Hourly forecast={forecast} />
+        </div>
+        <div>
+          <TodaysForecast forecast={forecast} windDirection={windDirection} />
+        </div>
+        <div>
+          {forecast && <Forecast  forecast={forecast} windDirection={windDirection} />}
+        </div>
+        <div>
+          <SunriseSunset forecast={forecast} />
+        </div>
+        {/* <div>
+          <MoonriseMoonset forecast={forecast} />
+        </div> */}
+      </>
+      )}
     </div>
   )
 }
