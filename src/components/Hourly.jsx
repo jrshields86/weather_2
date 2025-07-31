@@ -17,7 +17,7 @@ export default function Hourly({ forecast }) {
   const display = upcoming.slice(0, 12);
 
   return (
-    <div className="hourlyContainer">
+    <div className="hourlyContainer panel">
       {display.map(h => {
         const date = new Date(h.dt * 1000);
         const timeLabel = date.toLocaleTimeString([], {

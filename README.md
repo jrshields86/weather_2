@@ -1,0 +1,1 @@
+Hello. This is a functional weather web app that I built to both hone and demontrate my skills at web app development. I built the front end of the app myself originally and have since gone through and used ChatGPT to refactor the code to both learn and improve the quality of my app. Thank you for checking it out.
