@@ -11,14 +11,14 @@ const CurrentWeather = ({current, windDirection}) => {
     const description = iconData[0].description;
 
     return (
-        <div className='app'>
-            <div className='weatherContainer'>
+        
+            <div className='weatherContainer panel'>
                 <div className='currentWeatherHeader'>
                     Current Weather
                 </div>
                 <div className='leftAndRightContainer'>
 
-                        <div id='currentWeatherRight'>
+                        <div className='currentWeatherRight'>
                             <div className='top-left'>
                                 <p className='temp'>{Math.round(current.temp)}°F</p>
                                 <p className='feelsLike'>Feels Like: {Math.round(current.feels_like)}°F</p>
@@ -31,7 +31,7 @@ const CurrentWeather = ({current, windDirection}) => {
                             </div>
                         </div>
 
-                        <div id='currentWeatherLeft'>
+                        <div className='currentWeatherLeft'>
                             <div id='currentWeatherWind'>
                                 <p className='detailTitle'>Wind</p>
                                 <p className='detailValue'>{windDirection(current.wind_deg)} {Math.round(current.wind_speed)} mph</p>
@@ -67,7 +67,7 @@ const CurrentWeather = ({current, windDirection}) => {
                     
                 </div>
             </div>
-        </div>
+        
     );
 };
 

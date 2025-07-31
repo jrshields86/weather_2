@@ -78,7 +78,7 @@ function App() {
 
   return (
     <div className='appContainer'>
-      <h1 className='appHeader'>Joe's Weather Service</h1>
+      <h1 className='appHeader panel'>Joe's Weather Service</h1>
       
       {loading && <LoadingSpinner />}
       {error   && <div className="errorMsg">{error}</div>}
@@ -94,7 +94,7 @@ function App() {
                 locationData(lat, lon);
             }}
             />
-            {geoError && <p style={{ color: 'red' }}>Error: {geoError}</p>}
+            {geoError && <p className='geoError'>Error: {geoError}</p>}
           </section>
 
           <div className='searchBox'>
@@ -104,27 +104,21 @@ function App() {
         <div className='locationDisplayContainer'>
             <p>{current.city ? current.city : 'Your Location'}</p>
         </div>
-        <div>
-          {current && <CurrentWeather forecast={forecast} current={current} windDirection={windDirection} />}
-        </div>  
-        {/* <div>
-          <Alerts forecast={forecast} />
-        </div> */}
-        <div>
-          <Hourly forecast={forecast} />
-        </div>
-        <div>
-          <TodaysForecast forecast={forecast} windDirection={windDirection} />
-        </div>
-        <div>
-          {forecast && <Forecast  forecast={forecast} windDirection={windDirection} />}
-        </div>
-        <div>
-          <SunriseSunset forecast={forecast} />
-        </div>
-        {/* <div>
-          <MoonriseMoonset forecast={forecast} />
-        </div> */}
+        {current && <CurrentWeather forecast={forecast} current={current} windDirection={windDirection} />}
+          
+        {/* <Alerts forecast={forecast} /> */}
+        
+        <Hourly forecast={forecast} />
+        
+        
+        <TodaysForecast forecast={forecast} windDirection={windDirection} />
+        
+        
+        {forecast && <Forecast  forecast={forecast} windDirection={windDirection} />}
+        
+        
+        <SunriseSunset forecast={forecast} />
+        
       </>
       )}
     </div>

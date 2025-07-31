@@ -44,10 +44,9 @@ const SunriseSunset = ({forecast}) => {
         }
     };
     
-    return (
-        <>  
-            <div className="sunriseSunsetContainer">
-                <div id='sunriseSunsetChild 1'>
+    return (  
+            <div className="sunriseSunsetContainer panel">
+                <div className='sunriseSunsetChild'>
                     <div className="moonriseMoonsetContainer">
                     <div id='top'>
                         <div id='moonriseText'>
@@ -66,7 +65,7 @@ const SunriseSunset = ({forecast}) => {
                     </div>
                     </div>
                 </div>
-                <div id='sunriseSunsetChild 2'>
+                <div className='sunriseSunsetChild'>
                     <div className="moonriseMoonsetContainer">
                         <div id='top'>
                             <div id='moonriseText'>
@@ -85,11 +84,10 @@ const SunriseSunset = ({forecast}) => {
                         </div>
                     </div>
                 </div>
-                <div id='sunriseSunsetChild 3'>
+                <div className='sunriseSunsetChild'>
                     <MoonriseMoonset  forecast={forecast} />
                 </div>
             </div>
-        </>
     );
 };
 
