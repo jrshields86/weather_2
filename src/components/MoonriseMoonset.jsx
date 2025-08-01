@@ -49,25 +49,27 @@ const MoonriseMoonset = ({forecast}) => {
     };
 
     return (
-        <>  
-            <div className="moonriseMoonsetContainer">
-                <div id='top'>
-                    <div id='moonriseText'>
-                        Moon Phase
-                    </div>
-                </div>
-                <div id='moonPhaseMiddle'>
-                    <div id='moonPhaseIcon'>
-                        <img id='moonIcon' src={`icons/${displayMoonPhaseIcon(moonPhaseData)}.png`} alt='moon phase icon' />
-                    </div>
-                </div>
-                <div id='bottom'>
-                    <div id="moonrise">
-                        {displayMoonPhase(moonPhaseData)}
-                    </div>
+            <div className="moonriseMoonsetContainer panel">
+                <div className="moonPhaseTop">
+                <div className="moonPhaseTitle">
+                    Moon Phase
                 </div>
             </div>
-        </>
+            <div className="moonPhaseMiddle">
+                <div className="moonPhaseIcon">
+                    <img
+                        className="moonIcon"
+                        src={`icons/${displayMoonPhaseIcon(moonPhaseData)}.png`}
+                        alt="moon phase icon"
+                    />
+                </div>
+            </div>
+            <div className="moonPhaseBottom">
+                <div className="moonPhaseLabel">
+                    {displayMoonPhase(moonPhaseData)}
+                </div>
+            </div>
+            </div>
     );
 };
 

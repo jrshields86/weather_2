@@ -1,8 +1,9 @@
+/* = Imports = */
 @import './styles/design-system.css';
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
 
+/* = Variables & Design Tokens = */
 :root {
-  /* — design tokens — */
   --color-primary: rgb(0, 180, 216);
   --color-bg: var(--color-bg) /* already defined in design-system */;
   --color-text: var(--color-text);
@@ -13,8 +14,52 @@
   --panel-max: 1400px;
 }
 
+/* = Base & Globals = */
 * {
   box-sizing: border-box;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background: var(--color-bg);
+  color: var(--color-text);
+}
+
+/* = Utilities = */
+button {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+button:hover {
+  background-color: #2980b9;
+}
+
+.detailTitle {
+font-size: 24px;
+font-weight: 600;
+}
+
+.detailValue {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.errorMsg {
+  color: #c00;
+  text-align: center;
+  margin: 1rem 0;
+}
+
+.geoError {
+  color: red;
+  text-align: center;
+  margin: 0.5rem 0;
 }
 
 .panel {
@@ -28,23 +73,72 @@
   box-shadow: var(--shadow);
 }
 
-.geoError {
-  color: red;
-  text-align: center;
-  margin: 0.5rem 0;
+.spinner {
+  width: 3rem;
+  height: 3rem;
+  border: 0.4rem solid rgba(0,0,0,0.1);
+  border-top-color: rgba(0,0,0,0.6);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 2rem auto;
 }
 
-body {
-font-family: 'Montserrat', sans-serif;
-  background: var(--color-bg);
-  color: var(--color-text);}
-
+/* = Layout Helpers = */
 .appContainer {
   max-width: 600px;
   margin: 0 auto;
   padding: 20px;
 }
 
+.mainViewContainer {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.searchBar {
+  width: 200px;
+}
+
+.searchBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* = Components = */
+/* CurrentWeather */
+.currentWeatherHeader {
+  font-size: 1.5rem;
+  font-weight: bolder;
+  padding: .5rem;
+  text-align: center;
+}
+
+.weatherContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Forecast */
+.forecastChild {
+  display: flex;
+  justify-content: space-evenly;
+  width: 90%;
+  border: 2px solid black;
+  border-radius: 10px;
+  padding: .75rem;
+}
+
+.forecastContainer {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: space-around;
+}
+
+/* Sunrise/Sunset */
 .locationDisplayContainer {
   width: 80%;
   max-width: 1400px;
@@ -64,9 +158,12 @@ font-family: 'Montserrat', sans-serif;
   text-align: center;
 }
 
-.weatherContainer {
+.sunriseSunsetContainer {
   display: flex;
-  flex-direction: column;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding: 1.25rem;
+  color: black;
 }
 
 /* Make all major panels fluid */
@@ -82,6 +179,11 @@ font-family: 'Montserrat', sans-serif;
 .currentWeatherIcon {
   height: 100px;
   width: 100px;
+  margin-top: 0.5rem;
+}
+
+.moonPhaseTitle {
+  margin-bottom: 0.5rem; /* add space below the Moon Phase headline */
 }
 
 .top-right {
@@ -165,16 +267,6 @@ font-family: 'Montserrat', sans-serif;
   font-size: 18px;
 }
 
-.detailTitle {
-font-size: 24px;
-font-weight: 600;
-}
-
-.detailValue {
-  font-size: 18px;
-  font-weight: 600;
-}
-
 .descriptionContainer {
   display: flex;
   flex-direction: column;
@@ -191,37 +283,9 @@ font-weight: 600;
   text-align: center;
 }
 
-.searchBox {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.searchBar {
-  width: 200px;
-  
-}
-
-.forecastContainer {
-  position: relative;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  justify-content: space-around;
-}
-
 .forecastRight {
   display: flex;
   gap: 1rem;
-}
-
-.forecastChild {
-  display: flex;
-  justify-content: space-evenly;
-  width: 90%;
-  border: 2px solid black;
-  border-radius: 10px;
-  padding: .75rem;
 }
 
 .minMax {
@@ -245,14 +309,6 @@ font-weight: 600;
   border: 1px solid black;
   width: 50px;
   height: 50px;
-}
-
-.sunriseSunsetContainer {
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  padding: 1.25rem;
-  color: black;
 }
 
 /* Sunrise/Sunset panels: inner layout classes */
@@ -292,34 +348,37 @@ font-weight: 600;
   flex-direction: column;
   align-items: center;
   padding: 1.25rem;
-  border: 2px solid black;
-  border-radius: 10px;
-  margin: 0px auto 16px auto;
-  background-color: rgb(0, 180, 216);
-  box-shadow: 10px -2px 20px 2px rgb(0 0 0 / 30%);
-  color: black;
 }
 
-#moonrise, #moonset, #moonriseText, #moonsetText {
-  border: 2px solid black;
+/* Moonrise/Moonset inner layout */
+.moonPhaseTop,
+.moonPhaseMiddle,
+.moonPhaseBottom {
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+}
+
+.moonPhaseMiddle {
+  flex-direction: column;
+}
+
+.moonPhaseIcon {
+  text-align: center;
+  padding-bottom: .5rem;
+}
+
+.moonPhaseTitle,
+.moonPhaseLabel {
+  border: 2px solid var(--color-border);
   padding: .25rem .75rem;
   border-radius: 5px;
   font-weight: bolder;
 }
 
-#moonPhaseMiddle {
-  justify-content: center;
-  flex-direction: column;
-}
-
-#moonIcon {
+.moonIcon {
   width: 45px;
   height: 45px;
-}
-
-#moonPhaseIcon {
-  text-align: center;
-  padding-bottom: .5rem;
 }
 
 .searchAndLocationContainer {
@@ -327,24 +386,10 @@ font-weight: 600;
   justify-content: center;
 }
 
-.mainViewContainer {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-}
-
 .todaysForecastContainer {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  margin: 16px auto 16px auto;
-  background-color: rgb(0, 180, 216);
-  border: 2px solid black;
-  width: 80%;
-  max-width: 1400px;
-  border-radius: 10px;
-  text-align: center;
-  box-shadow: 10px -2px 20px 2px rgb(0 0 0 / 30%);
 }
 
 .todayForecastDateDayContainer {
@@ -569,11 +614,6 @@ body.activeModal {
   text-align: center;
 }
 
-.todaysForecastHeader {
-  display: flex;
-  justify-content: center;
-}
-
 .todaysForecastHeader p {
   width: 98%;
   border: 2px solid black;
@@ -641,14 +681,9 @@ body.activeModal {
   border-radius: 5px;;
 }
 
-.currentWeatherHeader {
-  font-size: 1.5rem;
-  font-weight: bolder;
-  padding: .5rem;
-  text-align: center;
-}
-
 .todaysForecastHeader {
+  display: flex;
+  justify-content: center;
   font-size: 1.5rem;
   font-weight: bolder;
   padding: 0.5rem;
@@ -668,17 +703,7 @@ body.activeModal {
 }
 
 .appHeader {
-  width: 80%;
-  max-width: 1400px;
-  font-size: 1.5rem;
-  font-weight: bolder;
-  padding: 0.5rem;
-  text-align: center;
-  background-color: rgb(0, 180, 216);
-  border: 2px solid black;
-  border-radius: 10px;
-  margin: 16px auto 16px auto;
-  box-shadow: 10px -2px 20px 2px rgb(0 0 0 / 30%);
+  @extend .panel;
 }
 
 .todaysForecastRaindropIcon {
@@ -690,36 +715,7 @@ body.activeModal {
     list-style-type: none;
 }
 
-button {
-  background-color: #3498db;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: background-color 0.2s ease-in-out;
-}
-
-button:hover {
-  background-color: #2980b9;
-}
-
-.spinner {
-  width: 3rem;
-  height: 3rem;
-  border: 0.4rem solid rgba(0,0,0,0.1);
-  border-top-color: rgba(0,0,0,0.6);
-  border-radius: 50%;
-  animation: spin 1s linear infinite;
-  margin: 2rem auto;
-}
-
-.errorMsg {
-  color: #c00;
-  text-align: center;
-  margin: 1rem 0;
-}
-
+/* = Media Queries = */
 @keyframes spin {
   to { transform: rotate(360deg); }
 }
@@ -745,8 +741,8 @@ button:hover {
   }
 
   /* Any two-column flex layouts ➔ stack vertically */
-  #currentWeatherLeft,
-  #currentWeatherRight,
+  .currentWeatherLeft,
+  .currentWeatherRight,
   .topContainer,
   .bottomLowerContainer,
   .forecastRight {
