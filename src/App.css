@@ -255,20 +255,31 @@ font-weight: 600;
   color: black;
 }
 
-#sunrise, #sunset, #sunriseText, #sunsetText {
-  border: 2px solid black;
+/* Sunrise/Sunset panels: inner layout classes */
+.sunriseSunsetTop,
+.sunriseSunsetMiddle,
+.sunriseSunsetBottom {
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+}
+
+.sunriseSunsetTop {
+  margin-bottom: .75rem;
+}
+
+.sunriseSunsetMiddle {
+  padding-bottom: 1rem;
+}
+
+/* Sunrise/Sunset title & time boxes */
+.sunriseSunsetTitle,
+.sunriseTime,
+.sunsetTime {
+  border: 2px solid var(--color-border);
   padding: .25rem .75rem;
   border-radius: 5px;
   font-weight: bolder;
-}
-
-#top, #middle, #bottom {
-  display: flex;
-  justify-content: space-around;
-}
-
-#top {
-  margin-bottom: .75rem;
 }
 
 .sunriseIcon, .sunsetIcon {
@@ -296,23 +307,9 @@ font-weight: 600;
   font-weight: bolder;
 }
 
-#top, #middle, #bottom {
-  display: flex;
-  justify-content: space-around;
-  text-align: center;
-}
-
 #moonPhaseMiddle {
   justify-content: center;
   flex-direction: column;
-}
-
-#top {
-  margin-bottom: .75rem;
-}
-
-#middle {
-  padding-bottom: 1rem;
 }
 
 #moonIcon {
