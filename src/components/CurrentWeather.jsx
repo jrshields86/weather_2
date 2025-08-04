@@ -12,26 +12,24 @@ const CurrentWeather = ({current, windDirection}) => {
 
     return (
         
-            <div className='weatherContainer panel'>
-                <div className='currentWeatherHeader'>
-                    Current Weather
-                </div>
-                <div className='leftAndRightContainer'>
+            <div className='panel flex flex-col gap-1'>
+                <h2 className='currentWeatherHeader'> Current Weather </h2>
+                <div className='flex wrap justify-evenly items-center gap-1'>
 
-                        <div className='currentWeatherRight'>
-                            <div className='top-left'>
+                        <div className='flex wrap justify-around grow items-center gap-1'>
+                            <div className='flex flex-col justify-center items-center gap-1'>
                                 <p className='temp'>{Math.round(current.temp)}°F</p>
                                 <p className='feelsLike'>Feels Like: {Math.round(current.feels_like)}°F</p>
                             </div>    
-                            <div className='top-right'>
+                            <div className='flex flex-col justify-center items-center gap-1'>
                                 <img alt='weather icon' className='currentWeatherIcon' src={`icons/${icon}.png`}/>
-                                <div className='descriptionContainer'>
+                                <div className='flex flex-col justify-center items-center'>
                                     <p className='description'>{description}</p>
                                 </div>
                             </div>
                         </div>
 
-                        <div className='currentWeatherLeft'>
+                        <div className='flex wrap justify-around grow gap-1'>
                             <div id='currentWeatherWind'>
                                 <p className='detailTitle'>Wind</p>
                                 <p className='detailValue'>{windDirection(current.wind_deg)} {Math.round(current.wind_speed)} mph</p>

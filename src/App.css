@@ -83,6 +83,11 @@ font-weight: 600;
   margin: 2rem auto;
 }
 
+/* = Animations = */
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
 /* = Layout Helpers = */
 .appContainer {
   max-width: 600px;
@@ -90,21 +95,35 @@ font-weight: 600;
   padding: 20px;
 }
 
-.mainViewContainer {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-}
-
 .searchBar {
   width: 200px;
 }
 
-.searchBox {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+/* Display & Direction */
+.flex          { display: flex; }
+.flex-row      { flex-direction: row; }
+.flex-col      { flex-direction: column; }
+.wrap          { flex-wrap: wrap; }
+
+/* Growth & Sizing */
+.grow          { flex-grow: 1; }
+
+/* Alignment */
+.justify-center   { justify-content: center; }
+.justify-between { justify-content: space-between; }
+.justify-around   { justify-content: space-around; }
+.justify-evenly   { justify-content: space-evenly; }
+
+.items-center     { align-items: center; }
+.text-center      { text-align: center; }
+
+/* Spacing */
+.gap-1        { gap: 1rem; }
+.gap-2        { gap: 2rem; }
+
+/* Utilities for padding/margin if you need them */
+.px-2         { padding-left: 2rem; padding-right: 2rem; }
+.mt-1         { margin-top: 1rem; }
 
 /* = Components = */
 /* CurrentWeather */
@@ -186,12 +205,7 @@ font-weight: 600;
   margin-bottom: 0.5rem; /* add space below the Moon Phase headline */
 }
 
-.top-right {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
+
 
 .currentWeatherLeft {
   display: flex;
@@ -207,40 +221,6 @@ font-weight: 600;
   flex-grow: 1;
 }
 
-.sunMoonContainer {
-  display: flex;
-  justify-content: center;
-  gap: 4rem;
-}
-
-.topContainer {
-  display: flex;
-  gap: 1rem;
-}
-
-.bottomContainer {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-}
-
-.bottomLowerContainer {
-  display: flex;
-  justify-content: space-evenly;
-}
-
-.rightContainer {
-  display: flex;
-  flex-direction: column;
-}
-
-.leftAndRightContainer {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  align-items: center;
-}
-
 .bottom {
   display: flex;
   justify-content: space-between;
@@ -250,7 +230,6 @@ font-weight: 600;
   text-align: center;
 }
 
-.bottomUpper,
 .bottomLower {
   display: flex;
   justify-content: space-around;
@@ -281,11 +260,6 @@ font-weight: 600;
 
 .currentTitle {
   text-align: center;
-}
-
-.forecastRight {
-  display: flex;
-  gap: 1rem;
 }
 
 .minMax {
@@ -702,10 +676,6 @@ body.activeModal {
   text-align: center;
 }
 
-.appHeader {
-  @extend .panel;
-}
-
 .todaysForecastRaindropIcon {
   width: 40px;
   height: 40px;
@@ -716,11 +686,6 @@ body.activeModal {
 }
 
 /* = Media Queries = */
-@keyframes spin {
-  to { transform: rotate(360deg); }
-}
-
-
  @media (max-width: 576px) {
   /* Constrain the overall wrapper */
   .appContainer {
@@ -742,10 +707,7 @@ body.activeModal {
 
   /* Any two-column flex layouts ➔ stack vertically */
   .currentWeatherLeft,
-  .currentWeatherRight,
-  .topContainer,
-  .bottomLowerContainer,
-  .forecastRight {
+  .currentWeatherRight {
     flex-direction: column;
     align-items: center;
   }

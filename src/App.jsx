@@ -86,8 +86,8 @@ function App() {
       {/* Only render the main UI when not loading & no error */}
       {!loading && !error && (
       <>
-        <div className='searchAndLocationContainer'>
-          <section className='geoButton'>
+        <div className='flex justify-center gap-1 items-center'>
+          <section className='flex flex-col items-center'>
             <GeoLocator
               onLocate={(lat, lon) => {
                 setGeoError('');      // clear any previous error
@@ -97,7 +97,7 @@ function App() {
             {geoError && <p className='geoError'>Error: {geoError}</p>}
           </section>
 
-          <div className='searchBox'>
+          <div className='flex justify-center items-center'>
             <Search onSearchChange={handleOnSearchChange} />
           </div>
         </div>
