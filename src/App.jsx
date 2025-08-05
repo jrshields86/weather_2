@@ -18,6 +18,7 @@ import LoadingSpinner from './components/LoadingSpinner.jsx';
 function App() {
   const [current, setCurrent] = useState({});
   const [forecast, setForecast] = useState([]);
+  const [hasLocation, setHasLocation] = useState(false);
   const [geoError, setGeoError] = useState('');
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
@@ -33,6 +34,7 @@ function App() {
   );
     setCurrent(resp.data.current);
     setForecast(resp.data);
+    setHasLocation(true);
   } catch (err) {
     console.error(err);
     setError("Sorry, something went wrong. Please try again.")
@@ -52,6 +54,7 @@ function App() {
         const fullWeatherResponse = await response[0].data;
         setCurrent({city: searchData.label , ...weatherResponse});
         setForecast({city: searchData.label , ...fullWeatherResponse});
+        setHasLocation(true);
       })
       .catch((err) => console.log(err));
   };
@@ -86,7 +89,12 @@ function App() {
       {/* Only render the main UI when not loading & no error */}
       {!loading && !error && (
       <>
-        <div className='flex justify-center gap-1 items-center'>
+        <div className='flex flex-col justify-center gap-1 items-center'>
+
+          <div className='flex justify-center items-center'>
+              <Search onSearchChange={handleOnSearchChange} />
+          </div>
+
           <section className='flex flex-col items-center'>
             <GeoLocator
               onLocate={(lat, lon) => {
@@ -97,15 +105,15 @@ function App() {
             {geoError && <p className='geoError'>Error: {geoError}</p>}
           </section>
 
-          <div className='flex justify-center items-center'>
-            <Search onSearchChange={handleOnSearchChange} />
-          </div>
         </div>
+
+        {hasLocation && (
         <div className='locationDisplayContainer'>
             <p>{current.city ? current.city : 'Your Location'}</p>
         </div>
+        )}
 
-        <Alerts forecast={forecast} />
+        {/* <Alerts forecast={forecast} /> */}
 
         {current && <CurrentWeather forecast={forecast} current={current} windDirection={windDirection} />}
         
