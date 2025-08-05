@@ -49,7 +49,7 @@ const MoonriseMoonset = ({forecast}) => {
     };
 
     return (
-            <div className="panel flex flex-col items-center gap-1">
+            <div className="panel sectionCard flex flex-col items-center gap-4 animate-fadeIn">
                 <div className="flex justify-center">
                 <div className="moonPhaseTitle">
                     Moon Phase

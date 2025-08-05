@@ -28,6 +28,10 @@ body {
 }
 
 /* = Utilities = */
+.animate-fadeIn {
+  animation: fadeIn 0.5s ease-out;
+}
+
 button {
   background-color: #3498db;
   color: white;
@@ -40,6 +44,24 @@ button {
 
 button:hover {
   background-color: #2980b9;
+}
+
+.descriptionItalic {
+  font-style: italic;
+  color: rgba(0,0,0,0.7);
+}
+
+.detailIcon {
+  width: 24px;
+  height: 24px;
+  filter: brightness(0) invert(1);
+}
+
+.detailItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
 }
 
 .detailTitle {
@@ -75,6 +97,12 @@ font-weight: 600;
   box-shadow: var(--shadow);
 }
 
+.sectionCard {
+  background: linear-gradient(120deg, #6dd5fa, #ffffff);
+  border-radius: var(--radius);
+  padding: calc(var(--panel-padding) * 1.5);
+}
+
 .spinner {
   width: 3rem;
   height: 3rem;
@@ -85,7 +113,36 @@ font-weight: 600;
   margin: 2rem auto;
 }
 
+.tempGradient {
+  font-size: 4rem;
+  font-weight: 700;
+  background: linear-gradient(90deg, #ff7e5f, #feb47b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.weatherCard {
+  background: linear-gradient(120deg, #6dd5fa, #ffffff);
+  border-radius: var(--radius);
+  padding: calc(var(--panel-padding) * 1.5);
+}
+
+.weatherIconCircle {
+  background-color: rgba(255,255,255,0.3);
+  border-radius: 50%;
+  padding: 0.5rem;
+}
+
 /* = Animations = */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.5s ease-out;
+}
+
 @keyframes spin {
   to { transform: rotate(360deg); }
 }

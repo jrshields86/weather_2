@@ -45,7 +45,7 @@ const SunriseSunset = ({forecast}) => {
     };
     
     return (  
-            <div className="panel flex wrap justify-around gap-1">
+            <div className="panel sectionCard flex wrap justify-around gap-4 animate-fadeIn">
 
                 <div className="flex flex-col items-center gap-1">
                     <div className="sunriseSunsetTitle">Sunrise</div>

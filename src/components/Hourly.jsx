@@ -17,7 +17,7 @@ export default function Hourly({ forecast }) {
   const display = upcoming.slice(0, 12);
 
   return (
-    <div className="panel flex overflow-x-auto gap-1">
+    <div className="panel sectionCard flex overflow-x-auto gap-4 animate-fadeIn">
       {display.map(h => {
         const date = new Date(h.dt * 1000);
         const timeLabel = date.toLocaleTimeString([], {
