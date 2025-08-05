@@ -5,13 +5,15 @@
 /* = Variables & Design Tokens = */
 :root {
   --color-primary: rgb(0, 180, 216);
-  --color-bg: var(--color-bg) /* already defined in design-system */;
+  --color-bg: #f0f4f8;
   --color-text: var(--color-text);
   --color-border: #000;
   --radius: 10px;
   --shadow: 10px -2px 20px 2px rgba(0,0,0,0.3);
   --panel-padding: 1rem;
   --panel-max: 1400px;
+  --bg-start: #e0f7fa;  /* pale cyan */
+  --bg-end:   #ffffff;  /* white */
 }
 
 /* = Base & Globals = */
@@ -21,7 +23,7 @@
 
 body {
   font-family: 'Montserrat', sans-serif;
-  background: var(--color-bg);
+  background: linear-gradient(to bottom, var(--bg-start), var(--bg-end));
   color: var(--color-text);
 }
 
