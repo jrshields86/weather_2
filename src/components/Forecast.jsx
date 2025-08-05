@@ -19,7 +19,7 @@ const Forecast = ({forecast, windDirection}) => {
     
     
     return (
-        <div className='forecastContainer panel'>
+        <div className='panel flex wrap justify-around gap-1'>
             <div className='forecastHeader'>
                 7 Day Forecast
             </div>

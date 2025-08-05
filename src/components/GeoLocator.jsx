@@ -25,11 +25,11 @@ export default function GeoLocator({ onLocate }) {
   };
 
   return (
-    <div style={{ margin: '1rem 0' }}>
+    <div className='mt-1'>
       <button onClick={handleClick} disabled={loading}>
         {loading ? 'Detecting location…' : 'Use My Location'}
       </button>
-      {error && <p style={{ color: 'red', marginTop: 8 }}>{error}</p>}
+      {error && <p className='geoError'>{error}</p>}
     </div>
   );
 }

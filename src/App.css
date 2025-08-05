@@ -99,6 +99,11 @@ font-weight: 600;
   width: 200px;
 }
 
+.overflow-x-auto {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch; /* smooth scrolling on iOS */
+}
+
 /* Display & Direction */
 .flex          { display: flex; }
 .flex-row      { flex-direction: row; }
@@ -428,6 +433,7 @@ font-weight: 600;
 .todaysForecastSummaryContainer {
   display: flex;
   justify-content: center;
+  text-align: center;
 }
 
 .todaysForecastDate,

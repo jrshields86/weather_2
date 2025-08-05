@@ -49,13 +49,13 @@ const MoonriseMoonset = ({forecast}) => {
     };
 
     return (
-            <div className="moonriseMoonsetContainer panel">
-                <div className="moonPhaseTop">
+            <div className="panel flex flex-col items-center gap-1">
+                <div className="flex justify-center">
                 <div className="moonPhaseTitle">
                     Moon Phase
                 </div>
             </div>
-            <div className="moonPhaseMiddle">
+            <div className="flex flex-col justify-center items-center">
                 <div className="moonPhaseIcon">
                     <img
                         className="moonIcon"
@@ -64,7 +64,7 @@ const MoonriseMoonset = ({forecast}) => {
                     />
                 </div>
             </div>
-            <div className="moonPhaseBottom">
+            <div className="flex justify-center">
                 <div className="moonPhaseLabel">
                     {displayMoonPhase(moonPhaseData)}
                 </div>
