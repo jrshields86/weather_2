@@ -105,7 +105,7 @@ function App() {
             <p>{current.city ? current.city : 'Your Location'}</p>
         </div>
 
-        {/* <Alerts forecast={forecast} /> */}
+        <Alerts forecast={forecast} />
 
         {current && <CurrentWeather forecast={forecast} current={current} windDirection={windDirection} />}
         
