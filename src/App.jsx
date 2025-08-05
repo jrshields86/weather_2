@@ -78,7 +78,7 @@ function App() {
 
   return (
     <div className='appContainer'>
-      <h1 className='appHeader panel'>Joe's Weather Service</h1>
+      <h1 className='appHeader panel text-center'>Joe's Weather Service</h1>
       
       {loading && <LoadingSpinner />}
       {error   && <div className="errorMsg">{error}</div>}
@@ -104,15 +104,14 @@ function App() {
         <div className='locationDisplayContainer'>
             <p>{current.city ? current.city : 'Your Location'}</p>
         </div>
-        {current && <CurrentWeather forecast={forecast} current={current} windDirection={windDirection} />}
-          
+
         {/* <Alerts forecast={forecast} /> */}
-        
-        <Hourly forecast={forecast} />
-        
+
+        {current && <CurrentWeather forecast={forecast} current={current} windDirection={windDirection} />}
         
         <TodaysForecast forecast={forecast} windDirection={windDirection} />
         
+        <Hourly forecast={forecast} />
         
         {forecast && <Forecast  forecast={forecast} windDirection={windDirection} />}
         

@@ -44,27 +44,36 @@ const Alerts = ({forecast}) => {
 
     return (
         
-        <div>
-            <ul>
-            {
-                alertEventArr.map((event, idx) => {
-                    return(
-                        <li className='alertLineItemList' key={idx}>
-                            <button className="buttonModal" onClick={toggleModal}>{event}</button>
-                        </li>
-                    )
-                })
-            }
+        <div className="panel flex flex-col gap-1">
+
+            {/*
+              Use flex & gap to stack the alert buttons neatly
+            */}
+            <ul className="flex flex-col items-center gap-1">
+                 {
+                     alertEventArr.map((event, idx) => {
+                         return(
+
+                            <li className="alertLineItemList" key={idx}>
+                                <button className="buttonModal" onClick={toggleModal}>
+                                  {event}
+                                </button>
+                            </li>
+                         )
+                     })
+                 }
+
             </ul>
+
             {modal && (
-            <div className="alertModal">
+            <div className="alertModal flex justify-center items-center">
             <div onClick={toggleModal} className="alertOverlay"></div>
             <div className="modalContent">
                 <h2>{}</h2>
                 <p>
                 {}
                 </p>
-                <button className="closeModal" onClick={toggleModal}>
+                <button className="close-modal" onClick={toggleModal}>
                 CLOSE
                 </button>
             </div>

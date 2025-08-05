@@ -39,11 +39,11 @@ const TodaysForecast = ({forecast, windDirection}) => {
 
 
     return (
-            <div className="todaysForecastContainer panel">
+            <div className="panel flex flex-col items-center gap-1">
                 <div className='todaysForecastHeader'>
                     Today's Forecast
                 </div>
-                <div className='todaysForecastDayIconSummaryContainer'>
+                <div className='flex flex-col items-center gap-1'>
                     <div className='todayForecastDateDayContainer'>
                         <div className='todaysForecastDate'>
                             {date}
@@ -56,8 +56,8 @@ const TodaysForecast = ({forecast, windDirection}) => {
                         <p className='todaysForecastSummary'>{todaySummary}</p>
                     </div>           
                 </div>
-                <div className='todaysForecastTopContainer'>
-                    <div className='todaysForecastWindPopContainer'>
+                <div className='flex flex-col gap-1'>
+                    <div className='flex flex-col items-center gap-1'>
                         <div className='todaysForecastWind'>
                             <p className='detailTitle'>Wind:</p>
                             <p className='detailValue'>{todayDirection} {Math.round(todayData.wind_speed)} mph</p>
@@ -68,7 +68,7 @@ const TodaysForecast = ({forecast, windDirection}) => {
                         </div>
                     </div>
                 </div>
-                <div className='todaysForecastHumidityPressureContainer'>
+                <div className="flex flex-col justify-around text-center gap-1">
                     <div className='todaysForecastHumidity'>
                         <p className='detailTitle'>Humidity:</p>
                         <p className='detailValue'>{todayData.humidity} %</p>

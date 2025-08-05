@@ -45,52 +45,36 @@ const SunriseSunset = ({forecast}) => {
     };
     
     return (  
-            <div className="sunriseSunsetContainer panel">
-                <div className="sunriseSunsetChild">
-                    <div className="moonriseMoonsetContainer">
-                    <div className="sunriseSunsetTop">
-                        <div className="sunriseSunsetTitle">Sunrise</div>
-                    </div>
-                    <div className="sunriseSunsetMiddle">
-                        <div className="sunriseSunsetIcon">
-                        <img
-                            alt="sunrise icon"
-                            className="sunriseIcon"
-                            src={`icons/Sunrise_icon.png`}
-                        />
-                        </div>
-                    </div>
-                    <div className="sunriseSunsetBottom">
-                        <div className="sunriseTime">
+            <div className="panel flex wrap justify-around gap-1">
+
+                <div className="flex flex-col items-center gap-1">
+                    <div className="sunriseSunsetTitle">Sunrise</div>
+                    <img
+                        alt="sunrise icon"
+                        className="sunriseIcon"
+                        src={`icons/Sunrise_icon.png`}
+                    />
+                    <div className="sunriseTime">
                         {sunriseHours}:{correctSunriseMin()} a.m.
-                        </div>
-                    </div>
                     </div>
                 </div>
-                            <div className="sunriseSunsetChild">
-                    <div className="moonriseMoonsetContainer">
-                    <div className="sunriseSunsetTop">
-                        <div className="sunriseSunsetTitle">Sunset</div>
-                    </div>
-                    <div className="sunriseSunsetMiddle">
-                        <div className="sunriseSunsetIcon">
-                        <img
-                            alt="sunset icon"
-                            className="sunsetIcon"
-                            src={`icons/Sunset_icon.png`}
-                        />
-                        </div>
-                    </div>
-                    <div className="sunriseSunsetBottom">
-                        <div className="sunsetTime">
+
+                <div className="flex flex-col items-center gap-1">
+                    <div className="sunriseSunsetTitle">Sunset</div>
+                    <img
+                        alt="sunset icon"
+                        className="sunsetIcon"
+                        src={`icons/Sunset_icon.png`}
+                    />
+                    <div className="sunsetTime">
                         {correctSunsetHour()}:{correctSunsetMin()} p.m.
-                        </div>
-                    </div>
                     </div>
                 </div>
-                <div className='sunriseSunsetChild'>
-                    <MoonriseMoonset  forecast={forecast} />
+
+                <div className="flex flex-col items-center gap-1">
+                    <MoonriseMoonset forecast={forecast} />
                 </div>
+
             </div>
     );
 };
