@@ -19,7 +19,7 @@ const Forecast = ({forecast, windDirection}) => {
     
     
     return (
-        <div className='panel flex wrap justify-around gap-1'>
+        <div className='panel sectionCard flex flex-col gap-4 animate-fadeIn'>
             <div className='forecastHeader'>
                 7 Day Forecast
             </div>

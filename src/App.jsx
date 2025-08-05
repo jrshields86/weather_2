@@ -81,7 +81,7 @@ function App() {
 
   return (
     <div className='appContainer'>
-      <h1 className='appHeader panel text-center'>Joe's Weather Service</h1>
+      <h1 className='appHeader panel text-center sectionCard'>Joe's Weather Service</h1>
       
       {loading && <LoadingSpinner />}
       {error   && <div className="errorMsg">{error}</div>}
@@ -108,8 +108,8 @@ function App() {
         </div>
 
         {hasLocation && (
-        <div className='locationDisplayContainer'>
-            <p>{current.city ? current.city : 'Your Location'}</p>
+        <div className='locationDisplayContainer '>
+            <p className='sectionCard'>{current.city ? current.city : 'Your Location'}</p>
         </div>
         )}
 

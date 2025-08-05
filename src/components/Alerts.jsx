@@ -44,7 +44,7 @@ const Alerts = ({forecast}) => {
 
     return (
         
-        <div className="panel flex flex-col gap-1">
+        <div className="panel sectionCard flex flex-col gap-4 animate-fadeIn">
 
             {/*
               Use flex & gap to stack the alert buttons neatly
